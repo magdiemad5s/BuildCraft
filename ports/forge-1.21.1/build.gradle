@@ -1,0 +1,127 @@
+plugins {
+    id 'eclipse'
+    id 'idea'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '[6.0.24,6.2)'
+}
+
+version = "${mod_version}+${minecraft_version}"
+group = mod_group_id
+
+base {
+    archivesName = "buildcraft-neo-better-forge-${minecraft_version}"
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+minecraft {
+    mappings channel: mapping_channel, version: mapping_version
+    copyIdeResources = true
+
+    runs {
+        configureEach {
+            workingDirectory project.file("run/${name}")
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+
+            mods {
+                // ForgeGradle's source-set label is a real preserved module
+                // identity, avoiding future datagen/GameTest mismatches.
+                buildcraftfactory {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        client {
+            property 'forge.enabledGameTestNamespaces', 'buildcraftfactory'
+        }
+
+        server {
+            property 'forge.enabledGameTestNamespaces', 'buildcraftfactory'
+            args '--nogui'
+        }
+
+        gameTestServer {
+            property 'forge.enabledGameTestNamespaces', 'buildcraftfactory'
+        }
+
+        data {
+            workingDirectory project.file('run-data')
+            // A data-generation --mod value must identify an actual loaded
+            // module. Generated resources can still retain the shared
+            // legacy buildcraft namespace.
+            args '--mod', 'buildcraftfactory', '--all', '--output', file('src/generated/resources/'),
+                '--existing', file('src/main/resources/')
+        }
+    }
+}
+
+sourceSets {
+    main {
+        resources.srcDir 'src/generated/resources'
+    }
+    test {
+        resources.srcDir rootProject.file('../../legacy-1.12.2-contract')
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.named('test', Test).configure {
+    useJUnitPlatform()
+    testLogging {
+        events 'passed', 'skipped', 'failed'
+    }
+}
+
+tasks.register('verifyLegacyContract') {
+    description = 'Checks the preserved BuildCraft namespace and module-ID contract.'
+    group = 'verification'
+
+    def contract = rootProject.file('../../legacy-1.12.2-contract/identity.json')
+    inputs.file(contract)
+
+    doLast {
+        def parsed = new groovy.json.JsonSlurper().parse(contract)
+        def expectedModules = [
+            'buildcraftlib', 'buildcraftcore', 'buildcraftbuilders', 'buildcraftenergy',
+            'buildcraftfactory', 'buildcraftsilicon', 'buildcrafttransport', 'buildcraftrobotics'
+        ]
+        if (parsed.resourceNamespace != 'buildcraft') {
+            throw new GradleException("Unexpected legacy resource namespace: ${parsed.resourceNamespace}")
+        }
+        if (parsed.moduleIds != expectedModules) {
+            throw new GradleException("Legacy module contract drifted: ${parsed.moduleIds}")
+        }
+        if (parsed.legacySource.minecraft != '1.12.2') {
+            throw new GradleException("Unexpected legacy source version: ${parsed.legacySource.minecraft}")
+        }
+    }
+}
+
+tasks.named('check').configure {
+    dependsOn tasks.named('verifyLegacyContract')
+}
+
+tasks.named('jar', Jar).configure {
+    manifest {
+        attributes([
+            'Implementation-Title': 'BuildCraft Neo Better',
+            'Implementation-Version': project.version,
+            'BuildCraft-Legacy-Contract': '1.12.2'
+        ])
+    }
+}

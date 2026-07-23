@@ -1,0 +1,623 @@
+{
+  "schema": "buildcraft-neo/legacy-identity-contract/v1",
+  "purpose": "Machine-readable compatibility contract extracted from the BuildCraft 8.0.x-1.12.2 source. It is a preservation manifest, not evidence that a modern-loader implementation or world migration is complete.",
+  "project": {
+    "displayName": "BuildCraft Neo Better",
+    "compatibilityRule": "The new display/project name must not replace any preserved legacy registry namespace, SavedData name, NBT key, recipe/tag path, or packet meaning."
+  },
+  "legacySource": {
+    "workspaceSibling": "BuildCraft",
+    "minecraft": "1.12.2",
+    "forge": "14.23.1.2593",
+    "java": 8,
+    "branch": "8.0.x-1.12.2",
+    "commit": "7c86626d09c4569fb2e0f458a16aaf8c3148ebaf",
+    "version": "8.0.1-pre.2",
+    "referenceJar": {
+      "relativePath": "../../buildcraft-all-8.0.0.jar",
+      "sha256": "F617279F8148A9140AB86C0E4AA4C54FE8A94515D2CF487A47CBD928160B88AA",
+      "role": "behavioral-and-packaged-resource-reference-only"
+    }
+  },
+  "preservationRules": [
+    "Preserve every fully-qualified registry ID listed here in the corresponding modern registry unless a documented, tested migration replaces it.",
+    "Keep every oldRegistryAlias as an explicit missing-mapping/migration rule; aliases are case-folded by the legacy migration manager.",
+    "Do not claim old-world compatibility until backed-up fixtures load, save, and reload with all required fields retained.",
+    "Modern packet transport may change, but each packet name, direction, validation boundary, payload meaning, and state authority must be preserved or deliberately migrated.",
+    "The buildcraftcompat companion is optional: no optional API type may be reachable from base common or dedicated-server startup paths."
+  ],
+  "namespaces": {
+    "sharedResourceAndDataNamespace": "buildcraft",
+    "moduleRegistryNamespaces": [
+      "buildcraftlib",
+      "buildcraftcore",
+      "buildcraftbuilders",
+      "buildcraftenergy",
+      "buildcraftfactory",
+      "buildcraftsilicon",
+      "buildcrafttransport",
+      "buildcraftrobotics"
+    ],
+    "optionalCompanionNamespace": "buildcraftcompat",
+    "legacyMissingMappingRule": {
+      "source": "common/buildcraft/lib/registry/MigrationManager.java",
+      "acceptedNamespacePrefix": "buildcraft",
+      "pathNormalization": "Locale.ROOT lowercase",
+      "meaning": "A legacy alias is a path, not a new canonical namespace. The 1.12 migration manager considered any missing mapping whose namespace begins with buildcraft."
+    }
+  },
+  "modules": [
+    {
+      "id": "buildcraftlib",
+      "displayName": "BuildCraft Lib",
+      "legacyEnum": "LIB",
+      "requiredModules": [],
+      "source": "common/buildcraft/lib/BCLib.java"
+    },
+    {
+      "id": "buildcraftcore",
+      "displayName": "BuildCraft Core",
+      "legacyEnum": "CORE",
+      "requiredModules": ["buildcraftlib"],
+      "source": "common/buildcraft/core/BCCore.java"
+    },
+    {
+      "id": "buildcraftbuilders",
+      "displayName": "BuildCraft Builders",
+      "legacyEnum": "BUILDERS",
+      "requiredModules": ["buildcraftcore"],
+      "source": "common/buildcraft/builders/BCBuilders.java"
+    },
+    {
+      "id": "buildcraftenergy",
+      "displayName": "BuildCraft Energy",
+      "legacyEnum": "ENERGY",
+      "requiredModules": ["buildcraftcore"],
+      "source": "common/buildcraft/energy/BCEnergy.java"
+    },
+    {
+      "id": "buildcraftfactory",
+      "displayName": "BuildCraft Factory",
+      "legacyEnum": "FACTORY",
+      "requiredModules": ["buildcraftcore"],
+      "source": "common/buildcraft/factory/BCFactory.java"
+    },
+    {
+      "id": "buildcraftrobotics",
+      "displayName": "BuildCraft Robotics",
+      "legacyEnum": "ROBOTICS",
+      "requiredModules": ["buildcraftcore"],
+      "source": "common/buildcraft/robotics/BCRobotics.java"
+    },
+    {
+      "id": "buildcraftsilicon",
+      "displayName": "BuildCraft Silicon",
+      "legacyEnum": "SILICON",
+      "requiredModules": ["buildcraftcore"],
+      "source": "common/buildcraft/silicon/BCSilicon.java"
+    },
+    {
+      "id": "buildcrafttransport",
+      "displayName": "BuildCraft Transport",
+      "legacyEnum": "TRANSPORT",
+      "requiredModules": ["buildcraftcore"],
+      "source": "common/buildcraft/transport/BCTransport.java"
+    },
+    {
+      "id": "buildcraftcompat",
+      "displayName": "BuildCraft Compat",
+      "legacyEnum": "COMPAT",
+      "requiredModules": [],
+      "optional": true,
+      "source": "separate optional companion workstream; not part of the base 182-entry inventory"
+    }
+  ],
+  "registryContract": {
+    "sourceModel": "TagManager REGISTRY_NAME declarations, with module namespace prepended by each module bootstrap class. Tile IDs are legacy GameRegistry tile-entity IDs and map to modern block-entity-type identities.",
+    "declarationCount": 182,
+    "countsByType": {
+      "item": 116,
+      "block": 33,
+      "blockEntity": 33
+    },
+    "itemsByNamespace": {
+      "buildcraftlib": [
+        "buildcraftlib:guide",
+        "buildcraftlib:guide_note",
+        "buildcraftlib:debugger"
+      ],
+      "buildcraftcore": [
+        "buildcraftcore:wrench",
+        "buildcraftcore:diamond_shard",
+        "buildcraftcore:gear_wood",
+        "buildcraftcore:gear_stone",
+        "buildcraftcore:gear_iron",
+        "buildcraftcore:gear_gold",
+        "buildcraftcore:gear_diamond",
+        "buildcraftcore:list",
+        "buildcraftcore:map_location",
+        "buildcraftcore:paintbrush",
+        "buildcraftcore:marker_connector",
+        "buildcraftcore:volume_box",
+        "buildcraftcore:goggles",
+        "buildcraftcore:fragile_fluid_shard",
+        "buildcraftcore:marker_volume",
+        "buildcraftcore:marker_path",
+        "buildcraftcore:spring",
+        "buildcraftcore:power_tester",
+        "buildcraftcore:decorated",
+        "buildcraftcore:engine"
+      ],
+      "buildcraftbuilders": [
+        "buildcraftbuilders:schematic_single",
+        "buildcraftbuilders:snapshot",
+        "buildcraftbuilders:filler_planner",
+        "buildcraftbuilders:architect",
+        "buildcraftbuilders:builder",
+        "buildcraftbuilders:filler",
+        "buildcraftbuilders:library",
+        "buildcraftbuilders:replacer",
+        "buildcraftbuilders:frame",
+        "buildcraftbuilders:quarry"
+      ],
+      "buildcraftenergy": [
+        "buildcraftenergy:glob_of_oil",
+        "buildcraftenergy:mj_dynamo"
+      ],
+      "buildcraftfactory": [
+        "buildcraftfactory:plastic_sheet",
+        "buildcraftfactory:water_gel_spawn",
+        "buildcraftfactory:gel",
+        "buildcraftfactory:plastic_block",
+        "buildcraftfactory:autoworkbench_item",
+        "buildcraftfactory:mining_well",
+        "buildcraftfactory:pump",
+        "buildcraftfactory:flood_gate",
+        "buildcraftfactory:tank",
+        "buildcraftfactory:chute",
+        "buildcraftfactory:distiller",
+        "buildcraftfactory:heat_exchange"
+      ],
+      "buildcraftsilicon": [
+        "buildcraftsilicon:redstone_chipset",
+        "buildcraftsilicon:gate_copier",
+        "buildcraftsilicon:plug_gate",
+        "buildcraftsilicon:plug_lens",
+        "buildcraftsilicon:plug_pulsar",
+        "buildcraftsilicon:plug_light_sensor",
+        "buildcraftsilicon:plug_timer",
+        "buildcraftsilicon:plug_facade",
+        "buildcraftsilicon:laser",
+        "buildcraftsilicon:assembly_table",
+        "buildcraftsilicon:advanced_crafting_table",
+        "buildcraftsilicon:integration_table",
+        "buildcraftsilicon:charging_table",
+        "buildcraftsilicon:programming_table"
+      ],
+      "buildcrafttransport": [
+        "buildcrafttransport:waterproof",
+        "buildcrafttransport:plug_blocker",
+        "buildcrafttransport:plug_power_adaptor",
+        "buildcrafttransport:wire",
+        "buildcrafttransport:pipe_structure",
+        "buildcrafttransport:pipe_wood_item",
+        "buildcrafttransport:pipe_wood_fluid",
+        "buildcrafttransport:pipe_wood_power",
+        "buildcrafttransport:pipe_wood_rf",
+        "buildcrafttransport:pipe_stone_item",
+        "buildcrafttransport:pipe_stone_fluid",
+        "buildcrafttransport:pipe_stone_power",
+        "buildcrafttransport:pipe_stone_rf",
+        "buildcrafttransport:pipe_cobble_item",
+        "buildcrafttransport:pipe_cobble_fluid",
+        "buildcrafttransport:pipe_cobble_power",
+        "buildcrafttransport:pipe_cobble_rf",
+        "buildcrafttransport:pipe_quartz_item",
+        "buildcrafttransport:pipe_quartz_fluid",
+        "buildcrafttransport:pipe_quartz_power",
+        "buildcrafttransport:pipe_quartz_rf",
+        "buildcrafttransport:pipe_gold_item",
+        "buildcrafttransport:pipe_gold_fluid",
+        "buildcrafttransport:pipe_gold_power",
+        "buildcrafttransport:pipe_gold_rf",
+        "buildcrafttransport:pipe_sandstone_item",
+        "buildcrafttransport:pipe_sandstone_fluid",
+        "buildcrafttransport:pipe_sandstone_power",
+        "buildcrafttransport:pipe_sandstone_rf",
+        "buildcrafttransport:pipe_iron_item",
+        "buildcrafttransport:pipe_iron_fluid",
+        "buildcrafttransport:pipe_iron_power",
+        "buildcrafttransport:pipe_iron_rf",
+        "buildcrafttransport:pipe_diamond_item",
+        "buildcrafttransport:pipe_diamond_fluid",
+        "buildcrafttransport:pipe_diamond_power",
+        "buildcrafttransport:pipe_diamond_rf",
+        "buildcrafttransport:pipe_diamond_wood_item",
+        "buildcrafttransport:pipe_diamond_wood_fluid",
+        "buildcrafttransport:pipe_diamond_wood_power",
+        "buildcrafttransport:pipe_diamond_wood_rf",
+        "buildcrafttransport:pipe_clay_item",
+        "buildcrafttransport:pipe_clay_fluid",
+        "buildcrafttransport:pipe_void_item",
+        "buildcrafttransport:pipe_void_fluid",
+        "buildcrafttransport:pipe_obsidian_item",
+        "buildcrafttransport:pipe_obsidian_fluid",
+        "buildcrafttransport:pipe_lapis_item",
+        "buildcrafttransport:pipe_daizuli_item",
+        "buildcrafttransport:pipe_emzuli_item",
+        "buildcrafttransport:pipe_stripes_item",
+        "buildcrafttransport:pipe_wood_power_2",
+        "buildcrafttransport:pipe_quartz_power_2",
+        "buildcrafttransport:filtered_buffer"
+      ],
+      "buildcraftrobotics": [
+        "buildcraftrobotics:zone_planner"
+      ]
+    },
+    "blocksByNamespace": {
+      "buildcraftcore": [
+        "buildcraftcore:spring",
+        "buildcraftcore:decorated",
+        "buildcraftcore:engine",
+        "buildcraftcore:marker_volume",
+        "buildcraftcore:marker_path",
+        "buildcraftcore:power_tester"
+      ],
+      "buildcraftbuilders": [
+        "buildcraftbuilders:architect",
+        "buildcraftbuilders:builder",
+        "buildcraftbuilders:filler",
+        "buildcraftbuilders:library",
+        "buildcraftbuilders:replacer",
+        "buildcraftbuilders:frame",
+        "buildcraftbuilders:quarry"
+      ],
+      "buildcraftenergy": [
+        "buildcraftenergy:mj_dynamo"
+      ],
+      "buildcraftfactory": [
+        "buildcraftfactory:autoworkbench_item",
+        "buildcraftfactory:mining_well",
+        "buildcraftfactory:pump",
+        "buildcraftfactory:tube",
+        "buildcraftfactory:flood_gate",
+        "buildcraftfactory:tank",
+        "buildcraftfactory:chute",
+        "buildcraftfactory:water_gel",
+        "buildcraftfactory:distiller",
+        "buildcraftfactory:heat_exchange"
+      ],
+      "buildcraftsilicon": [
+        "buildcraftsilicon:laser",
+        "buildcraftsilicon:assembly_table",
+        "buildcraftsilicon:advanced_crafting_table",
+        "buildcraftsilicon:integration_table",
+        "buildcraftsilicon:charging_table",
+        "buildcraftsilicon:programming_table"
+      ],
+      "buildcrafttransport": [
+        "buildcrafttransport:filtered_buffer",
+        "buildcrafttransport:pipe_holder"
+      ],
+      "buildcraftrobotics": [
+        "buildcraftrobotics:zone_planner"
+      ]
+    },
+    "blockEntitiesByNamespace": {
+      "buildcraftcore": [
+        "buildcraftcore:marker.volume",
+        "buildcraftcore:marker.path",
+        "buildcraftcore:engine.wood",
+        "buildcraftcore:engine.creative",
+        "buildcraftcore:power_tester"
+      ],
+      "buildcraftbuilders": [
+        "buildcraftbuilders:architect",
+        "buildcraftbuilders:builder",
+        "buildcraftbuilders:library",
+        "buildcraftbuilders:replacer",
+        "buildcraftbuilders:filler",
+        "buildcraftbuilders:quarry"
+      ],
+      "buildcraftenergy": [
+        "buildcraftenergy:engine.stone",
+        "buildcraftenergy:engine.iron",
+        "buildcraftenergy:engine.rf",
+        "buildcraftenergy:spring.oil",
+        "buildcraftenergy:mj_dynamo"
+      ],
+      "buildcraftfactory": [
+        "buildcraftfactory:autoworkbench_item",
+        "buildcraftfactory:mining_well",
+        "buildcraftfactory:pump",
+        "buildcraftfactory:flood_gate",
+        "buildcraftfactory:tank",
+        "buildcraftfactory:chute",
+        "buildcraftfactory:distiller",
+        "buildcraftfactory:heat_exchange"
+      ],
+      "buildcraftsilicon": [
+        "buildcraftsilicon:laser",
+        "buildcraftsilicon:assembly_table",
+        "buildcraftsilicon:advanced_crafting_table",
+        "buildcraftsilicon:integration_table",
+        "buildcraftsilicon:charging_table",
+        "buildcraftsilicon:programming_table"
+      ],
+      "buildcrafttransport": [
+        "buildcrafttransport:filtered_buffer",
+        "buildcrafttransport:pipe_holder"
+      ],
+      "buildcraftrobotics": [
+        "buildcraftrobotics:zone_planner"
+      ]
+    }
+  },
+  "oldRegistryAliases": {
+    "count": 49,
+    "source": "TagManager.oldReg(...) declarations in the legacy source; all bare aliases are paths and are lower-cased by MigrationManager.",
+    "aliases": [
+      { "registryType": "item", "target": "buildcraftbuilders:filler_planner", "legacyPath": "filling_planner" },
+      { "registryType": "item", "target": "buildcraftcore:wrench", "legacyPath": "wrenchItem" },
+      { "registryType": "item", "target": "buildcraftcore:gear_wood", "legacyPath": "woodenGearItem" },
+      { "registryType": "item", "target": "buildcraftcore:gear_stone", "legacyPath": "stoneGearItem" },
+      { "registryType": "item", "target": "buildcraftcore:gear_iron", "legacyPath": "ironGearItem" },
+      { "registryType": "item", "target": "buildcraftcore:gear_gold", "legacyPath": "goldGearItem" },
+      { "registryType": "item", "target": "buildcraftcore:gear_diamond", "legacyPath": "diamondGearItem" },
+      { "registryType": "item", "target": "buildcraftcore:list", "legacyPath": "listItem" },
+      { "registryType": "item", "target": "buildcraftcore:map_location", "legacyPath": "mapLocation" },
+      { "registryType": "item", "target": "buildcraftcore:marker_volume", "legacyPath": "markerBlock" },
+      { "registryType": "item", "target": "buildcraftcore:marker_path", "legacyPath": "pathMarkerBlock" },
+      { "registryType": "block", "target": "buildcraftcore:engine", "legacyPath": "engineBlock" },
+      { "registryType": "block", "target": "buildcraftcore:marker_volume", "legacyPath": "markerBlock" },
+      { "registryType": "block", "target": "buildcraftcore:marker_path", "legacyPath": "pathMarkerBlock" },
+      { "registryType": "block", "target": "buildcraftcore:power_tester", "legacyPath": "power_tester" },
+      { "registryType": "blockEntity", "target": "buildcraftcore:marker.volume", "legacyPath": "buildcraft.builders.Marker" },
+      { "registryType": "blockEntity", "target": "buildcraftcore:marker.volume", "legacyPath": "Marker" },
+      { "registryType": "item", "target": "buildcraftenergy:glob_of_oil", "legacyPath": "glob_oil" },
+      { "registryType": "item", "target": "buildcraftfactory:plastic_sheet", "legacyPath": "plasticSheet" },
+      { "registryType": "item", "target": "buildcraftfactory:heat_exchange", "legacyPath": "heat_exchange_start" },
+      { "registryType": "item", "target": "buildcraftfactory:heat_exchange", "legacyPath": "heat_exchange_middle" },
+      { "registryType": "item", "target": "buildcraftfactory:heat_exchange", "legacyPath": "heat_exchange_end" },
+      { "registryType": "block", "target": "buildcraftfactory:autoworkbench_item", "legacyPath": "autoWorkbenchBlock" },
+      { "registryType": "block", "target": "buildcraftfactory:mining_well", "legacyPath": "miningWellBlock" },
+      { "registryType": "block", "target": "buildcraftfactory:pump", "legacyPath": "pumpBlock" },
+      { "registryType": "block", "target": "buildcraftfactory:tube", "legacyPath": "tubeBlock" },
+      { "registryType": "block", "target": "buildcraftfactory:flood_gate", "legacyPath": "floodGateBlock" },
+      { "registryType": "block", "target": "buildcraftfactory:tank", "legacyPath": "tankBlock" },
+      { "registryType": "block", "target": "buildcraftfactory:chute", "legacyPath": "chuteBlock" },
+      { "registryType": "block", "target": "buildcraftfactory:heat_exchange", "legacyPath": "heat_exchange_start" },
+      { "registryType": "block", "target": "buildcraftfactory:heat_exchange", "legacyPath": "heat_exchange_middle" },
+      { "registryType": "block", "target": "buildcraftfactory:heat_exchange", "legacyPath": "heat_exchange_end" },
+      { "registryType": "blockEntity", "target": "buildcraftfactory:heat_exchange", "legacyPath": "heat_exchange.start" },
+      { "registryType": "blockEntity", "target": "buildcraftfactory:heat_exchange", "legacyPath": "heat_exchange.end" },
+      { "registryType": "item", "target": "buildcraftsilicon:plug_gate", "legacyPath": "plug_gate" },
+      { "registryType": "item", "target": "buildcraftsilicon:plug_lens", "legacyPath": "plug_lens" },
+      { "registryType": "item", "target": "buildcraftsilicon:plug_pulsar", "legacyPath": "plug_pulsar" },
+      { "registryType": "item", "target": "buildcraftsilicon:plug_light_sensor", "legacyPath": "plug_light_sensor" },
+      { "registryType": "item", "target": "buildcraftsilicon:plug_timer", "legacyPath": "plug_timer" },
+      { "registryType": "item", "target": "buildcraftsilicon:plug_facade", "legacyPath": "plug_facade" },
+      { "registryType": "block", "target": "buildcraftsilicon:laser", "legacyPath": "laserBlock" },
+      { "registryType": "block", "target": "buildcraftsilicon:assembly_table", "legacyPath": "assemblyTableBlock" },
+      { "registryType": "block", "target": "buildcraftsilicon:advanced_crafting_table", "legacyPath": "advancedCraftingTableBlock" },
+      { "registryType": "block", "target": "buildcraftsilicon:integration_table", "legacyPath": "integrationTableBlock" },
+      { "registryType": "block", "target": "buildcraftsilicon:charging_table", "legacyPath": "chargingTableBlock" },
+      { "registryType": "block", "target": "buildcraftsilicon:programming_table", "legacyPath": "programmingTableBlock" },
+      { "registryType": "block", "target": "buildcraftrobotics:zone_planner", "legacyPath": "zonePlannerBlock" },
+      { "registryType": "item", "target": "buildcrafttransport:waterproof", "legacyPath": "pipeWaterproof" },
+      { "registryType": "block", "target": "buildcrafttransport:filtered_buffer", "legacyPath": "filteredBufferBlock" }
+    ]
+  },
+  "additionalMigrationAliases": [
+    {
+      "registryType": "block",
+      "target": "buildcraftenergy:fluid_block_heat_0_oil",
+      "legacyPath": "fluid_block_oil",
+      "source": "BCEnergy.registerMigrations(), marked 7.99.0"
+    },
+    {
+      "registryType": "block",
+      "target": "buildcraftenergy:fluid_block_heat_0_fuel_light",
+      "legacyPath": "fluid_block_fuel",
+      "source": "BCEnergy.registerMigrations(), marked 7.99.0"
+    }
+  ],
+  "conditionalOrNonPublicDeclarations": {
+    "declaredButNotNormalReleaseRegistrations": [
+      {
+        "registryType": "item",
+        "id": "buildcraftcore:diamond_shard",
+        "legacyTag": "item.diamond.shard",
+        "reason": "Tag declaration exists, but BCCoreItems never constructs or registers it."
+      },
+      {
+        "registryType": "item",
+        "id": "buildcraftcore:goggles",
+        "legacyTag": "item.goggles",
+        "reason": "BCCoreItems registers it only when BCLib.DEV is true."
+      },
+      {
+        "registryType": "item",
+        "id": "buildcraftfactory:plastic_sheet",
+        "legacyTag": "item.plastic.sheet",
+        "reason": "BCFactoryItems registers it only when BCLib.DEV is true."
+      },
+      {
+        "registryType": "item",
+        "id": "buildcraftfactory:plastic_block",
+        "legacyTag": "item.block.plastic",
+        "reason": "A tag declaration exists, but BCFactoryBlocks has no matching plastic block or BlockItem construction."
+      },
+      {
+        "registryType": "item",
+        "id": "buildcrafttransport:pipe_obsidian_fluid",
+        "legacyTag": "item.pipe.buildcrafttransport.obsidian_fluid",
+        "reason": "The PipeDefinition construction is deliberately commented out."
+      },
+      {
+        "registryType": "item",
+        "id": "buildcrafttransport:pipe_wood_power_2",
+        "legacyTag": "item.pipe.buildcrafttransport.wood_power_2",
+        "reason": "A tag declaration exists but BCTransportPipes defines no corresponding PipeDefinition."
+      },
+      {
+        "registryType": "item",
+        "id": "buildcrafttransport:pipe_quartz_power_2",
+        "legacyTag": "item.pipe.buildcrafttransport.quartz_power_2",
+        "reason": "A tag declaration exists but BCTransportPipes defines no corresponding PipeDefinition."
+      }
+    ],
+    "metadataOnlyTagsWithoutRegistryName": [
+      "block.engine.bc.wood",
+      "block.engine.bc.stone",
+      "block.engine.bc.iron",
+      "block.engine.bc.creative",
+      "block.engine.bc.rf"
+    ],
+    "transportPipeDefinitions": {
+      "itemDeclarationCount": 49,
+      "normalDefinitionCount": 46,
+      "conditionalRfDefinitions": [
+        "buildcrafttransport:pipe_wood_rf",
+        "buildcrafttransport:pipe_stone_rf",
+        "buildcrafttransport:pipe_cobble_rf",
+        "buildcrafttransport:pipe_quartz_rf",
+        "buildcrafttransport:pipe_gold_rf",
+        "buildcrafttransport:pipe_sandstone_rf",
+        "buildcrafttransport:pipe_iron_rf",
+        "buildcrafttransport:pipe_diamond_rf",
+        "buildcrafttransport:pipe_diamond_wood_rf"
+      ],
+      "condition": "BCTransportConfig.disableRfPipe must be false",
+      "releaseGate": "Each live pipe requires ID, save/load, rendering, connection, transfer-capacity, and multiplayer synchronization coverage before release."
+    }
+  },
+  "persistence": {
+    "savedData": [
+      {
+        "name": "buildcraft_wire_systems",
+        "class": "buildcraft.transport.wire.WorldSavedDataWireSystems",
+        "rootKeys": ["entries"],
+        "entryKeys": ["wireSystem", "powered"]
+      },
+      {
+        "name": "buildcraft_volume_boxes",
+        "class": "buildcraft.core.marker.volume.WorldSavedDataVolumeBoxes",
+        "rootKeys": ["volumeBoxes"]
+      },
+      {
+        "name": "buildcraft_marker_volume",
+        "class": "buildcraft.core.marker.VolumeSavedData",
+        "rootKeys": ["positions", "connections"]
+      },
+      {
+        "name": "buildcraft_marker_path",
+        "class": "buildcraft.core.marker.PathSavedData",
+        "rootKeys": ["positions", "connections"]
+      },
+      {
+        "name": "buildcraft_world_gen",
+        "class": "buildcraft.lib.world.gen.RetroGenData",
+        "rootKeys": ["registry", "data"],
+        "dynamicKeyFormat": "data contains keys encoded as <chunkX>,<chunkZ>"
+      }
+    ],
+    "baseBlockEntitySchema": {
+      "class": "buildcraft.lib.tile.TileBC_Neptune",
+      "currentDataVersion": 2,
+      "writeKeys": ["data-version", "deltas", "owner", "items", "tanks"],
+      "legacyReadAndMigrationKeys": ["tank"],
+      "migration": "A non-empty legacy tank compound is moved under tanks.tank before subclass deserialization."
+    },
+    "highRiskBlockEntitySchemas": {
+      "quarry": ["box", "frame", "boxIterator", "battery", "currentTask", "currentTaskId", "currentTaskData", "drillPos", "firstChecked"],
+      "filler": ["battery", "canExcavate", "inverted", "finished", "lockedTicks", "mode", "box", "addonVolumeBoxId", "addonSlot", "markerBox", "patternStatement", "builder"],
+      "chunkLoadingTicket": ["location"],
+      "factoryTank": ["tank"],
+      "pipeAndPluggableState": ["pipe", "plugs", "wireManager", "wirePart", "wireSystem"]
+    },
+    "dynamicKeyPatterns": [
+      "tank[<direction>]",
+      "in[<index>]",
+      "slotColors[<index>]",
+      "layer_<0..15>",
+      "trigger[<slot>]",
+      "action[<slot>]",
+      "<EnumFacing name> below plugs",
+      "<chunkX>,<chunkZ> below buildcraft_world_gen.data"
+    ],
+    "sourceAudit": {
+      "recordedNbtCallSites": 822,
+      "recordedUniqueLiteralNbtStrings": 268,
+      "meaning": "This count is an inventory signal, not a safe justification to discard keys absent from the named schemas. A per-block-entity codec test is required before declaring migration support."
+    }
+  },
+  "network": {
+    "registrationRule": "The 1.12 MessageManager creates one SimpleNetworkWrapper per module ID, then assigns discriminators by lexicographic fully-qualified message-class name within that channel.",
+    "channels": [
+      {
+        "id": "buildcraftlib",
+        "messages": [
+          { "discriminator": 0, "class": "buildcraft.lib.net.MessageContainer", "receiverSides": ["client", "server"] },
+          { "discriminator": 1, "class": "buildcraft.lib.net.MessageDebugRequest", "receiverSides": ["server"] },
+          { "discriminator": 2, "class": "buildcraft.lib.net.MessageDebugResponse", "receiverSides": ["client"] },
+          { "discriminator": 3, "class": "buildcraft.lib.net.MessageMarker", "receiverSides": ["client"] },
+          { "discriminator": 4, "class": "buildcraft.lib.net.MessageUpdateTile", "receiverSides": ["client", "server"] },
+          { "discriminator": 5, "class": "buildcraft.lib.net.cache.MessageObjectCacheRequest", "receiverSides": ["server"] },
+          { "discriminator": 6, "class": "buildcraft.lib.net.cache.MessageObjectCacheResponse", "receiverSides": ["client"] }
+        ]
+      },
+      {
+        "id": "buildcraftcore",
+        "messages": [
+          { "discriminator": 0, "class": "buildcraft.core.marker.volume.MessageVolumeBoxes", "receiverSides": ["client"] }
+        ]
+      },
+      {
+        "id": "buildcraftbuilders",
+        "messages": [
+          { "discriminator": 0, "class": "buildcraft.builders.snapshot.MessageSnapshotRequest", "receiverSides": ["server"] },
+          { "discriminator": 1, "class": "buildcraft.builders.snapshot.MessageSnapshotResponse", "receiverSides": ["client"] }
+        ]
+      },
+      {
+        "id": "buildcraftrobotics",
+        "messages": [
+          { "discriminator": 0, "class": "buildcraft.robotics.zone.MessageZoneMapRequest", "receiverSides": ["server"] },
+          { "discriminator": 1, "class": "buildcraft.robotics.zone.MessageZoneMapResponse", "receiverSides": ["client"] }
+        ]
+      },
+      {
+        "id": "buildcrafttransport",
+        "messages": [
+          { "discriminator": 0, "class": "buildcraft.transport.net.MessageMultiPipeItem", "receiverSides": ["client"] },
+          { "discriminator": 1, "class": "buildcraft.transport.wire.MessageWireSystems", "receiverSides": ["client"] },
+          { "discriminator": 2, "class": "buildcraft.transport.wire.MessageWireSystemsPowered", "receiverSides": ["client"] }
+        ]
+      }
+    ],
+    "modernPortRequirements": [
+      "Do not reuse a legacy integer discriminator blindly across an unrelated modern channel; preserve message meaning, direction, payload bounds, and target validation instead.",
+      "All state-changing requests must validate player, target block entity or menu, current world, distance, and side on the logical server.",
+      "Client-only messages must not be referenced during dedicated-server class loading."
+    ]
+  },
+  "scopeBoundaries": {
+    "included": ["module IDs", "registry IDs", "oldReg aliases", "SavedData names and root schemas", "base tile persistence schema", "legacy network channels"],
+    "notYetEnumeratedHere": ["recipe IDs", "tag IDs", "advancements", "full entity/fluid/worldgen registry inventories", "resource file inventory", "optional Compat registrations"],
+    "reason": "Those are distinct release-gated manifests; their absence from this file must never be interpreted as permission to rename or omit them."
+  },
+  "validation": {
+    "staticSourceChecks": [
+      "TagManager declarations with .reg(...): 182 total, split 116 item / 33 block / 33 tile.",
+      "TagManager .oldReg(...) aliases, including the two three-alias heat-exchange TagEntry follow-ups: 49 total.",
+      "BCTransport tag declarations: 49 pipe items; BCTransportPipes default definitions: 46; RF definitions: 9 conditional."
+    ],
+    "requiredFutureChecks": [
+      "Parse this JSON in CI and assert the declared counts.",
+      "Compare every modern registry against this contract by registry type and fully-qualified ID.",
+      "Run backed-up-world migration fixtures, save them, and reload them before making a compatibility claim.",
+      "Exercise every packet semantic and SavedData schema in client, dedicated-server, and multiplayer validation."
+    ]
+  }
+}

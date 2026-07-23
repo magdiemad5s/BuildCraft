@@ -24,6 +24,10 @@ libs
 run
 run_server
 
+# BuildCraft Neo Better lane state remains isolated and is never committed.
+.gradle-user-home/
+run-data/
+
 #mac
 .DS_Store
 

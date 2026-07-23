@@ -1,0 +1,22 @@
+{
+  "schema": "buildcraft-neo/legacy-identity-contract-amendment/v1",
+  "appliesTo": "LEGACY_IDENTITY_MANIFEST.json",
+  "reason": "FluidManager prefixes fluid.getBlockName() with fluid_block_; BCEnergyFluids sets blockName to <fluid>_heat_<heat>. The BCEnergy comment states the historical intent in a different word order, so these source-derived targets are authoritative.",
+  "operations": [
+    {
+      "op": "replace",
+      "path": "/additionalMigrationAliases/0/target",
+      "value": "buildcraftenergy:fluid_block_oil_heat_0"
+    },
+    {
+      "op": "replace",
+      "path": "/additionalMigrationAliases/1/target",
+      "value": "buildcraftenergy:fluid_block_fuel_light_heat_0"
+    }
+  ],
+  "sourceEvidence": [
+    "common/buildcraft/energy/BCEnergy.java:74-75",
+    "common/buildcraft/energy/BCEnergyFluids.java:112",
+    "common/buildcraft/lib/fluid/FluidManager.java:42"
+  ]
+}

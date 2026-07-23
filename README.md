@@ -1,3 +1,46 @@
+# BuildCraft Neo Better
+
+> This repository now carries an **additive, early development port** alongside
+> the preserved legacy BuildCraft 8.0.x / Minecraft 1.12.2 source. It is not a
+> complete or stable public BuildCraft release.
+
+## Test builds: 0.1.0-dev
+
+Four checked development JARs are committed under
+[`releases/0.1.0-dev`](releases/0.1.0-dev/). Install **one** JAR that matches
+both your Minecraft version and loader in a fresh, disposable profile:
+
+| Target | File |
+|---|---|
+| Forge 1.20.1 | `buildcraft-neo-better-forge-1.20.1-0.1.0-dev+1.20.1.jar` |
+| NeoForge 1.20.1 | `buildcraft-neo-better-neoforge-1.20.1-0.1.0-dev+1.20.1.jar` |
+| Forge 1.21.1 | `buildcraft-neo-better-forge-1.21.1-0.1.0-dev+1.21.1.jar` |
+| NeoForge 1.21.1 | `buildcraft-neo-better-neoforge-1.21.1-0.1.0-dev+1.21.1.jar` |
+
+Verify the selected file with
+[`SHA256SUMS.txt`](releases/0.1.0-dev/SHA256SUMS.txt) and read the
+[`release notes`](releases/0.1.0-dev/RELEASE_NOTES.md) first. The only
+implemented gameplay slice is the Factory Tank (`buildcraftfactory:tank`);
+pipes, engines, machines, world generation, most GUIs, multiplayer, and
+legacy-world migration remain unfinished.
+
+## Port sources and status
+
+- [Current port handoff](PORT_STATUS_LATEST.md)
+- [Legacy compatibility contract](legacy-1.12.2-contract/LEGACY_IDENTITY_MANIFEST.json)
+- [GUI parity manifest](GUI_PARITY_MANIFEST.md)
+- [Issue port ledger](ISSUE_PORT_LEDGER_2026-07-23.md)
+- [Manual testing checklist](MANUAL_TEST_CHECKLIST.md)
+- [Port lanes](ports/)
+
+Each port lane has its own Gradle wrapper and uses a lane-local
+`.gradle-user-home` cache. Do not run Minecraft client/server/GameTest tasks
+against a normal instance or an irreplaceable world.
+
+## Legacy BuildCraft 8.0.x documentation
+
+The original project README follows unchanged.
+
 ## Welcome to BuildCraft on GitHub
 
 ### Reporting an issue

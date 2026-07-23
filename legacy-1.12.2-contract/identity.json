@@ -1,0 +1,39 @@
+{
+  "contractVersion": 1,
+  "status": "seeded-from-verified-legacy-baseline",
+  "legacySource": {
+    "minecraft": "1.12.2",
+    "forge": "14.23.1.2593",
+    "java": 8,
+    "branch": "8.0.x-1.12.2",
+    "commit": "7c86626d09c4569fb2e0f458a16aaf8c3148ebaf",
+    "version": "8.0.1-pre.2"
+  },
+  "referenceJar": {
+    "path": "../buildcraft-all-8.0.0.jar",
+    "version": "8.0.0",
+    "sha256": "F617279F8148A9140AB86C0E4AA4C54FE8A94515D2CF487A47CBD928160B88AA",
+    "role": "behavioral-and-packaged-resource-reference-only"
+  },
+  "resourceNamespace": "buildcraft",
+  "moduleIds": [
+    "buildcraftlib",
+    "buildcraftcore",
+    "buildcraftbuilders",
+    "buildcraftenergy",
+    "buildcraftfactory",
+    "buildcraftsilicon",
+    "buildcrafttransport",
+    "buildcraftrobotics"
+  ],
+  "preservationRules": [
+    "Do not rename registry paths, resource namespaces, NBT keys, SavedData names, packet meanings, recipe IDs, tag IDs, or block-entity serialization without an explicit migration record.",
+    "The modern port must keep optional integrations isolated from core startup.",
+    "A passing compilation is not evidence of GUI, packet, model, world, or gameplay parity.",
+    "Old-world migration is unclaimed until it passes against backed-up fixtures."
+  ],
+  "knownScopeGaps": [
+    "Detailed registry, NBT, SavedData, packet, recipe, and resource manifests are generated incrementally and remain release gates.",
+    "BuildCraft Compat is a separate optional-integration workstream."
+  ]
+}

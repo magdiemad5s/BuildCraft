@@ -1,0 +1,242 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'net.neoforged.moddev' version '2.0.142'
+    id 'idea'
+}
+
+tasks.named('wrapper', Wrapper).configure {
+    distributionType = Wrapper.DistributionType.BIN
+}
+
+version = "${mod_version}+${minecraft_version}"
+group = mod_group_id
+
+sourceSets.main.resources {
+    srcDir('src/generated/resources')
+    exclude('**/*.bbmodel')
+    exclude('src/generated/**/.cache')
+}
+
+repositories {
+    mavenCentral()
+}
+
+base {
+    archivesName = "buildcraft-neo-better-neoforge-${minecraft_version}"
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+neoForge {
+    version = project.neo_version
+
+    parchment {
+        mappingsVersion = project.parchment_mappings_version
+        minecraftVersion = project.parchment_minecraft_version
+    }
+
+    runs {
+        client {
+            client()
+            gameDirectory = project.file('run/client')
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'buildcraftfactory'
+        }
+
+        server {
+            server()
+            gameDirectory = project.file('run/server')
+            programArgument '--nogui'
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'buildcraftfactory'
+        }
+
+        gameTestServer {
+            type = 'gameTestServer'
+            gameDirectory = project.file('run/gametest')
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'buildcraftfactory'
+        }
+
+        data {
+            data()
+            gameDirectory = project.file('run/data')
+            programArguments.addAll '--mod', 'buildcraftfactory', '--all',
+                '--output', file('src/generated/resources/').getAbsolutePath(),
+                '--existing', file('src/main/resources/').getAbsolutePath()
+        }
+
+        configureEach {
+            systemProperty 'forge.logging.markers', 'REGISTRIES'
+            logLevel = org.slf4j.event.Level.DEBUG
+        }
+    }
+
+    mods {
+        buildcraftlib {
+            sourceSet(sourceSets.main)
+        }
+        buildcraftcore {
+            sourceSet(sourceSets.main)
+        }
+        buildcraftbuilders {
+            sourceSet(sourceSets.main)
+        }
+        buildcraftenergy {
+            sourceSet(sourceSets.main)
+        }
+        buildcraftfactory {
+            sourceSet(sourceSets.main)
+        }
+        buildcraftsilicon {
+            sourceSet(sourceSets.main)
+        }
+        buildcrafttransport {
+            sourceSet(sourceSets.main)
+        }
+        buildcraftrobotics {
+            sourceSet(sourceSets.main)
+        }
+    }
+}
+
+configurations {
+    runtimeClasspath.extendsFrom localRuntime
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'
+}
+
+def generatedModMetadata = tasks.register('generateModMetadata', ProcessResources) {
+    def replaceProperties = [
+        minecraft_version      : minecraft_version,
+        minecraft_version_range: minecraft_version_range,
+        neo_version            : neo_version,
+        loader_version_range   : loader_version_range,
+        mod_license            : mod_license,
+        mod_version            : mod_version,
+    ]
+    inputs.properties(replaceProperties)
+    expand(replaceProperties)
+    from('src/main/templates')
+    into('build/generated/sources/modMetadata')
+}
+
+sourceSets.main.resources.srcDir(generatedModMetadata)
+neoForge.ideSyncTask(generatedModMetadata)
+
+def legacyModuleIds = [
+    'buildcraftlib',
+    'buildcraftcore',
+    'buildcraftbuilders',
+    'buildcraftenergy',
+    'buildcraftfactory',
+    'buildcraftsilicon',
+    'buildcrafttransport',
+    'buildcraftrobotics',
+]
+
+tasks.register('verifyLegacyContract') {
+    description = 'Checks the preserved BuildCraft namespace and module-ID contract.'
+    group = 'verification'
+
+    def contract = rootProject.file('../../legacy-1.12.2-contract/identity.json')
+    inputs.file(contract)
+
+    doLast {
+        def parsed = new groovy.json.JsonSlurper().parse(contract)
+        if (parsed.resourceNamespace != 'buildcraft') {
+            throw new GradleException("Unexpected legacy resource namespace: ${parsed.resourceNamespace}")
+        }
+        if (parsed.moduleIds != legacyModuleIds) {
+            throw new GradleException("Legacy module contract drifted: ${parsed.moduleIds}")
+        }
+        if (parsed.legacySource.minecraft != '1.12.2') {
+            throw new GradleException("Unexpected legacy source version: ${parsed.legacySource.minecraft}")
+        }
+    }
+}
+
+tasks.register('verifyMetadataEntrypoints') {
+    description = 'Checks generated NeoForge metadata against the eight Java @Mod bootstrap classes.'
+    group = 'verification'
+    dependsOn(generatedModMetadata)
+
+    doLast {
+        def metadata = layout.buildDirectory.file('generated/sources/modMetadata/META-INF/neoforge.mods.toml').get().asFile
+        if (!metadata.isFile()) {
+            throw new GradleException("Generated NeoForge metadata is missing: ${metadata}")
+        }
+
+        def actualModuleIds = (metadata.text =~ /(?m)^\[\[mods\]\]\s*\RmodId="([^"]+)"$/).collect { it[1] }
+        if (actualModuleIds != legacyModuleIds) {
+            throw new GradleException("NeoForge metadata module IDs drifted: ${actualModuleIds}")
+        }
+
+        def entrypoints = [
+            buildcraftlib      : ['LIB', 'BuildCraftLibEntrypoint'],
+            buildcraftcore     : ['CORE', 'BuildCraftCoreEntrypoint'],
+            buildcraftbuilders : ['BUILDERS', 'BuildCraftBuildersEntrypoint'],
+            buildcraftenergy   : ['ENERGY', 'BuildCraftEnergyEntrypoint'],
+            buildcraftfactory  : ['FACTORY', 'BuildCraftFactoryEntrypoint'],
+            buildcraftsilicon  : ['SILICON', 'BuildCraftSiliconEntrypoint'],
+            buildcrafttransport: ['TRANSPORT', 'BuildCraftTransportEntrypoint'],
+            buildcraftrobotics : ['ROBOTICS', 'BuildCraftRoboticsEntrypoint'],
+        ]
+        entrypoints.each { moduleId, details ->
+            def source = file("src/main/java/buildcraft/neo/neoforge1211/${details[1]}.java")
+            if (!source.isFile() || !source.text.contains("@Mod(LegacyModuleIds.${details[0]})")) {
+                throw new GradleException("${moduleId} does not have the expected @Mod bootstrap entrypoint")
+            }
+        }
+
+        def tankContract = file('src/main/java/buildcraft/neo/neoforge1211/factory/FactoryTankContract.java')
+        if (!tankContract.isFile() || !tankContract.text.contains('CAPACITY_MILLIBUCKETS = 16_000')) {
+            throw new GradleException('Factory Tank compatibility contract is missing or has drifted.')
+        }
+
+        def pack = new groovy.json.JsonSlurper().parse(file('src/main/resources/pack.mcmeta'))
+        if (pack.pack.pack_format != 48 || pack.pack.supported_formats != [34, 48]) {
+            throw new GradleException('pack.mcmeta must support resource format 34 and data format 48 for Minecraft 1.21.1')
+        }
+    }
+}
+
+tasks.register('verifyPackagedJar', Exec) {
+    description = 'Parses packaged JSON resources and verifies the legacy module graph in the built JAR.'
+    group = 'verification'
+    dependsOn(tasks.named('jar'))
+
+    def jarFile = tasks.named('jar', Jar).flatMap { it.archiveFile }
+    inputs.file(jarFile)
+    commandLine 'powershell.exe', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File',
+        file('tools/verify-lane.ps1').absolutePath, '-JarPath', jarFile.get().asFile.absolutePath
+}
+
+tasks.named('check').configure {
+    dependsOn(tasks.named('verifyLegacyContract'))
+    dependsOn(tasks.named('verifyMetadataEntrypoints'))
+    dependsOn(tasks.named('verifyPackagedJar'))
+}
+
+tasks.named('jar', Jar).configure {
+    manifest {
+        attributes([
+            'Implementation-Title'         : 'BuildCraft Neo Better',
+            'Implementation-Version'       : project.version,
+            'BuildCraft-Legacy-Contract'   : '1.12.2',
+            'BuildCraft-Resource-Namespace': 'buildcraft',
+        ])
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.named('test', Test).configure {
+    useJUnitPlatform()
+    testLogging {
+        events 'passed', 'skipped', 'failed'
+    }
+}
