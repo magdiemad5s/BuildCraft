@@ -1,5 +1,9 @@
 # BuildCraft Neo Better
 
+<p align="center">
+  <img src="assets/branding/buildcraft-neo-logo-v1.png" alt="BuildCraft Neo" width="1200">
+</p>
+
 > This repository now carries an **additive, early development port** alongside
 > the preserved legacy BuildCraft 8.0.x / Minecraft 1.12.2 source. It is not a
 > complete or stable public BuildCraft release.
