@@ -1,14 +1,15 @@
 # BuildCraft Neo Better - port handoff
 
-Updated: 2026-07-23
+Updated: 2026-07-24
 
 ## Release state
 
-This is a verified four-lane development foundation, **not a complete or
-bug-free public BuildCraft release**. Each requested loader/version now has a
-real Factory Tank vertical slice and a packaged development JAR. The original
-1.12.2 checkout, reference JAR, Minecraft clients, EULA state, and worlds were
-not changed.
+This is a development foundation, **not a complete or bug-free public
+BuildCraft release**. The Factory Tank source slice exists in all requested
+lanes, but only the Forge 1.20.1 `0.1.2-dev` artifact has passed the fresh
+post-atlas-fix build and packaged-resource validation. The original 1.12.2
+checkout, reference JAR, Minecraft clients, EULA state, and worlds were not
+changed.
 
 The original preservation references remain unchanged:
 
@@ -19,10 +20,10 @@ The original preservation references remain unchanged:
 
 | Lane | Loader/toolchain | Build and tests | Packaged-resource check |
 |---|---|---:|---|
-| Forge 1.20.1 | Forge `47.4.22`, Java 17, Gradle 8.8 | PASS - 31 JUnit tests | PASS - packaged-resource and Tank visual verifier |
-| NeoForge 1.20.1 | transitional `net.neoforged:forge:1.20.1-47.1.106`, Java 17, NeoGradle 7.0.97 | PASS - 29 JUnit tests | PASS - packaged-resource and Tank visual verifier |
-| Forge 1.21.1 | Forge `52.1.16`, Java 21, Gradle 8.8 | PASS - 6 JUnit tests | PASS - packaged-resource and Tank visual verifier |
-| NeoForge 1.21.1 | NeoForge `21.1.242`, Java 21, ModDevGradle 2.0.142 | PASS - 9 JUnit tests | PASS - packaged-resource and Tank visual verifier |
+| Forge 1.20.1 | Forge `47.4.22`, Java 17, Gradle 8.8 | PASS - 31 JUnit tests (`0.1.2-dev`) | PASS - packaged resource and singular block-atlas Tank verifier |
+| NeoForge 1.20.1 | transitional `net.neoforged:forge:1.20.1-47.1.106`, Java 17, NeoGradle 7.0.97 | Source atlas fix staged; rebuild pending | `0.1.1-dev` visual JAR superseded |
+| Forge 1.21.1 | Forge `52.1.16`, Java 21, Gradle 8.8 | Source atlas fix staged; rebuild pending | `0.1.1-dev` visual JAR superseded |
+| NeoForge 1.21.1 | NeoForge `21.1.242`, Java 21, ModDevGradle 2.0.142 | Source atlas fix staged; rebuild pending | `0.1.1-dev` visual JAR superseded |
 
 All lanes preserve the public module graph:
 
@@ -40,14 +41,14 @@ buildcraftsilicon   -> buildcraftcore, optional AFTER buildcrafttransport
 
 | Lane | JAR | Size | SHA-256 |
 |---|---|---:|---|
-| Forge 1.20.1 | `ports/forge-1.20.1/build/libs/buildcraft-neo-better-forge-1.20.1-0.1.1-dev+1.20.1.jar` | 55,152 bytes | `9885740D0AD4F4BA4B0D4EBE2BE7CEF558D13A972DA4A65F47BD0F10ED534F4A` |
-| NeoForge 1.20.1 | `ports/neoforge-1.20.1/build/libs/buildcraft-neo-better-neoforge-1.20.1-0.1.1-dev+1.20.1.jar` | 53,893 bytes | `6D3694B705E72582DA0A7AF7149394335561B6441EF7705D8FCCA3CC0C1B8C63` |
-| Forge 1.21.1 | `ports/forge-1.21.1/build/libs/buildcraft-neo-better-forge-1.21.1-0.1.1-dev+1.21.1.jar` | 41,784 bytes | `72A4C38E1EC3076CB21C33CC3BBD60A673706D23F75B0B59727EE57CE2566EDE` |
-| NeoForge 1.21.1 | `ports/neoforge-1.21.1/build/libs/buildcraft-neo-better-neoforge-1.21.1-0.1.1-dev+1.21.1.jar` | 42,928 bytes | `2C29EC854E23DE333835FFDDF81F5D477F4737BA420535170A99CB471F5C3C27` |
+| Forge 1.20.1 | `releases/0.1.2-dev/buildcraft-neo-better-forge-1.20.1-0.1.2-dev+1.20.1.jar` | 55,137 bytes | `A5A8256A623DACE6BED66D308B1569DDB83AAAD93278418FAE93FA91AB9F4C07` |
+| NeoForge 1.20.1 | `releases/0.1.1-dev/buildcraft-neo-better-neoforge-1.20.1-0.1.1-dev+1.20.1.jar` (superseded) | 53,893 bytes | `6D3694B705E72582DA0A7AF7149394335561B6441EF7705D8FCCA3CC0C1B8C63` |
+| Forge 1.21.1 | `releases/0.1.1-dev/buildcraft-neo-better-forge-1.21.1-0.1.1-dev+1.21.1.jar` (superseded) | 41,784 bytes | `72A4C38E1EC3076CB21C33CC3BBD60A673706D23F75B0B59727EE57CE2566EDE` |
+| NeoForge 1.21.1 | `releases/0.1.1-dev/buildcraft-neo-better-neoforge-1.21.1-0.1.1-dev+1.21.1.jar` (superseded) | 42,928 bytes | `2C29EC854E23DE333835FFDDF81F5D477F4737BA420535170A99CB471F5C3C27` |
 
-Use only the explicitly listed `buildcraft-neo-better-*` artifacts. Older
-same-size pre-rename JARs were retained rather than deleted; they are not the
-hand-off artifacts above.
+Do not use the superseded `0.1.1-dev` JARs to test Tank visuals. Use only the
+Forge 1.20.1 `0.1.2-dev` artifact above until the other source fixes have fresh
+loader-specific builds, packaged verification, and real-client validation.
 
 ## Implemented functionality
 

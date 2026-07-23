@@ -25,9 +25,9 @@ try {
         'assets/buildcraftfactory/models/item/tank.json',
         'assets/buildcraftfactory/lang/en_us.json',
         'data/buildcraftfactory/loot_tables/blocks/tank.json',
-        'assets/buildcraftfactory/textures/blocks/tank/end.png',
-        'assets/buildcraftfactory/textures/blocks/tank/side.png',
-        'assets/buildcraftfactory/textures/blocks/tank/side_joined_below.png',
+        'assets/buildcraftfactory/textures/block/tank/end.png',
+        'assets/buildcraftfactory/textures/block/tank/side.png',
+        'assets/buildcraftfactory/textures/block/tank/side_joined_below.png',
         'assets/buildcraftfactory/textures/gui/tank.png'
     )
     foreach ($entryName in $required) {
@@ -37,12 +37,35 @@ try {
     }
 
     $jsonEntries = $required | Where-Object { $_.EndsWith('.json') }
+    $parsedJson = @{}
     foreach ($entryName in $jsonEntries) {
         $reader = [IO.StreamReader]::new($entries[$entryName].Open())
         try {
-            $null = $reader.ReadToEnd() | ConvertFrom-Json
+            $parsedJson[$entryName] = $reader.ReadToEnd() | ConvertFrom-Json
         } finally {
             $reader.Dispose()
+        }
+    }
+
+    # Minecraft 1.20.1's minecraft:blocks atlas stitches the singular
+    # textures/block directory. A present PNG under legacy textures/blocks can
+    # therefore still render as the missing-texture checkerboard at runtime.
+    $tankModels = @(
+        $parsedJson['assets/buildcraftfactory/models/block/tank.json'],
+        $parsedJson['assets/buildcraftfactory/models/block/tank_joined_below.json']
+    )
+    foreach ($model in $tankModels) {
+        foreach ($texture in $model.textures.psobject.Properties.Value) {
+            if ($texture -like '#*') {
+                continue
+            }
+            if ($texture -notmatch '^buildcraftfactory:block/.+$') {
+                throw "Tank model uses a texture outside the 1.20.1 block atlas: $texture"
+            }
+            $texturePath = 'assets/buildcraftfactory/textures/' + $texture.Substring('buildcraftfactory:'.Length) + '.png'
+            if (-not $entries.ContainsKey($texturePath)) {
+                throw "Tank model texture is missing from the packaged JAR: $texturePath"
+            }
         }
     }
 

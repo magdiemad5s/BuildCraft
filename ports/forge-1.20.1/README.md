@@ -7,19 +7,20 @@ registry identity for the Tank.
 
 Verified artifact:
 
-`build/libs/buildcraft-neo-better-forge-1.20.1-0.1.1-dev+1.20.1.jar`
+`build/libs/buildcraft-neo-better-forge-1.20.1-0.1.2-dev+1.20.1.jar`
 
-- 55,152 bytes
-- SHA-256 `9885740D0AD4F4BA4B0D4EBE2BE7CEF558D13A972DA4A65F47BD0F10ED534F4A`
+- 55,137 bytes
+- SHA-256 `A5A8256A623DACE6BED66D308B1569DDB83AAAD93278418FAE93FA91AB9F4C07`
 - `build --offline --no-daemon`: PASS; 31 JUnit tests and packaged-resource
-  validation passed.
+  validation passed. Tank block sprites use the 1.20.1 block-atlas path
+  `textures/block/tank/`.
 
 Use a lane-local Gradle cache:
 
 ```powershell
 $env:GRADLE_USER_HOME = Join-Path (Get-Location) '.gradle-user-home'
 .\gradlew.bat build --offline --no-daemon
-.\tools\verify-packaged-resources.ps1 -JarPath .\build\libs\buildcraft-neo-better-forge-1.20.1-0.1.1-dev+1.20.1.jar
+.\tools\verify-packaged-resources.ps1 -JarPath .\build\libs\buildcraft-neo-better-forge-1.20.1-0.1.2-dev+1.20.1.jar
 ```
 
 This is not a complete BuildCraft release. Do not run a client/server/GameTest

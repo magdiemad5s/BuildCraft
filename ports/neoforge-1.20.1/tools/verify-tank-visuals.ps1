@@ -93,9 +93,9 @@ $blockModelPath = Join-Path $resourcesRoot 'assets\buildcraftfactory\models\bloc
 $joinedModelPath = Join-Path $resourcesRoot 'assets\buildcraftfactory\models\block\tank_joined_below.json'
 $itemModelPath = Join-Path $resourcesRoot 'assets\buildcraftfactory\models\item\tank.json'
 $textureDimensions = [ordered]@{
-    'assets/buildcraftfactory/textures/blocks/tank/end.png' = @(16, 16)
-    'assets/buildcraftfactory/textures/blocks/tank/side.png' = @(16, 16)
-    'assets/buildcraftfactory/textures/blocks/tank/side_joined_below.png' = @(16, 16)
+    'assets/buildcraftfactory/textures/block/tank/end.png' = @(16, 16)
+    'assets/buildcraftfactory/textures/block/tank/side.png' = @(16, 16)
+    'assets/buildcraftfactory/textures/block/tank/side_joined_below.png' = @(16, 16)
     'assets/buildcraftfactory/textures/gui/tank.png' = @(256, 256)
 }
 
@@ -114,11 +114,11 @@ Assert-LiteralContains -Text $screen -Expected 'private static final int OVERLAY
 Assert-LiteralContains -Text $screen -Expected 'graphics.blit(TEXTURE' -Message 'Factory Tank screen must blit its background and gauge overlay.'
 
 $blockModel = Get-Content -LiteralPath $blockModelPath -Raw | ConvertFrom-Json
-Assert-Condition -Condition ($blockModel.textures.side -eq 'buildcraftfactory:blocks/tank/side') -Message 'Tank model must use the legacy side texture.'
-Assert-Condition -Condition ($blockModel.textures.up -eq 'buildcraftfactory:blocks/tank/end' -and $blockModel.textures.down -eq 'buildcraftfactory:blocks/tank/end') -Message 'Tank model must use the legacy end texture.'
+Assert-Condition -Condition ($blockModel.textures.side -eq 'buildcraftfactory:block/tank/side') -Message 'Tank model must use the legacy side texture.'
+Assert-Condition -Condition ($blockModel.textures.up -eq 'buildcraftfactory:block/tank/end' -and $blockModel.textures.down -eq 'buildcraftfactory:block/tank/end') -Message 'Tank model must use the legacy end texture.'
 $joinedModel = Get-Content -LiteralPath $joinedModelPath -Raw | ConvertFrom-Json
 Assert-Condition -Condition ($joinedModel.parent -eq 'buildcraftfactory:block/tank') -Message 'Joined Tank model must inherit the base Tank model.'
-Assert-Condition -Condition ($joinedModel.textures.side -eq 'buildcraftfactory:blocks/tank/side_joined_below') -Message 'Joined Tank model must use the legacy joined-side texture.'
+Assert-Condition -Condition ($joinedModel.textures.side -eq 'buildcraftfactory:block/tank/side_joined_below') -Message 'Joined Tank model must use the legacy joined-side texture.'
 $itemModel = Get-Content -LiteralPath $itemModelPath -Raw | ConvertFrom-Json
 $expectedTransforms = [ordered]@{
     gui = @{ rotation = @(30, 225, 0); translation = @(0, 0, 0); scale = @(0.625, 0.625, 0.625) }

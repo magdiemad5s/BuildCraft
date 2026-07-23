@@ -238,6 +238,9 @@ $tankJsonResourcePaths = @(
     'data/buildcraftfactory/recipe/tank.json'
 )
 $tankTextureDimensions = [ordered]@{
+    'assets/buildcraftfactory/textures/block/tank/end.png' = @(16, 16)
+    'assets/buildcraftfactory/textures/block/tank/side.png' = @(16, 16)
+    'assets/buildcraftfactory/textures/block/tank/side_joined_below.png' = @(16, 16)
     'assets/buildcraftfactory/textures/blocks/tank/end.png' = @(16, 16)
     'assets/buildcraftfactory/textures/blocks/tank/side.png' = @(16, 16)
     'assets/buildcraftfactory/textures/blocks/tank/side_joined_below.png' = @(16, 16)
@@ -325,12 +328,12 @@ foreach ($texturePath in $tankTextureDimensions.Keys) {
 }
 
 $tankBlockModel = Get-Content -LiteralPath (Join-Path $laneRoot 'src\main\resources\assets\buildcraftfactory\models\block\tank.json') -Raw | ConvertFrom-Json
-if ($tankBlockModel.textures.side -ne 'buildcraftfactory:blocks/tank/side' -or $tankBlockModel.textures.up -ne 'buildcraftfactory:blocks/tank/end' -or $tankBlockModel.textures.down -ne 'buildcraftfactory:blocks/tank/end') {
-    throw 'Factory Tank model does not reference the preserved legacy Tank textures.'
+if ($tankBlockModel.textures.particle -ne 'buildcraftfactory:block/tank/side' -or $tankBlockModel.textures.side -ne 'buildcraftfactory:block/tank/side' -or $tankBlockModel.textures.up -ne 'buildcraftfactory:block/tank/end' -or $tankBlockModel.textures.down -ne 'buildcraftfactory:block/tank/end') {
+    throw 'Factory Tank model must reference the 1.21.1 block-atlas sprite IDs.'
 }
 $joinedTankModel = Get-Content -LiteralPath (Join-Path $laneRoot 'src\main\resources\assets\buildcraftfactory\models\block\tank_joined_below.json') -Raw | ConvertFrom-Json
-if ($joinedTankModel.textures.side -ne 'buildcraftfactory:blocks/tank/side_joined_below') {
-    throw 'Joined Factory Tank model does not reference the legacy joined-side texture.'
+if ($joinedTankModel.textures.particle -ne 'buildcraftfactory:block/tank/side_joined_below' -or $joinedTankModel.textures.side -ne 'buildcraftfactory:block/tank/side_joined_below') {
+    throw 'Joined Factory Tank model must reference the 1.21.1 block-atlas sprite ID.'
 }
 $tankItemModel = Get-Content -LiteralPath (Join-Path $laneRoot 'src\main\resources\assets\buildcraftfactory\models\item\tank.json') -Raw | ConvertFrom-Json
 foreach ($transformName in @('gui', 'ground', 'fixed', 'thirdperson_righthand', 'firstperson_righthand', 'firstperson_lefthand')) {

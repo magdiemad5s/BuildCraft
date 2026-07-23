@@ -8,28 +8,27 @@
 > the preserved legacy BuildCraft 8.0.x / Minecraft 1.12.2 source. It is not a
 > complete or stable public BuildCraft release.
 
-## Test builds: 0.1.1-dev
+## Current Forge 1.20.1 test build: 0.1.2-dev
 
-Four checked development JARs are committed under
-[`releases/0.1.1-dev`](releases/0.1.1-dev/). Install **one** JAR that matches
-both your Minecraft version and loader in a fresh, disposable profile:
+The currently validated test artifact is committed under
+[`releases/0.1.2-dev`](releases/0.1.2-dev/):
 
 | Target | File |
 |---|---|
-| Forge 1.20.1 | `buildcraft-neo-better-forge-1.20.1-0.1.1-dev+1.20.1.jar` |
-| NeoForge 1.20.1 | `buildcraft-neo-better-neoforge-1.20.1-0.1.1-dev+1.20.1.jar` |
-| Forge 1.21.1 | `buildcraft-neo-better-forge-1.21.1-0.1.1-dev+1.21.1.jar` |
-| NeoForge 1.21.1 | `buildcraft-neo-better-neoforge-1.21.1-0.1.1-dev+1.21.1.jar` |
+| Forge 1.20.1 | `buildcraft-neo-better-forge-1.20.1-0.1.2-dev+1.20.1.jar` |
 
-This refresh restores the Factory Tank's visible block model, legacy textures,
-item transforms, and GUI artwork across all four lanes.
+It fixes the Factory Tank's missing-texture checkerboard by placing its block
+sprites in the modern `textures/block/` atlas path.
 
-Verify the selected file with
-[`SHA256SUMS.txt`](releases/0.1.1-dev/SHA256SUMS.txt) and read the
-[`release notes`](releases/0.1.1-dev/RELEASE_NOTES.md) first. The only
+The older `0.1.1-dev` artifacts are **superseded for Tank visual testing**.
+Equivalent source fixes are staged for NeoForge 1.20.1 and both 1.21.1 lanes,
+but those lanes require fresh builds and validation before release.
+
+Verify the Forge file with
+[`SHA256SUMS.txt`](releases/0.1.2-dev/SHA256SUMS.txt) and read the
+[`release notes`](releases/0.1.2-dev/RELEASE_NOTES.md) first. The only
 implemented gameplay slice is the Factory Tank (`buildcraftfactory:tank`);
 pipes, engines, machines, world generation, most GUIs, multiplayer, and
-legacy-world migration remain unfinished.
 
 ## Port sources and status
 
