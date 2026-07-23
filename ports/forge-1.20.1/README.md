@@ -7,10 +7,10 @@ registry identity for the Tank.
 
 Verified artifact:
 
-`build/libs/buildcraft-neo-better-forge-1.20.1-0.1.0-dev+1.20.1.jar`
+`build/libs/buildcraft-neo-better-forge-1.20.1-0.1.1-dev+1.20.1.jar`
 
-- 52,151 bytes
-- SHA-256 `F53680631A152AB0AD616BA2DE472FC3381A33E2625893B2F8C339461578BB6E`
+- 55,152 bytes
+- SHA-256 `9885740D0AD4F4BA4B0D4EBE2BE7CEF558D13A972DA4A65F47BD0F10ED534F4A`
 - `build --offline --no-daemon`: PASS; 31 JUnit tests and packaged-resource
   validation passed.
 
@@ -19,7 +19,7 @@ Use a lane-local Gradle cache:
 ```powershell
 $env:GRADLE_USER_HOME = Join-Path (Get-Location) '.gradle-user-home'
 .\gradlew.bat build --offline --no-daemon
-.\tools\verify-packaged-resources.ps1 -JarPath .\build\libs\buildcraft-neo-better-forge-1.20.1-0.1.0-dev+1.20.1.jar
+.\tools\verify-packaged-resources.ps1 -JarPath .\build\libs\buildcraft-neo-better-forge-1.20.1-0.1.1-dev+1.20.1.jar
 ```
 
 This is not a complete BuildCraft release. Do not run a client/server/GameTest

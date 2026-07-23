@@ -1,22 +1,30 @@
 package buildcraft.neo.forge1211.factory.client;
 
+import buildcraft.neo.forge1211.LegacyModuleIds;
 import buildcraft.neo.forge1211.factory.FactoryTankBlockEntity;
 import buildcraft.neo.forge1211.factory.TankMenu;
 import java.util.List;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraftforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.minecraftforge.fluids.FluidStack;
 
-/** Lightweight, texture-free screen so the first Tank slice has no missing GUI asset dependency. */
+/** Factory Tank screen using the original GUI background and gauge-overlay artwork. */
 public final class TankScreen extends AbstractContainerScreen<TankMenu> {
+    private static final ResourceLocation GUI_TEXTURE = ResourceLocation.fromNamespaceAndPath(
+        LegacyModuleIds.FACTORY,
+        "textures/gui/tank.png"
+    );
+    private static final int GUI_TEXTURE_SIZE = 256;
     private static final int TANK_X = 80;
     private static final int TANK_Y = 18;
     private static final int TANK_WIDTH = 16;
     private static final int TANK_HEIGHT = 64;
+    private static final int OVERLAY_U = 176;
 
     public TankScreen(TankMenu menu, Inventory inventory, Component title) {
         super(menu, inventory, title);
@@ -30,27 +38,21 @@ public final class TankScreen extends AbstractContainerScreen<TankMenu> {
     protected void renderBg(GuiGraphics graphics, float partialTick, int mouseX, int mouseY) {
         int left = leftPos;
         int top = topPos;
-        graphics.fill(left, top, left + imageWidth, top + imageHeight, 0xFFE2E2E2);
-        graphics.fill(left + 1, top + 1, left + imageWidth - 1, top + imageHeight - 1, 0xFFB6B6B6);
-        graphics.fill(left + 4, top + 4, left + imageWidth - 4, top + imageHeight - 4, 0xFFECECEC);
+        graphics.blit(GUI_TEXTURE, left, top, 0, 0, imageWidth, imageHeight, GUI_TEXTURE_SIZE, GUI_TEXTURE_SIZE);
 
         int tankLeft = left + TANK_X;
         int tankTop = top + TANK_Y;
-        graphics.fill(tankLeft - 1, tankTop - 1, tankLeft + TANK_WIDTH + 1, tankTop + TANK_HEIGHT + 1, 0xFF404040);
-        graphics.fill(tankLeft, tankTop, tankLeft + TANK_WIDTH, tankTop + TANK_HEIGHT, 0xFF212121);
-
         FactoryTankBlockEntity tank = clientTank();
-        if (tank == null) {
-            return;
+        if (tank != null) {
+            FluidStack fluid = tank.getLocalFluid();
+            int capacity = tank.getLocalCapacity();
+            if (!fluid.isEmpty() && capacity > 0) {
+                int height = Math.max(1, Math.min(TANK_HEIGHT, fluid.getAmount() * TANK_HEIGHT / capacity));
+                int color = IClientFluidTypeExtensions.of(fluid.getFluid()).getTintColor(fluid) | 0xFF000000;
+                graphics.fill(tankLeft, tankTop + TANK_HEIGHT - height, tankLeft + TANK_WIDTH, tankTop + TANK_HEIGHT, color);
+            }
         }
-        FluidStack fluid = tank.getLocalFluid();
-        int capacity = tank.getLocalCapacity();
-        if (fluid.isEmpty() || capacity <= 0) {
-            return;
-        }
-        int height = Math.max(1, Math.min(TANK_HEIGHT, fluid.getAmount() * TANK_HEIGHT / capacity));
-        int color = IClientFluidTypeExtensions.of(fluid.getFluid()).getTintColor(fluid) | 0xFF000000;
-        graphics.fill(tankLeft + 1, tankTop + TANK_HEIGHT - height, tankLeft + TANK_WIDTH - 1, tankTop + TANK_HEIGHT, color);
+        graphics.blit(GUI_TEXTURE, tankLeft, tankTop, OVERLAY_U, 0, TANK_WIDTH, TANK_HEIGHT, GUI_TEXTURE_SIZE, GUI_TEXTURE_SIZE);
     }
 
     @Override

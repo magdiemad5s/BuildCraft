@@ -1,21 +1,22 @@
 {
-  "ambientocclusion": false,
-  "textures": {
-    "particle": "minecraft:block/glass",
-    "glass": "minecraft:block/glass"
-  },
   "elements": [
     {
       "from": [2, 0, 2],
       "to": [14, 16, 14],
       "faces": {
-        "down": { "texture": "#glass" },
-        "up": { "texture": "#glass" },
-        "north": { "texture": "#glass" },
-        "south": { "texture": "#glass" },
-        "west": { "texture": "#glass" },
-        "east": { "texture": "#glass" }
+        "down": { "texture": "#down", "cullface": "down" },
+        "up": { "texture": "#up", "cullface": "up" },
+        "north": { "texture": "#side" },
+        "south": { "texture": "#side" },
+        "west": { "texture": "#side" },
+        "east": { "texture": "#side" }
       }
     }
-  ]
+  ],
+  "textures": {
+    "particle": "buildcraftfactory:blocks/tank/side",
+    "up": "buildcraftfactory:blocks/tank/end",
+    "down": "buildcraftfactory:blocks/tank/end",
+    "side": "buildcraftfactory:blocks/tank/side"
+  }
 }

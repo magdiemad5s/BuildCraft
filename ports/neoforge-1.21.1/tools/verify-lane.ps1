@@ -183,12 +183,52 @@ function Get-ZipEntryText($Archive, [string]$Name) {
     }
 }
 
+function Get-ZipEntryBytes($Archive, [string]$Name) {
+    $entry = $Archive.GetEntry($Name)
+    if ($null -eq $entry) {
+        throw "Packaged JAR is missing $Name."
+    }
+    $stream = $entry.Open()
+    $memory = [System.IO.MemoryStream]::new()
+    try {
+        $stream.CopyTo($memory)
+        return $memory.ToArray()
+    }
+    finally {
+        $memory.Dispose()
+        $stream.Dispose()
+    }
+}
+
+function Assert-PngDimensions([byte[]]$Bytes, [int]$ExpectedWidth, [int]$ExpectedHeight, [string]$Origin) {
+    $signature = @(137, 80, 78, 71, 13, 10, 26, 10)
+    if ($Bytes.Length -lt 24) {
+        throw "$Origin is too short to be a PNG."
+    }
+    for ($index = 0; $index -lt $signature.Length; $index++) {
+        if ([int]$Bytes[$index] -ne $signature[$index]) {
+            throw "$Origin does not have a PNG signature."
+        }
+    }
+    if ([System.Text.Encoding]::ASCII.GetString($Bytes, 12, 4) -ne 'IHDR') {
+        throw "$Origin does not have a PNG IHDR header."
+    }
+    $width = ([int]$Bytes[16] -shl 24) -bor ([int]$Bytes[17] -shl 16) -bor ([int]$Bytes[18] -shl 8) -bor [int]$Bytes[19]
+    $height = ([int]$Bytes[20] -shl 24) -bor ([int]$Bytes[21] -shl 16) -bor ([int]$Bytes[22] -shl 8) -bor [int]$Bytes[23]
+    if ($width -ne $ExpectedWidth -or $height -ne $ExpectedHeight) {
+        throw "$Origin has ${width}x${height}; expected ${ExpectedWidth}x${ExpectedHeight}."
+    }
+}
+
 $metadataPath = Join-Path $laneRoot 'src\main\templates\META-INF\neoforge.mods.toml'
 $legacyModsPath = Join-Path $laneRoot 'src\main\resources\META-INF\mods.toml'
 $packPath = Join-Path $laneRoot 'src\main\resources\pack.mcmeta'
 $resourceNamespacePath = Join-Path $laneRoot 'src\main\resources\assets\buildcraft\lang\en_us.json'
 $tankContractPath = Join-Path $laneRoot 'src\main\java\buildcraft\neo\neoforge1211\factory\FactoryTankContract.java'
-$tankResourcePaths = @(
+$tankBlockSourcePath = Join-Path $laneRoot 'src\main\java\buildcraft\neo\neoforge1211\factory\FactoryTankBlock.java'
+$tankClientEventsPath = Join-Path $laneRoot 'src\main\java\buildcraft\neo\neoforge1211\factory\client\FactoryTankClientEvents.java'
+$tankScreenPath = Join-Path $laneRoot 'src\main\java\buildcraft\neo\neoforge1211\factory\client\TankScreen.java'
+$tankJsonResourcePaths = @(
     'assets/buildcraftfactory/blockstates/tank.json',
     'assets/buildcraftfactory/models/block/tank.json',
     'assets/buildcraftfactory/models/block/tank_joined_below.json',
@@ -197,6 +237,13 @@ $tankResourcePaths = @(
     'data/buildcraftfactory/loot_table/blocks/tank.json',
     'data/buildcraftfactory/recipe/tank.json'
 )
+$tankTextureDimensions = [ordered]@{
+    'assets/buildcraftfactory/textures/blocks/tank/end.png' = @(16, 16)
+    'assets/buildcraftfactory/textures/blocks/tank/side.png' = @(16, 16)
+    'assets/buildcraftfactory/textures/blocks/tank/side_joined_below.png' = @(16, 16)
+    'assets/buildcraftfactory/textures/gui/tank.png' = @(256, 256)
+}
+$tankResourcePaths = @($tankJsonResourcePaths) + @($tankTextureDimensions.Keys)
 
 if (-not (Test-Path -LiteralPath $metadataPath -PathType Leaf)) {
     throw "Missing NeoForge metadata template: $metadataPath"
@@ -209,6 +256,11 @@ if (-not (Test-Path -LiteralPath $resourceNamespacePath -PathType Leaf)) {
 }
 if (-not (Test-Path -LiteralPath $tankContractPath -PathType Leaf)) {
     throw 'The Factory Tank compatibility contract is missing.'
+}
+foreach ($sourcePath in @($tankBlockSourcePath, $tankClientEventsPath, $tankScreenPath)) {
+    if (-not (Test-Path -LiteralPath $sourcePath -PathType Leaf)) {
+        throw "Factory Tank client source is missing: $sourcePath"
+    }
 }
 
 $metadata = Get-Content -LiteralPath $metadataPath -Raw
@@ -237,18 +289,54 @@ if ($tankContract -notmatch 'REGISTRY_PATH\s*=\s*"tank"' -or $tankContract -notm
     throw 'Factory Tank registry ID or capacity drifted.'
 }
 
+$tankBlockSource = Get-Content -LiteralPath $tankBlockSourcePath -Raw
+if ($tankBlockSource -notmatch '(?s)getRenderShape\s*\([^)]*\)\s*\{\s*return\s+RenderShape\.MODEL;') {
+    throw 'Factory Tank must render its baked model rather than BaseEntityBlock invisibly.'
+}
+$clientEventsSource = Get-Content -LiteralPath $tankClientEventsPath -Raw
+if ($clientEventsSource -notmatch 'RenderType\.cutout\s*\(\s*\)' -or $clientEventsSource -match 'RenderType\.translucent\s*\(\s*\)') {
+    throw 'Factory Tank must use the cutout render layer for its legacy alpha-cutout textures.'
+}
+$tankScreenSource = Get-Content -LiteralPath $tankScreenPath -Raw
+if ($tankScreenSource -notmatch 'textures/gui/tank\.png' -or $tankScreenSource -notmatch 'graphics\.blit\(TEXTURE') {
+    throw 'Factory Tank screen must use the preserved GUI texture and gauge overlay.'
+}
+
 $pack = Get-Content -LiteralPath $packPath -Raw | ConvertFrom-Json
 if ([int]$pack.pack.pack_format -ne 48) {
     throw 'Minecraft 1.21.1 server-data pack format must be 48.'
 }
 Assert-Equal @($pack.pack.supported_formats) @(34, 48) 'pack.mcmeta supported formats drifted.'
 
-foreach ($resourcePath in $tankResourcePaths) {
+foreach ($resourcePath in $tankJsonResourcePaths) {
     $sourcePath = Join-Path $laneRoot ('src\main\resources\' + $resourcePath)
     if (-not (Test-Path -LiteralPath $sourcePath -PathType Leaf)) {
         throw "Factory Tank resource is missing: $sourcePath"
     }
     Get-Content -LiteralPath $sourcePath -Raw | ConvertFrom-Json | Out-Null
+}
+foreach ($texturePath in $tankTextureDimensions.Keys) {
+    $sourcePath = Join-Path $laneRoot ('src\main\resources\' + $texturePath)
+    if (-not (Test-Path -LiteralPath $sourcePath -PathType Leaf)) {
+        throw "Factory Tank texture is missing: $sourcePath"
+    }
+    $dimensions = $tankTextureDimensions[$texturePath]
+    Assert-PngDimensions ([System.IO.File]::ReadAllBytes($sourcePath)) $dimensions[0] $dimensions[1] $sourcePath
+}
+
+$tankBlockModel = Get-Content -LiteralPath (Join-Path $laneRoot 'src\main\resources\assets\buildcraftfactory\models\block\tank.json') -Raw | ConvertFrom-Json
+if ($tankBlockModel.textures.side -ne 'buildcraftfactory:blocks/tank/side' -or $tankBlockModel.textures.up -ne 'buildcraftfactory:blocks/tank/end' -or $tankBlockModel.textures.down -ne 'buildcraftfactory:blocks/tank/end') {
+    throw 'Factory Tank model does not reference the preserved legacy Tank textures.'
+}
+$joinedTankModel = Get-Content -LiteralPath (Join-Path $laneRoot 'src\main\resources\assets\buildcraftfactory\models\block\tank_joined_below.json') -Raw | ConvertFrom-Json
+if ($joinedTankModel.textures.side -ne 'buildcraftfactory:blocks/tank/side_joined_below') {
+    throw 'Joined Factory Tank model does not reference the legacy joined-side texture.'
+}
+$tankItemModel = Get-Content -LiteralPath (Join-Path $laneRoot 'src\main\resources\assets\buildcraftfactory\models\item\tank.json') -Raw | ConvertFrom-Json
+foreach ($transformName in @('gui', 'ground', 'fixed', 'thirdperson_righthand', 'firstperson_righthand', 'firstperson_lefthand')) {
+    if ($null -eq $tankItemModel.display.$transformName) {
+        throw "Factory Tank item model is missing the legacy $transformName transform."
+    }
 }
 
 if ($JarPath) {
@@ -271,8 +359,12 @@ if ($JarPath) {
         foreach ($jsonEntry in $jsonEntries) {
             Get-ZipEntryText $archive $jsonEntry.FullName | ConvertFrom-Json -ErrorAction Stop | Out-Null
         }
+        foreach ($texturePath in $tankTextureDimensions.Keys) {
+            $dimensions = $tankTextureDimensions[$texturePath]
+            Assert-PngDimensions (Get-ZipEntryBytes $archive $texturePath) $dimensions[0] $dimensions[1] "Packaged JAR entry $texturePath"
+        }
         Get-ZipEntryText $archive 'pack.mcmeta' | ConvertFrom-Json -ErrorAction Stop | Out-Null
-        Write-Output "Packaged JAR validation passed: $($names.Count) entries; $($jsonEntries.Count) JSON files parsed."
+        Write-Output "Packaged JAR validation passed: $($names.Count) entries; $($jsonEntries.Count) JSON files parsed; $($tankTextureDimensions.Count) Tank PNG files verified."
     }
     finally {
         $archive.Dispose()

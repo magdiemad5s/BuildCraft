@@ -7,10 +7,10 @@ menu, and data-path APIs.
 
 Verified artifact:
 
-`build/libs/buildcraft-neo-better-forge-1.21.1-0.1.0-dev+1.21.1.jar`
+`build/libs/buildcraft-neo-better-forge-1.21.1-0.1.1-dev+1.21.1.jar`
 
-- 38,841 bytes
-- SHA-256 `E1005452D67AB399E081DEE517017A39A8DE9D866F2A2808D2E75CAC9FDE44B8`
+- 41,784 bytes
+- SHA-256 `72A4C38E1EC3076CB21C33CC3BBD60A673706D23F75B0B59727EE57CE2566EDE`
 - Offline build PASS: 6 JUnit tests and packaged-resource validation passed.
 
 Use the isolated cache only:
@@ -18,7 +18,7 @@ Use the isolated cache only:
 ```powershell
 $env:GRADLE_USER_HOME = Join-Path (Get-Location) '.gradle-user-home'
 .\gradlew.bat build --offline --no-daemon
-.\tools\verify-packaged-resources.ps1 -JarPath .\build\libs\buildcraft-neo-better-forge-1.21.1-0.1.0-dev+1.21.1.jar
+.\tools\verify-packaged-resources.ps1 -JarPath .\build\libs\buildcraft-neo-better-forge-1.21.1-0.1.1-dev+1.21.1.jar
 ```
 
 No live Minecraft process was used. This Tank slice is not a complete BuildCraft

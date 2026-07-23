@@ -10,7 +10,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
-/** Client-only screen and translucent block-layer registration. */
+/** Client-only screen and alpha-cutout Tank render-layer registration. */
 @Mod.EventBusSubscriber(
     modid = LegacyModuleIds.FACTORY,
     bus = Mod.EventBusSubscriber.Bus.MOD,
@@ -24,7 +24,7 @@ public final class FactoryTankClientEvents {
     public static void registerScreens(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             MenuScreens.register(FactoryTankRegistries.tankMenu(), TankScreen::new);
-            ItemBlockRenderTypes.setRenderLayer(FactoryTankRegistries.tankBlock(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(FactoryTankRegistries.tankBlock(), RenderType.cutout());
         });
     }
 }

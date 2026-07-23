@@ -19,10 +19,10 @@ The original preservation references remain unchanged:
 
 | Lane | Loader/toolchain | Build and tests | Packaged-resource check |
 |---|---|---:|---|
-| Forge 1.20.1 | Forge `47.4.22`, Java 17, Gradle 8.8 | PASS - 31 JUnit tests | PASS - 62 entries, 6 JSON, 8 module IDs, 8 edges |
-| NeoForge 1.20.1 | transitional `net.neoforged:forge:1.20.1-47.1.106`, Java 17, NeoGradle 7.0.97 | PASS - 27 JUnit tests | PASS - 62 entries, 6 JSON, 8 module IDs, 8 edges |
-| Forge 1.21.1 | Forge `52.1.16`, Java 21, Gradle 8.8 | PASS - 6 JUnit tests | PASS - 50 entries, 7 JSON, 8 module IDs, 8 edges |
-| NeoForge 1.21.1 | NeoForge `21.1.242`, Java 21, ModDevGradle 2.0.142 | PASS - 7 JUnit tests | PASS - 54 entries, 8 JSON, 8-module graph |
+| Forge 1.20.1 | Forge `47.4.22`, Java 17, Gradle 8.8 | PASS - 31 JUnit tests | PASS - packaged-resource and Tank visual verifier |
+| NeoForge 1.20.1 | transitional `net.neoforged:forge:1.20.1-47.1.106`, Java 17, NeoGradle 7.0.97 | PASS - 29 JUnit tests | PASS - packaged-resource and Tank visual verifier |
+| Forge 1.21.1 | Forge `52.1.16`, Java 21, Gradle 8.8 | PASS - 6 JUnit tests | PASS - packaged-resource and Tank visual verifier |
+| NeoForge 1.21.1 | NeoForge `21.1.242`, Java 21, ModDevGradle 2.0.142 | PASS - 9 JUnit tests | PASS - packaged-resource and Tank visual verifier |
 
 All lanes preserve the public module graph:
 
@@ -40,10 +40,10 @@ buildcraftsilicon   -> buildcraftcore, optional AFTER buildcrafttransport
 
 | Lane | JAR | Size | SHA-256 |
 |---|---|---:|---|
-| Forge 1.20.1 | `ports/forge-1.20.1/build/libs/buildcraft-neo-better-forge-1.20.1-0.1.0-dev+1.20.1.jar` | 52,151 bytes | `F53680631A152AB0AD616BA2DE472FC3381A33E2625893B2F8C339461578BB6E` |
-| NeoForge 1.20.1 | `ports/neoforge-1.20.1/build/libs/buildcraft-neo-better-neoforge-1.20.1-0.1.0-dev+1.20.1.jar` | 51,043 bytes | `636BC36FFF3574922A9DE0832BD804CE043CFB150BAFCE826528B6CDA6FB1DB0` |
-| Forge 1.21.1 | `ports/forge-1.21.1/build/libs/buildcraft-neo-better-forge-1.21.1-0.1.0-dev+1.21.1.jar` | 38,841 bytes | `E1005452D67AB399E081DEE517017A39A8DE9D866F2A2808D2E75CAC9FDE44B8` |
-| NeoForge 1.21.1 | `ports/neoforge-1.21.1/build/libs/buildcraft-neo-better-neoforge-1.21.1-0.1.0-dev+1.21.1.jar` | 39,920 bytes | `F40E822AD9BA65FC46083E5FAFD6A90854CB0AD103372F148C4C8A6230922177` |
+| Forge 1.20.1 | `ports/forge-1.20.1/build/libs/buildcraft-neo-better-forge-1.20.1-0.1.1-dev+1.20.1.jar` | 55,152 bytes | `9885740D0AD4F4BA4B0D4EBE2BE7CEF558D13A972DA4A65F47BD0F10ED534F4A` |
+| NeoForge 1.20.1 | `ports/neoforge-1.20.1/build/libs/buildcraft-neo-better-neoforge-1.20.1-0.1.1-dev+1.20.1.jar` | 53,893 bytes | `6D3694B705E72582DA0A7AF7149394335561B6441EF7705D8FCCA3CC0C1B8C63` |
+| Forge 1.21.1 | `ports/forge-1.21.1/build/libs/buildcraft-neo-better-forge-1.21.1-0.1.1-dev+1.21.1.jar` | 41,784 bytes | `72A4C38E1EC3076CB21C33CC3BBD60A673706D23F75B0B59727EE57CE2566EDE` |
+| NeoForge 1.21.1 | `ports/neoforge-1.21.1/build/libs/buildcraft-neo-better-neoforge-1.21.1-0.1.1-dev+1.21.1.jar` | 42,928 bytes | `2C29EC854E23DE333835FFDDF81F5D477F4737BA420535170A99CB471F5C3C27` |
 
 Use only the explicitly listed `buildcraft-neo-better-*` artifacts. Older
 same-size pre-rename JARs were retained rather than deleted; they are not the

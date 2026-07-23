@@ -25,7 +25,11 @@ try {
         'assets/buildcraftfactory/models/block/tank_joined_below.json',
         'assets/buildcraftfactory/models/item/tank.json',
         'assets/buildcraftfactory/lang/en_us.json',
-        'data/buildcraftfactory/loot_table/blocks/tank.json'
+        'data/buildcraftfactory/loot_table/blocks/tank.json',
+        'assets/buildcraftfactory/textures/blocks/tank/end.png',
+        'assets/buildcraftfactory/textures/blocks/tank/side.png',
+        'assets/buildcraftfactory/textures/blocks/tank/side_joined_below.png',
+        'assets/buildcraftfactory/textures/gui/tank.png'
     )
     foreach ($entryName in $required) {
         if (-not $entries.ContainsKey($entryName)) {

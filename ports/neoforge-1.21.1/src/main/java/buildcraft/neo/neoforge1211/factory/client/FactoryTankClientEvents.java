@@ -11,7 +11,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 
-/** Client-only screen and translucent block-layer registration. */
+/** Client-only screen and alpha-cutout Tank render-layer registration. */
 @EventBusSubscriber(
     modid = LegacyModuleIds.FACTORY,
     bus = EventBusSubscriber.Bus.MOD,
@@ -30,7 +30,7 @@ public final class FactoryTankClientEvents {
     public static void registerRenderLayer(FMLClientSetupEvent event) {
         event.enqueueWork(() -> ItemBlockRenderTypes.setRenderLayer(
             FactoryTankRegistries.TANK_BLOCK.get(),
-            RenderType.translucent()
+            RenderType.cutout()
         ));
     }
 }

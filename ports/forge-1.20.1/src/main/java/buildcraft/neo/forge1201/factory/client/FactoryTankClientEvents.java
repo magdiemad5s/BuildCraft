@@ -24,7 +24,7 @@ public final class FactoryTankClientEvents {
     public static void registerScreens(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             MenuScreens.register(FactoryTankRegistries.tankMenu(), TankScreen::new);
-            ItemBlockRenderTypes.setRenderLayer(FactoryTankRegistries.tankBlock(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(FactoryTankRegistries.tankBlock(), RenderType.cutout());
         });
     }
 }

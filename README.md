@@ -8,22 +8,25 @@
 > the preserved legacy BuildCraft 8.0.x / Minecraft 1.12.2 source. It is not a
 > complete or stable public BuildCraft release.
 
-## Test builds: 0.1.0-dev
+## Test builds: 0.1.1-dev
 
 Four checked development JARs are committed under
-[`releases/0.1.0-dev`](releases/0.1.0-dev/). Install **one** JAR that matches
+[`releases/0.1.1-dev`](releases/0.1.1-dev/). Install **one** JAR that matches
 both your Minecraft version and loader in a fresh, disposable profile:
 
 | Target | File |
 |---|---|
-| Forge 1.20.1 | `buildcraft-neo-better-forge-1.20.1-0.1.0-dev+1.20.1.jar` |
-| NeoForge 1.20.1 | `buildcraft-neo-better-neoforge-1.20.1-0.1.0-dev+1.20.1.jar` |
-| Forge 1.21.1 | `buildcraft-neo-better-forge-1.21.1-0.1.0-dev+1.21.1.jar` |
-| NeoForge 1.21.1 | `buildcraft-neo-better-neoforge-1.21.1-0.1.0-dev+1.21.1.jar` |
+| Forge 1.20.1 | `buildcraft-neo-better-forge-1.20.1-0.1.1-dev+1.20.1.jar` |
+| NeoForge 1.20.1 | `buildcraft-neo-better-neoforge-1.20.1-0.1.1-dev+1.20.1.jar` |
+| Forge 1.21.1 | `buildcraft-neo-better-forge-1.21.1-0.1.1-dev+1.21.1.jar` |
+| NeoForge 1.21.1 | `buildcraft-neo-better-neoforge-1.21.1-0.1.1-dev+1.21.1.jar` |
+
+This refresh restores the Factory Tank's visible block model, legacy textures,
+item transforms, and GUI artwork across all four lanes.
 
 Verify the selected file with
-[`SHA256SUMS.txt`](releases/0.1.0-dev/SHA256SUMS.txt) and read the
-[`release notes`](releases/0.1.0-dev/RELEASE_NOTES.md) first. The only
+[`SHA256SUMS.txt`](releases/0.1.1-dev/SHA256SUMS.txt) and read the
+[`release notes`](releases/0.1.1-dev/RELEASE_NOTES.md) first. The only
 implemented gameplay slice is the Factory Tank (`buildcraftfactory:tank`);
 pipes, engines, machines, world generation, most GUIs, multiplayer, and
 legacy-world migration remain unfinished.

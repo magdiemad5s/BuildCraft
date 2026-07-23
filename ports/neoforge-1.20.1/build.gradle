@@ -100,8 +100,19 @@ tasks.register('verifyLegacyContract') {
     }
 }
 
+def visualJar = tasks.named('jar', Jar).flatMap { it.archiveFile }
+tasks.register('verifyTankVisualResources', Exec) {
+    description = 'Verifies Factory Tank legacy visual resources in the source tree and packaged JAR.'
+    group = 'verification'
+    dependsOn tasks.named('jar')
+    inputs.file(visualJar)
+    commandLine 'powershell.exe', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File',
+        file('tools/verify-tank-visuals.ps1').absolutePath, '-JarPath', visualJar.get().asFile.absolutePath
+}
+
 tasks.named('check').configure {
     dependsOn tasks.named('verifyLegacyContract')
+    dependsOn tasks.named('verifyTankVisualResources')
 }
 
 tasks.named('jar', Jar).configure {
