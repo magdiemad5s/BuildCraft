@@ -36,7 +36,11 @@ public final class FactoryTankBlockEntity extends BlockEntity implements MenuPro
         }
     };
     private final TankFluidHandler fluidHandler = new TankFluidHandler();
-    private final LazyOptional<IFluidHandler> fluidCapability = LazyOptional.of(() -> fluidHandler);
+    // Forge revives the BlockEntity capability provider after certain state and
+    // chunk lifecycle transitions, but an invalidated LazyOptional itself is
+    // terminal. Keep this replaceable so external fluid networks can discover
+    // the Tank again after reviveCaps().
+    private LazyOptional<IFluidHandler> fluidCapability = createFluidCapability();
     private int lastComparatorLevel;
 
     public FactoryTankBlockEntity(BlockPos pos, BlockState state) {
@@ -66,6 +70,12 @@ public final class FactoryTankBlockEntity extends BlockEntity implements MenuPro
     public void invalidateCaps() {
         super.invalidateCaps();
         fluidCapability.invalidate();
+    }
+
+    @Override
+    public void reviveCaps() {
+        super.reviveCaps();
+        fluidCapability = createFluidCapability();
     }
 
     @Override
@@ -100,6 +110,13 @@ public final class FactoryTankBlockEntity extends BlockEntity implements MenuPro
     @Override
     public ClientboundBlockEntityDataPacket getUpdatePacket() {
         return ClientboundBlockEntityDataPacket.create(this);
+    }
+
+    @Override
+    public CompoundTag getUpdateTag() {
+        CompoundTag tag = super.getUpdateTag();
+        tag.put(FactoryTankContract.FLUID_NBT_KEY, tank.writeToNBT(new CompoundTag()));
+        return tag;
     }
 
     public int getComparatorLevel() {
@@ -182,6 +199,10 @@ public final class FactoryTankBlockEntity extends BlockEntity implements MenuPro
             }
             level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
         }
+    }
+
+    private LazyOptional<IFluidHandler> createFluidCapability() {
+        return LazyOptional.of(() -> fluidHandler);
     }
 
     private List<FactoryTankBlockEntity> connectedTanks() {

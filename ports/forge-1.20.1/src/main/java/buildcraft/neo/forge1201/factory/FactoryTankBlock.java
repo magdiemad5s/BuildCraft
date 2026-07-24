@@ -6,6 +6,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -23,7 +24,10 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
+import net.minecraftforge.fluids.FluidActionResult;
 import net.minecraftforge.fluids.FluidUtil;
+import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.network.NetworkHooks;
 
 /** A vertically connecting 16-bucket BuildCraft Factory Tank. */
@@ -93,7 +97,10 @@ public final class FactoryTankBlock extends BaseEntityBlock {
         // Fluid and inventory mutation is server-authoritative. The client still
         // returns a sided success so vanilla sends the matching use request.
         if (!level.isClientSide
-            && FluidUtil.interactWithFluidHandler(player, hand, level, pos, hit.getDirection())) {
+            && level.getBlockEntity(pos) instanceof FactoryTankBlockEntity tank
+            && tank.getCapability(ForgeCapabilities.FLUID_HANDLER, hit.getDirection())
+                .map(handler -> transferHeldFluidContainer(player, hand, handler))
+                .orElse(false)) {
             return InteractionResult.CONSUME;
         }
         if (!level.isClientSide && player instanceof ServerPlayer serverPlayer
@@ -101,6 +108,29 @@ public final class FactoryTankBlock extends BaseEntityBlock {
             NetworkHooks.openScreen(serverPlayer, tank, buffer -> buffer.writeBlockPos(pos));
         }
         return InteractionResult.sidedSuccess(level.isClientSide);
+    }
+
+    private static boolean transferHeldFluidContainer(Player player, InteractionHand hand, IFluidHandler tank) {
+        ItemStack held = player.getItemInHand(hand);
+        if (held.isEmpty()) {
+            return false;
+        }
+        return player.getCapability(ForgeCapabilities.ITEM_HANDLER).map(inventory -> {
+            // Match legacy Tank behavior: container -> Tank before Tank -> container.
+            FluidActionResult operation = FluidUtil.tryEmptyContainerAndStow(
+                held, tank, inventory, Integer.MAX_VALUE, player, true
+            );
+            if (!operation.isSuccess()) {
+                operation = FluidUtil.tryFillContainerAndStow(
+                    held, tank, inventory, Integer.MAX_VALUE, player, true
+                );
+            }
+            if (!operation.isSuccess()) {
+                return false;
+            }
+            player.setItemInHand(hand, operation.getResult());
+            return true;
+        }).orElse(false);
     }
 
     @Override

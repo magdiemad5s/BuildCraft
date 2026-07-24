@@ -7,20 +7,21 @@ registry identity for the Tank.
 
 Verified artifact:
 
-`build/libs/buildcraft-neo-better-forge-1.20.1-0.1.2-dev+1.20.1.jar`
+`build/libs/buildcraft-neo-better-forge-1.20.1-0.1.3-dev+1.20.1.jar`
 
-- 55,137 bytes
-- SHA-256 `A5A8256A623DACE6BED66D308B1569DDB83AAAD93278418FAE93FA91AB9F4C07`
+- 59,307 bytes
+- SHA-256 `44B63023B70BB10FF5132E762E65BDCB459EF2A40DC40D27D221481C1111E5E3`
 - `build --offline --no-daemon`: PASS; 31 JUnit tests and packaged-resource
-  validation passed. Tank block sprites use the 1.20.1 block-atlas path
-  `textures/block/tank/`.
+  validation passed.
+- Includes Tank fluid-capability revival, update-tag synchronization, legacy
+  item-to-Tank transfer priority, and the initial in-world fluid renderer.
 
 Use a lane-local Gradle cache:
 
 ```powershell
 $env:GRADLE_USER_HOME = Join-Path (Get-Location) '.gradle-user-home'
 .\gradlew.bat build --offline --no-daemon
-.\tools\verify-packaged-resources.ps1 -JarPath .\build\libs\buildcraft-neo-better-forge-1.20.1-0.1.2-dev+1.20.1.jar
+.\tools\verify-packaged-resources.ps1 -JarPath .\build\libs\buildcraft-neo-better-forge-1.20.1-0.1.3-dev+1.20.1.jar
 ```
 
 This is not a complete BuildCraft release. Do not run a client/server/GameTest

@@ -11,8 +11,14 @@ only copy of an existing world.
   duplicate-mod error.
 - [ ] Obtain `buildcraftfactory:tank`; place one Tank and confirm its model,
   item model and English name resolve without a missing-texture/model log.
-- [ ] Right-click an empty Tank with a water bucket. The bucket transfer must
-  happen before any menu opens.
+- [ ] In Survival, right-click an empty Tank with a vanilla water bucket. The
+  bucket transfer must happen before any menu opens; then hover the GUI gauge
+  and confirm `Water 1000 / 16000 mB`.
+- [ ] In Creative, use the Tank GUI gauge or comparator as the transfer result:
+  Forge deliberately keeps the held water bucket even when the Tank accepted
+  the fluid.
+- [ ] Confirm the placed Tank renders a visible, tinted water level after fill,
+  then visibly updates again after draining into an empty bucket.
 - [ ] Right-click without a fluid container. Confirm the 176×181 Tank menu,
   title, player inventory, gauge, tooltip, shift-click transfer and gauge-click
   transfer all work.
@@ -20,6 +26,10 @@ only copy of an existing world.
   comparator output rises from 0 to 15 as expected.
 - [ ] Stack two or more Tanks vertically. Liquid must settle/fill from bottom;
   gas must settle/fill from top; mixed fluids must be rejected.
+- [ ] Optional IC2 Classic endpoint smoke test: a water-containing source must
+  touch the facing side of a powered Electric Pipe Pump, which then routes
+  through normal IC2 fluid pipe into the Tank. Wait at least one second and
+  check the Tank GUI; a visible pipe connection alone is not a transfer.
 - [ ] Break a Tank. Confirm it drops the Tank item and does not duplicate fluid
   or items.
 - [ ] Leave and re-enter the world; reopen the Tank and confirm contents remain.
@@ -35,7 +45,8 @@ Do not attempt to judge these as working in the current development JAR:
 - Engines, MJ transport, RF/FE pipes, pipe plugs, wire networks and conversion.
 - Builders, Quarry, Filler, blueprints, world generation, oil/fuels, robots,
   silicon machines and advanced menus.
-- Compat integrations (JEI, IC2, or other third-party mod links).
+- Full third-party compatibility beyond the Tank's standard Forge fluid
+  capability endpoint (JEI, IC2 content, or other mod links).
 - Any old-world migration claim.
 
 ## Before testing migration
