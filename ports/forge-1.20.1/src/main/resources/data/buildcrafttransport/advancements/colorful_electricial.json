@@ -1,0 +1,491 @@
+{
+  "display": {
+    "icon": {
+      "item": "buildcrafttransport:wire",
+      "nbt": "{Damage:1}"
+    },
+    "title": {
+      "translate": "advancements.buildcrafttransport.colorful_electrician.title"
+    },
+    "description": {
+      "translate": "advancements.buildcrafttransport.colorful_electrician.description"
+    },
+    "frame": "challenge"
+  },
+  "parent": "buildcrafttransport:logic_transportation",
+  "criteria": {
+    "has_all_wire_colors": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:15}"
+          },
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:14}"
+          },
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:13}"
+          },
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:12}"
+          },
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:11}"
+          },
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:10}"
+          },
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:9}"
+          },
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:8}"
+          },
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:7}"
+          },
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:6}"
+          },
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:5}"
+          },
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:4}"
+          },
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:3}"
+          },
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:2}"
+          },
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:1}"
+          },
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:0}"
+          }
+        ]
+      }
+    },
+    "wire_white": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:15}"
+          }
+        ]
+      }
+    },
+    "wire_orange": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:14}"
+          }
+        ]
+      }
+    },
+    "wire_magenta": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:13}"
+          }
+        ]
+      }
+    },
+    "wire_light_blue": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:12}"
+          }
+        ]
+      }
+    },
+    "wire_yellow": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:11}"
+          }
+        ]
+      }
+    },
+    "wire_lime": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:10}"
+          }
+        ]
+      }
+    },
+    "wire_pink": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:9}"
+          }
+        ]
+      }
+    },
+    "wire_gray": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:8}"
+          }
+        ]
+      }
+    },
+    "wire_light_gray": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:7}"
+          }
+        ]
+      }
+    },
+    "wire_cyan": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:6}"
+          }
+        ]
+      }
+    },
+    "wire_purple": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:5}"
+          }
+        ]
+      }
+    },
+    "wire_blue": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:4}"
+          }
+        ]
+      }
+    },
+    "wire_brown": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:3}"
+          }
+        ]
+      }
+    },
+    "wire_green": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:2}"
+          }
+        ]
+      }
+    },
+    "wire_red": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:1}"
+          }
+        ]
+      }
+    },
+    "wire_black": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "buildcrafttransport:wire"
+            ],
+            "count": {
+              "min": 1
+            },
+            "nbt": "{Damage:0}"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_all_wire_colors",
+      "wire_white"
+    ],
+    [
+      "has_all_wire_colors",
+      "wire_orange"
+    ],
+    [
+      "has_all_wire_colors",
+      "wire_magenta"
+    ],
+    [
+      "has_all_wire_colors",
+      "wire_light_blue"
+    ],
+    [
+      "has_all_wire_colors",
+      "wire_yellow"
+    ],
+    [
+      "has_all_wire_colors",
+      "wire_lime"
+    ],
+    [
+      "has_all_wire_colors",
+      "wire_pink"
+    ],
+    [
+      "has_all_wire_colors",
+      "wire_gray"
+    ],
+    [
+      "has_all_wire_colors",
+      "wire_light_gray"
+    ],
+    [
+      "has_all_wire_colors",
+      "wire_cyan"
+    ],
+    [
+      "has_all_wire_colors",
+      "wire_purple"
+    ],
+    [
+      "has_all_wire_colors",
+      "wire_blue"
+    ],
+    [
+      "has_all_wire_colors",
+      "wire_brown"
+    ],
+    [
+      "has_all_wire_colors",
+      "wire_green"
+    ],
+    [
+      "has_all_wire_colors",
+      "wire_red"
+    ],
+    [
+      "has_all_wire_colors",
+      "wire_black"
+    ]
+  ]
+}

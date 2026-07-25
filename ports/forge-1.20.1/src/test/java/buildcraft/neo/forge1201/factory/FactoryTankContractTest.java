@@ -29,6 +29,7 @@ class FactoryTankContractTest {
         assertEquals(1, VerticalTankPolicy.comparatorLevel(1, 16_000));
         assertEquals(15, VerticalTankPolicy.comparatorLevel(16_000, 16_000));
         assertEquals(15, VerticalTankPolicy.comparatorLevel(50_000, 16_000));
+        assertEquals(15, VerticalTankPolicy.comparatorLevel(Integer.MAX_VALUE, Integer.MAX_VALUE));
         assertEquals(0, VerticalTankPolicy.comparatorLevel(1, 0));
     }
 

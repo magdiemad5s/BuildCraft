@@ -1,5 +1,40 @@
-.gradle/
-build/
-run/
-run-data/
-src/generated/
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# gradle
+build
+.gradle
+
+# other
+eclipse
+run
+
+# Files from Forge MDK
+forge*changelog.txt
+
+src.zip
+src.rar
+saves
+mcmodsrepo
+src/main/resources/.cache/
+src/generated/resources/
+sub_projects/
+
+# Local restoration scratch files (never release or commit)
+.codex-tmp/
+.patch_sandbox_probe
+*.orig
+transport-audit-fixes*.patch
+*.jsonx

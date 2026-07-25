@@ -106,6 +106,17 @@ try {
             $currentValues = @{}
             continue
         }
+        if ($line -match '^\[\[' -and $null -ne $currentSource) {
+            $dependencyBlocks.Add([pscustomobject]@{
+                Source = $currentSource
+                ModId = $currentValues['modId']
+                Mandatory = $currentValues['mandatory']
+                Ordering = $currentValues['ordering']
+            })
+            $currentSource = $null
+            $currentValues = $null
+            continue
+        }
         if ($null -ne $currentSource -and $line -match '^\s*(modId|mandatory|ordering)\s*=\s*(.+?)\s*$') {
             $currentValues[$matches[1]] = $matches[2].Trim().Trim('"')
         }

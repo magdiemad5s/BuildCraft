@@ -1,4 +1,4 @@
-# BuildCraft Neo Better - Forge 1.21.1
+# BuildCraft Neo - Forge 1.21.1
 
 This independent Java 21 / Forge 52.1.16 lane now includes the verified
 `buildcraftfactory:tank` vertical slice. It retains the eight legacy module IDs

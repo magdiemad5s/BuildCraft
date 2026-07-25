@@ -1,0 +1,8 @@
+{
+  "parent": "buildcraftlib:item/engine_base",
+  "textures": {
+    "particle": "buildcraftenergy:blocks/engine/rf/back",
+    "back": "buildcraftenergy:blocks/engine/rf/back",
+    "side": "buildcraftenergy:blocks/engine/rf/side"
+  }
+}

@@ -1,0 +1,54 @@
+﻿{
+    "schemaVersion":  1,
+    "result":  "PASS",
+    "input":  "C:\\Users\\magdi\\Documents\\Coding projects\\aitesting\\Minecraft\\Buildcraft\\BuildCraft-GitHub\\ports\\forge-1.20.1\\src\\main\\resources",
+    "inputKind":  "directory",
+    "manifest":  "C:\\Users\\magdi\\Documents\\Coding projects\\aitesting\\Minecraft\\Buildcraft\\BuildCraft-GitHub\\ports\\forge-1.20.1\\TEXTURE_PARITY_MANIFEST.json",
+    "pngDecoderValidation":  true,
+    "counts":  {
+                   "entries":  2494,
+                   "png":  1154,
+                   "validPng":  1154,
+                   "guiPng":  60,
+                   "animationMetadata":  86,
+                   "models":  465,
+                   "blockstates":  72,
+                   "atlasSources":  936,
+                   "resolvedTextureReferences":  1367,
+                   "externalTextureReferences":  18,
+                   "resolvedModelReferences":  376,
+                   "externalModelReferences":  277,
+                   "errors":  0,
+                   "warnings":  0
+               },
+    "pngByNamespace":  {
+                           "buildcraft":  1,
+                           "buildcraftbuilders":  180,
+                           "buildcraftcompat":  29,
+                           "buildcraftcore":  171,
+                           "buildcraftenergy":  102,
+                           "buildcraftfactory":  75,
+                           "buildcraftlib":  34,
+                           "buildcraftneo":  12,
+                           "buildcraftrobotics":  105,
+                           "buildcraftsilicon":  94,
+                           "buildcrafttransport":  350
+                       },
+    "guiPngByNamespace":  {
+                              "buildcraftbuilders":  10,
+                              "buildcraftcompat":  1,
+                              "buildcraftcore":  7,
+                              "buildcraftenergy":  5,
+                              "buildcraftfactory":  7,
+                              "buildcraftlib":  11,
+                              "buildcraftrobotics":  3,
+                              "buildcraftsilicon":  8,
+                              "buildcrafttransport":  8
+                          },
+    "errors":  [
+
+               ],
+    "warnings":  [
+
+                 ]
+}

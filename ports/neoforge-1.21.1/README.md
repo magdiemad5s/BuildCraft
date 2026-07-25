@@ -1,4 +1,4 @@
-# BuildCraft Neo Better - NeoForge 1.21.1
+# BuildCraft Neo - NeoForge 1.21.1
 
 This is an independent, additive development lane for Minecraft `1.21.1` and
 NeoForge `21.1.242`, using Java `21`, ModDevGradle `2.0.142`, and the

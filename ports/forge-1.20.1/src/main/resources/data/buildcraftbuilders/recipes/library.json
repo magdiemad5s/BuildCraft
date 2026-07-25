@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "igi",
+    "bBb",
+    "iri"
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "g": {
+      "item": "buildcraftcore:gear_iron"
+    },
+    "b": {
+      "item": "minecraft:bookshelf"
+    },
+    "B": {
+      "item": "buildcraftbuilders:snapshot",
+      "nbt": "{Damage:2}",
+      "type": "forge:partial_nbt"
+    },
+    "r": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "buildcraftbuilders:library"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "buildcraftcore:engine",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "buildcraftcore:engine",
+              "properties": {
+                "type": "wood"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{Damage:0}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "buildcraftcore:engine",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "buildcraftcore:engine",
+              "properties": {
+                "type": "stone"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{Damage:1}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "buildcraftcore:engine",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "buildcraftcore:engine",
+              "properties": {
+                "type": "iron"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{Damage:2}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "buildcraftcore:engine",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "buildcraftcore:engine",
+              "properties": {
+                "type": "creative"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{Damage:3}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "buildcraftcore:engine",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "buildcraftcore:engine",
+              "properties": {
+                "type": "rf"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{Damage:4}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

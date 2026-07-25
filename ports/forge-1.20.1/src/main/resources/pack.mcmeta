@@ -1,6 +1,8 @@
 {
   "pack": {
+    "description": "BuildCraft Neo resources and data",
     "pack_format": 15,
-    "description": "BuildCraft Neo development resources"
+    "forge:resource_pack_format": 15,
+    "forge:data_pack_format": 15
   }
 }

@@ -1,0 +1,6 @@
+{
+    "parent": "buildcraftcore:block/centered_torch",
+    "textures": {
+        "torch": "buildcraftcore:blocks/marker_volume"
+    }
+}

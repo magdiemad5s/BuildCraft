@@ -7,6 +7,7 @@ import java.util.List;
  * not branding; changing one is a data and dependency migration.
  */
 public final class LegacyModuleIds {
+    public static final String RESOURCE_NAMESPACE = "buildcraft";
     public static final String LIB = "buildcraftlib";
     public static final String CORE = "buildcraftcore";
     public static final String BUILDERS = "buildcraftbuilders";

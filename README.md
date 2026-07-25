@@ -1,51 +1,80 @@
-# BuildCraft Neo Better
+# BuildCraft Neo
 
 <p align="center">
   <img src="assets/branding/buildcraft-neo-logo-v1.png" alt="BuildCraft Neo" width="1200">
 </p>
 
-> This repository now carries an **additive, early development port** alongside
-> the preserved legacy BuildCraft 8.0.x / Minecraft 1.12.2 source. It is not a
-> complete or stable public BuildCraft release.
+> BuildCraft Neo is an authorized restoration of BuildCraft for modern
+> Minecraft. The active target is Forge 1.20.1. This repository preserves the
+> original 1.12.2 source and released JAR as compatibility references; the
+> latest restored source is still undergoing release validation.
 
-## Current Forge 1.20.1 test build: 0.1.3-dev
+## Active target
 
-The currently validated test artifact is committed under
-[`releases/0.1.3-dev`](releases/0.1.3-dev/):
-
-| Target | File |
+| Component | Version |
 |---|---|
-| Forge 1.20.1 | `buildcraft-neo-better-forge-1.20.1-0.1.3-dev+1.20.1.jar` |
+| Minecraft | `1.20.1` |
+| Loader | Forge `47.4.22` |
+| Java | 17 |
+| Mappings | Official Mojang `1.20.1` |
+| Source lane | [`ports/forge-1.20.1`](ports/forge-1.20.1/) |
+| Source version | `8.0.10+1.20.1+neo1-dev` |
 
-It fixes the Factory Tank's modern block-atlas path, fluid-capability revival,
-server-to-client Tank synchronization, direct container-transfer priority, and
-initial in-world fluid rendering.
+Forge 1.20.1 is the only active completion target. NeoForge 1.20.1 and both
+Forge/NeoForge 1.21.1 lanes follow after the 1.20.1 behavior is stable; Fabric
+and later Minecraft versions are separate follow-up work.
 
-The older `0.1.1-dev` and `0.1.2-dev` Forge artifacts are **superseded for
-Tank testing**. Equivalent source fixes are staged for NeoForge 1.20.1 and both
-1.21.1 lanes, but those lanes require fresh builds and validation before
-release.
+## Current state
 
-Verify the Forge file with
-[`SHA256SUMS.txt`](releases/0.1.3-dev/SHA256SUMS.txt) and read the
-[`release notes`](releases/0.1.3-dev/RELEASE_NOTES.md) first. The only
-implemented gameplay slice is the Factory Tank (`buildcraftfactory:tank`);
-pipes, engines, machines, world generation, most GUIs, multiplayer, and
-old-world migration remain unfinished.
+The modern lane now contains the full eight-module source surface: Core, Lib,
+Transport, Energy, Factory, Builders, Silicon, and Robotics. Registries,
+creative providers, pipes, engines, machines, builders, worldgen, networking,
+rendering, menus/screens, guides, migrations, and optional-integration hooks are
+present in source.
 
-## Port sources and status
+That is a source-restoration statement, not a bug-free or release-ready claim.
+The last recorded full unit checkpoint passed **314/314 JUnit tests across 98
+suites**. The working tree changed afterward. It now declares **69 GameTests**,
+but the latest source still needs a clean test/build/data/GameTest pass,
+packaged-JAR validation, dedicated-server and client startup, F3+T resource
+reload, multiplayer checks, and the complete manual gameplay checklist.
 
-- [Current port handoff](PORT_STATUS_LATEST.md)
+The historical `0.1.x-dev` files under `releases/` were Tank-focused test
+bundles. They are preserved for traceability but are superseded as a
+representation of the current full source. No full-restoration release
+candidate is approved until a new JAR name, size, SHA-256, commit, and test
+record are published.
+
+## Preserved identities and assets
+
+- The eight legacy module/registry namespaces remain unchanged.
+- The static identity gate accounts for the 182-entry legacy registry contract,
+  creative providers, migration aliases, and five legacy `SavedData` names.
+- All 116 currently registered modern items are wired into creative providers;
+  in-game creative-tab confirmation is still required.
+- The resource tree contains 1,154 PNGs, 60 GUI sheets, 86 animations, 465
+  models, 72 blockstates, and 936 atlas sources.
+- All 1,014 PNGs and 24 animation metadata files from the released 8.0.0 JAR
+  are present byte-for-byte at normalized modern paths.
+- The GUI static audit reports 28 menu declarations and 28 matching screen
+  registrations.
+- All 40 released locales and 12,205 released translation keys are retained.
+- The original source/JAR contains no authoritative custom sound assets.
+
+## Status and testing
+
+- [Current Forge 1.20.1 handoff](PORT_STATUS_LATEST.md)
+- [Forge lane instructions](ports/forge-1.20.1/README.md)
 - [Legacy compatibility contract](legacy-1.12.2-contract/LEGACY_IDENTITY_MANIFEST.json)
+- [Asset parity report](ports/forge-1.20.1/TEXTURE_PARITY_REPORT.md)
 - [GUI parity manifest](GUI_PARITY_MANIFEST.md)
 - [Issue port ledger](ISSUE_PORT_LEDGER_2026-07-23.md)
 - [Manual testing checklist](MANUAL_TEST_CHECKLIST.md)
-- [Port lanes](ports/)
+- [Community Edition reference audit](COMMUNITY_EDITION_REFERENCE_AUDIT_2026-07-23.md)
 
-Each port lane has its own Gradle wrapper and uses a lane-local
-`.gradle-user-home` cache. Do not run Minecraft client/server/GameTest tasks
-against a normal instance or an irreplaceable world.
-
+Use only a disposable test instance and a copied world. Never test migration on
+the only world copy, overwrite an actively loaded mod JAR, or interrupt a
+Minecraft client the user is testing.
 ## Legacy BuildCraft 8.0.x documentation
 
 The original project README follows unchanged.

@@ -1,0 +1,63 @@
+{
+  "display": {
+    "icon": {
+      "item": "buildcraftcore:engine",
+      "nbt": "{Damage:1}"
+    },
+    "title": {
+      "translate": "advancements.buildcraftcore.engine.title"
+    },
+    "description": {
+      "translate": "advancements.buildcraftcore.engine.description"
+    }
+  },
+  "parent": "buildcraftcore:root",
+  "criteria": {
+    "redstone_engine": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "buildcraftcore:engine"
+            ],
+            "nbt": "{Damage:0}"
+          }
+        ]
+      }
+    },
+    "stirling_engine": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "buildcraftcore:engine"
+            ],
+            "nbt": "{Damage:1}"
+          }
+        ]
+      }
+    },
+    "combustion_engine": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "buildcraftcore:engine"
+            ],
+            "nbt": "{Damage:2}"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "redstone_engine",
+      "stirling_engine",
+      "combustion_engine"
+    ]
+  ]
+}

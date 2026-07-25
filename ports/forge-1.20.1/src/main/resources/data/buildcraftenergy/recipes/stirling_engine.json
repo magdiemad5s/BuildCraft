@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "www",
+    " g ",
+    "GpG"
+  ],
+  "key": {
+    "w": {
+      "tag": "minecraft:stone_crafting_materials"
+    },
+    "g": {
+      "tag": "forge:glass/colorless"
+    },
+    "G": {
+      "item": "buildcraftcore:gear_stone"
+    },
+    "p": {
+      "item": "minecraft:piston"
+    }
+  },
+  "result": {
+    "item": "buildcraftcore:engine",
+    "nbt": "{Damage:1}"
+  }
+}

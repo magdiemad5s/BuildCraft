@@ -1,0 +1,82 @@
+package buildcraft.robotics.ai;
+
+import buildcraft.api.core.IStackFilter;
+import buildcraft.api.robots.AIRobot;
+import buildcraft.api.robots.DockingStation;
+import buildcraft.api.robots.EntityRobotBase;
+import buildcraft.robotics.IStationFilter;
+import buildcraft.lib.inventory.filter.AggregateFilter;
+import buildcraft.robotics.statements.ActionRobotFilterTool;
+import net.minecraft.world.item.ItemStack;
+
+/** Fetches a matching stack from a station-side inventory and equips it as the robot held item. */
+public class AIRobotFetchAndEquipItemStack extends AIRobot {
+    private static final int FETCH_AND_EQUIP_DELAY_TICKS = 10;
+    private IStackFilter filter;
+    private int maxStackSize = 1;
+    private int delay;
+
+    public AIRobotFetchAndEquipItemStack(EntityRobotBase robot) {
+        super(robot);
+    }
+
+    public AIRobotFetchAndEquipItemStack(EntityRobotBase robot, IStackFilter filter) {
+        this(robot, filter, 1);
+    }
+
+    public AIRobotFetchAndEquipItemStack(EntityRobotBase robot, IStackFilter filter, int maxStackSize) {
+        this(robot);
+        this.filter = filter == null ? null : new AggregateFilter(ActionRobotFilterTool.getGateFilter(robot.getLinkedStation()), filter);
+        this.maxStackSize = Math.max(1, maxStackSize);
+    }
+
+    @Override
+    public void start() {
+        if (filter == null) {
+            setSuccess(false);
+            terminate();
+            return;
+        }
+        if (robot.getDockingStation() == null || !canTakeSingle(robot.getDockingStation(), filter)) {
+            startDelegateAI(new AIRobotSearchAndGotoStation(robot, new StationToolFilter(), robot.getZoneToLoadUnload()));
+        }
+    }
+
+    @Override
+    public void update() {
+        if (filter == null || robot.getDockingStation() == null) {
+            setSuccess(false);
+            terminate();
+            return;
+        }
+        if (delay++ > FETCH_AND_EQUIP_DELAY_TICKS) {
+            ItemStack stack = AIRobotLoad.takeMatching(robot.getDockingStation(), filter, maxStackSize, true);
+            if (!stack.isEmpty()) {
+                robot.setItemInUse(stack);
+                terminate();
+            } else {
+                delay = 0;
+                startDelegateAI(new AIRobotSearchAndGotoStation(robot, new StationToolFilter(), robot.getZoneToLoadUnload()));
+            }
+        }
+    }
+
+    @Override
+    public void delegateAIEnded(AIRobot ai) {
+        if (ai instanceof AIRobotSearchAndGotoStation && !ai.success()) {
+            setSuccess(false);
+            terminate();
+        }
+    }
+
+    private boolean canTakeSingle(DockingStation station, IStackFilter filter) {
+        return !AIRobotLoad.takeMatching(station, filter, maxStackSize, false).isEmpty();
+    }
+
+    private class StationToolFilter implements IStationFilter {
+        @Override
+        public boolean matches(DockingStation station) {
+            return canTakeSingle(station, filter);
+        }
+    }
+}

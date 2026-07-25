@@ -1,0 +1,488 @@
+{
+  "schema": "buildcraft-neo/gui-parity-report/v1",
+  "generatedAtUtc": "2026-07-24T18:59:29.620Z",
+  "result": "PASS",
+  "counts": {
+    "javaFiles": 1503,
+    "menuDeclarations": 28,
+    "clientScreenRegistrations": 28,
+    "literalBuildCraftGuiResources": 42,
+    "guiJson": 6,
+    "guiPng": 60,
+    "requiredGuiPng": 59,
+    "errors": 0
+  },
+  "menus": [
+    {
+      "menu": "BCBuildersGuis.MENU_ARCHITECT_TABLE",
+      "declaration": "src/main/java/buildcraft/builders/BCBuildersGuis.java",
+      "screen": "GuiArchitectTable",
+      "screenRegistration": "src/main/java/buildcraft/builders/BCBuildersClientGuis.java"
+    },
+    {
+      "menu": "BCBuildersGuis.MENU_BUILDER",
+      "declaration": "src/main/java/buildcraft/builders/BCBuildersGuis.java",
+      "screen": "GuiBuilder",
+      "screenRegistration": "src/main/java/buildcraft/builders/BCBuildersClientGuis.java"
+    },
+    {
+      "menu": "BCBuildersGuis.MENU_ELIBRARY",
+      "declaration": "src/main/java/buildcraft/builders/BCBuildersGuis.java",
+      "screen": "GuiElectronicLibrary",
+      "screenRegistration": "src/main/java/buildcraft/builders/BCBuildersClientGuis.java"
+    },
+    {
+      "menu": "BCBuildersGuis.MENU_FILLER",
+      "declaration": "src/main/java/buildcraft/builders/BCBuildersGuis.java",
+      "screen": "GuiFiller",
+      "screenRegistration": "src/main/java/buildcraft/builders/BCBuildersClientGuis.java"
+    },
+    {
+      "menu": "BCBuildersGuis.MENU_FILLER_PLANNER",
+      "declaration": "src/main/java/buildcraft/builders/BCBuildersGuis.java",
+      "screen": "GuiFillerPlanner",
+      "screenRegistration": "src/main/java/buildcraft/builders/BCBuildersClientGuis.java"
+    },
+    {
+      "menu": "BCBuildersGuis.MENU_REPLACER",
+      "declaration": "src/main/java/buildcraft/builders/BCBuildersGuis.java",
+      "screen": "ScreenReplacer",
+      "screenRegistration": "src/main/java/buildcraft/builders/BCBuildersClientGuis.java"
+    },
+    {
+      "menu": "BCCore.LIST_MENU",
+      "declaration": "src/main/java/buildcraft/core/BCCore.java",
+      "screen": "GuiList",
+      "screenRegistration": "src/main/java/buildcraft/core/BCCore.java"
+    },
+    {
+      "menu": "BCEnergyGuis.DYNAMO_MJ",
+      "declaration": "src/main/java/buildcraft/energy/BCEnergyGuis.java",
+      "screen": "GuiDynamoMJ",
+      "screenRegistration": "src/main/java/buildcraft/energy/BCEnergyClientProxy.java"
+    },
+    {
+      "menu": "BCEnergyGuis.MENU_IRON",
+      "declaration": "src/main/java/buildcraft/energy/BCEnergyGuis.java",
+      "screen": "GuiEngineIron_BC8",
+      "screenRegistration": "src/main/java/buildcraft/energy/BCEnergyClientProxy.java"
+    },
+    {
+      "menu": "BCEnergyGuis.MENU_RF",
+      "declaration": "src/main/java/buildcraft/energy/BCEnergyGuis.java",
+      "screen": "GuiEngineRF",
+      "screenRegistration": "src/main/java/buildcraft/energy/BCEnergyClientProxy.java"
+    },
+    {
+      "menu": "BCEnergyGuis.MENU_STONE",
+      "declaration": "src/main/java/buildcraft/energy/BCEnergyGuis.java",
+      "screen": "GuiEngineStone_BC8",
+      "screenRegistration": "src/main/java/buildcraft/energy/BCEnergyClientProxy.java"
+    },
+    {
+      "menu": "BCFactoryGuis.MENU_AUTOWORK_BENCH_ITEM",
+      "declaration": "src/main/java/buildcraft/factory/BCFactoryGuis.java",
+      "screen": "GuiAutoCraftItems",
+      "screenRegistration": "src/main/java/buildcraft/factory/BCFactoryClientGuis.java"
+    },
+    {
+      "menu": "BCFactoryGuis.MENU_CHUTE",
+      "declaration": "src/main/java/buildcraft/factory/BCFactoryGuis.java",
+      "screen": "GuiChute",
+      "screenRegistration": "src/main/java/buildcraft/factory/BCFactoryClientGuis.java"
+    },
+    {
+      "menu": "BCFactoryGuis.MENU_DISTILLER",
+      "declaration": "src/main/java/buildcraft/factory/BCFactoryGuis.java",
+      "screen": "GuiDistiller",
+      "screenRegistration": "src/main/java/buildcraft/factory/BCFactoryClientGuis.java"
+    },
+    {
+      "menu": "BCFactoryGuis.MENU_HEAT_EXCHANGE",
+      "declaration": "src/main/java/buildcraft/factory/BCFactoryGuis.java",
+      "screen": "ScreenHeatExchange",
+      "screenRegistration": "src/main/java/buildcraft/factory/BCFactoryClientGuis.java"
+    },
+    {
+      "menu": "BCFactoryGuis.MENU_TANK",
+      "declaration": "src/main/java/buildcraft/factory/BCFactoryGuis.java",
+      "screen": "GuiTank",
+      "screenRegistration": "src/main/java/buildcraft/factory/BCFactoryClientGuis.java"
+    },
+    {
+      "menu": "BCRoboticsGuis.MENU_REQUESTER",
+      "declaration": "src/main/java/buildcraft/robotics/BCRoboticsGuis.java",
+      "screen": "GuiRequester",
+      "screenRegistration": "src/main/java/buildcraft/robotics/BCRoboticsClientGuis.java"
+    },
+    {
+      "menu": "BCRoboticsGuis.MENU_ZONE_PLANNER",
+      "declaration": "src/main/java/buildcraft/robotics/BCRoboticsGuis.java",
+      "screen": "GuiZonePlanner",
+      "screenRegistration": "src/main/java/buildcraft/robotics/BCRoboticsClientGuis.java"
+    },
+    {
+      "menu": "BCSiliconGuis.MENU_AD_CRAFTING_TABLE",
+      "declaration": "src/main/java/buildcraft/silicon/BCSiliconGuis.java",
+      "screen": "GuiAdvancedCraftingTable",
+      "screenRegistration": "src/main/java/buildcraft/silicon/BCSiliconClientGuis.java"
+    },
+    {
+      "menu": "BCSiliconGuis.MENU_ASSEMBLY_TABLE",
+      "declaration": "src/main/java/buildcraft/silicon/BCSiliconGuis.java",
+      "screen": "GuiAssemblyTable",
+      "screenRegistration": "src/main/java/buildcraft/silicon/BCSiliconClientGuis.java"
+    },
+    {
+      "menu": "BCSiliconGuis.MENU_CHARGING_TABLE",
+      "declaration": "src/main/java/buildcraft/silicon/BCSiliconGuis.java",
+      "screen": "GuiChargingTable",
+      "screenRegistration": "src/main/java/buildcraft/silicon/BCSiliconClientGuis.java"
+    },
+    {
+      "menu": "BCSiliconGuis.MENU_GATE",
+      "declaration": "src/main/java/buildcraft/silicon/BCSiliconGuis.java",
+      "screen": "GuiGate",
+      "screenRegistration": "src/main/java/buildcraft/silicon/BCSiliconClientGuis.java"
+    },
+    {
+      "menu": "BCSiliconGuis.MENU_INTEGRATION_TABLE",
+      "declaration": "src/main/java/buildcraft/silicon/BCSiliconGuis.java",
+      "screen": "GuiIntegrationTable",
+      "screenRegistration": "src/main/java/buildcraft/silicon/BCSiliconClientGuis.java"
+    },
+    {
+      "menu": "BCSiliconGuis.MENU_PROGRAMMING_TABLE",
+      "declaration": "src/main/java/buildcraft/silicon/BCSiliconGuis.java",
+      "screen": "GuiProgrammingTable",
+      "screenRegistration": "src/main/java/buildcraft/silicon/BCSiliconClientGuis.java"
+    },
+    {
+      "menu": "BCTransportGuis.MENU_FILTERED_BUFFER",
+      "declaration": "src/main/java/buildcraft/transport/BCTransportGuis.java",
+      "screen": "GuiFilteredBuffer",
+      "screenRegistration": "src/main/java/buildcraft/transport/BCTransportClientGuis.java"
+    },
+    {
+      "menu": "BCTransportGuis.MENU_PIPE_DIAMOND",
+      "declaration": "src/main/java/buildcraft/transport/BCTransportGuis.java",
+      "screen": "GuiDiamondPipe",
+      "screenRegistration": "src/main/java/buildcraft/transport/BCTransportClientGuis.java"
+    },
+    {
+      "menu": "BCTransportGuis.MENU_PIPE_DIAMOND_WOOD",
+      "declaration": "src/main/java/buildcraft/transport/BCTransportGuis.java",
+      "screen": "GuiDiamondWoodPipe",
+      "screenRegistration": "src/main/java/buildcraft/transport/BCTransportClientGuis.java"
+    },
+    {
+      "menu": "BCTransportGuis.MENU_PIPE_EMZULI",
+      "declaration": "src/main/java/buildcraft/transport/BCTransportGuis.java",
+      "screen": "GuiEmzuliPipe_BC8",
+      "screenRegistration": "src/main/java/buildcraft/transport/BCTransportClientGuis.java"
+    }
+  ],
+  "guiResources": [
+    {
+      "id": "buildcraftbuilders:gui/filler_planner.json",
+      "source": "src/main/java/buildcraft/builders/gui/GuiFillerPlanner.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftbuilders/gui/filler_planner.json"
+      ]
+    },
+    {
+      "id": "buildcraftbuilders:gui/filler.json",
+      "source": "src/main/java/buildcraft/builders/gui/GuiFiller.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftbuilders/gui/filler.json"
+      ]
+    },
+    {
+      "id": "buildcraftbuilders:textures/gui/architect.png",
+      "source": "src/main/java/buildcraft/builders/gui/GuiArchitectTable.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftbuilders/textures/gui/architect.png"
+      ]
+    },
+    {
+      "id": "buildcraftbuilders:textures/gui/builder_blueprint.png",
+      "source": "src/main/java/buildcraft/builders/gui/GuiBuilder.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftbuilders/textures/gui/builder_blueprint.png"
+      ]
+    },
+    {
+      "id": "buildcraftbuilders:textures/gui/builder.png",
+      "source": "src/main/java/buildcraft/builders/gui/GuiBuilder.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftbuilders/textures/gui/builder.png"
+      ]
+    },
+    {
+      "id": "buildcraftbuilders:textures/gui/electronic_library.png",
+      "source": "src/main/java/buildcraft/builders/gui/GuiElectronicLibrary.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftbuilders/textures/gui/electronic_library.png"
+      ]
+    },
+    {
+      "id": "buildcraftbuilders:textures/gui/replacer.png",
+      "source": "src/main/java/buildcraft/builders/gui/ScreenReplacer.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftbuilders/textures/gui/replacer.png"
+      ]
+    },
+    {
+      "id": "buildcraftcore:textures/gui/buttons.png",
+      "source": "src/main/java/buildcraft/lib/gui/button/StandardButtonTextureSets.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftcore/textures/gui/buttons.png"
+      ]
+    },
+    {
+      "id": "buildcraftcore:textures/gui/list_new.png",
+      "source": "src/main/java/buildcraft/core/list/GuiList.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftcore/textures/gui/list_new.png"
+      ]
+    },
+    {
+      "id": "buildcraftenergy:textures/gui/combustion_engine_gui.png",
+      "source": "src/main/java/buildcraft/energy/client/gui/GuiEngineIron_BC8.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftenergy/textures/gui/combustion_engine_gui.png"
+      ]
+    },
+    {
+      "id": "buildcraftenergy:textures/gui/mj_dynamo_gui.png",
+      "source": "src/main/java/buildcraft/energy/client/gui/GuiDynamoMJ.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftenergy/textures/gui/mj_dynamo_gui.png"
+      ]
+    },
+    {
+      "id": "buildcraftenergy:textures/gui/rf_engine_gui.png",
+      "source": "src/main/java/buildcraft/energy/client/gui/GuiEngineRF.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftenergy/textures/gui/rf_engine_gui.png"
+      ]
+    },
+    {
+      "id": "buildcraftenergy:textures/gui/steam_engine_gui.png",
+      "source": "src/main/java/buildcraft/energy/client/gui/GuiEngineStone_BC8.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftenergy/textures/gui/steam_engine_gui.png"
+      ]
+    },
+    {
+      "id": "buildcraftfactory:textures/gui/autobench_item.png",
+      "source": "src/main/java/buildcraft/factory/gui/GuiAutoCraftItems.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftfactory/textures/gui/autobench_item.png"
+      ]
+    },
+    {
+      "id": "buildcraftfactory:textures/gui/chute.png",
+      "source": "src/main/java/buildcraft/factory/gui/GuiChute.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftfactory/textures/gui/chute.png"
+      ]
+    },
+    {
+      "id": "buildcraftfactory:textures/gui/distiller.png",
+      "source": "src/main/java/buildcraft/factory/gui/GuiDistiller.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftfactory/textures/gui/distiller.png"
+      ]
+    },
+    {
+      "id": "buildcraftfactory:textures/gui/heat_exchanger.png",
+      "source": "src/main/java/buildcraft/factory/BCFactorySprites.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftfactory/textures/gui/heat_exchanger.png"
+      ]
+    },
+    {
+      "id": "buildcraftfactory:textures/gui/tank.png",
+      "source": "src/main/java/buildcraft/factory/gui/GuiTank.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftfactory/textures/gui/tank.png"
+      ]
+    },
+    {
+      "id": "buildcraftlib:textures/gui/buttons.png",
+      "source": "src/main/java/buildcraft/lib/gui/button/StandardSpriteButtons.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftlib/textures/gui/buttons.png"
+      ]
+    },
+    {
+      "id": "buildcraftlib:textures/gui/guide/icons.png",
+      "source": "src/main/java/buildcraft/lib/client/guide/GuideScreen.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftlib/textures/gui/guide/icons.png"
+      ]
+    },
+    {
+      "id": "buildcraftlib:textures/gui/guide/left_page_first.png",
+      "source": "src/main/java/buildcraft/lib/client/guide/GuideScreen.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftlib/textures/gui/guide/left_page_first.png"
+      ]
+    },
+    {
+      "id": "buildcraftlib:textures/gui/guide/left_page.png",
+      "source": "src/main/java/buildcraft/lib/client/guide/GuideScreen.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftlib/textures/gui/guide/left_page.png"
+      ]
+    },
+    {
+      "id": "buildcraftlib:textures/gui/guide/note.png",
+      "source": "src/main/java/buildcraft/lib/client/guide/GuideScreen.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftlib/textures/gui/guide/note.png"
+      ]
+    },
+    {
+      "id": "buildcraftlib:textures/gui/guide/right_page_last.png",
+      "source": "src/main/java/buildcraft/lib/client/guide/GuideScreen.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftlib/textures/gui/guide/right_page_last.png"
+      ]
+    },
+    {
+      "id": "buildcraftlib:textures/gui/guide/right_page.png",
+      "source": "src/main/java/buildcraft/lib/client/guide/GuideScreen.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftlib/textures/gui/guide/right_page.png"
+      ]
+    },
+    {
+      "id": "buildcraftlib:textures/gui/misc_slots.png",
+      "source": "src/main/java/buildcraft/lib/gui/statement/GuiElementStatement.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftlib/textures/gui/misc_slots.png"
+      ]
+    },
+    {
+      "id": "buildcraftrobotics:textures/gui/requester_gui.png",
+      "source": "src/main/java/buildcraft/robotics/gui/GuiRequester.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftrobotics/textures/gui/requester_gui.png"
+      ]
+    },
+    {
+      "id": "buildcraftrobotics:textures/gui/zone_planner.png",
+      "source": "src/main/java/buildcraft/robotics/gui/GuiZonePlanner.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftrobotics/textures/gui/zone_planner.png"
+      ]
+    },
+    {
+      "id": "buildcraftsilicon:gui/gate.json",
+      "source": "src/main/java/buildcraft/silicon/gui/GuiGate.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftsilicon/gui/gate.json"
+      ]
+    },
+    {
+      "id": "buildcraftsilicon:textures/gui/advanced_crafting_table.png",
+      "source": "src/main/java/buildcraft/silicon/gui/GuiAdvancedCraftingTable.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftsilicon/textures/gui/advanced_crafting_table.png"
+      ]
+    },
+    {
+      "id": "buildcraftsilicon:textures/gui/assembly_table.png",
+      "source": "src/main/java/buildcraft/silicon/gui/GuiAssemblyTable.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftsilicon/textures/gui/assembly_table.png"
+      ]
+    },
+    {
+      "id": "buildcraftsilicon:textures/gui/charging_table.png",
+      "source": "src/main/java/buildcraft/silicon/gui/GuiChargingTable.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftsilicon/textures/gui/charging_table.png"
+      ]
+    },
+    {
+      "id": "buildcraftsilicon:textures/gui/integration_table.png",
+      "source": "src/main/java/buildcraft/silicon/gui/GuiIntegrationTable.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftsilicon/textures/gui/integration_table.png"
+      ]
+    },
+    {
+      "id": "buildcraftsilicon:textures/gui/programming_table.png",
+      "source": "src/main/java/buildcraft/silicon/gui/GuiProgrammingTable.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcraftsilicon/textures/gui/programming_table.png"
+      ]
+    },
+    {
+      "id": "buildcrafttransport:gui/empty_filtered_buffer_slot",
+      "source": "src/main/java/buildcraft/transport/BCTransportSprites.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcrafttransport/gui/empty_filtered_buffer_slot",
+        "src/main/resources/assets/buildcrafttransport/textures/gui/empty_filtered_buffer_slot.png"
+      ]
+    },
+    {
+      "id": "buildcrafttransport:gui/nothing_filtered_buffer_slot",
+      "source": "src/main/java/buildcraft/transport/BCTransportSprites.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcrafttransport/gui/nothing_filtered_buffer_slot",
+        "src/main/resources/assets/buildcrafttransport/textures/gui/nothing_filtered_buffer_slot.png"
+      ]
+    },
+    {
+      "id": "buildcrafttransport:textures/gui/filter_cb.png",
+      "source": "src/main/java/buildcraft/transport/gui/GuiDiamondPipe.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcrafttransport/textures/gui/filter_cb.png"
+      ]
+    },
+    {
+      "id": "buildcrafttransport:textures/gui/filter.png",
+      "source": "src/main/java/buildcraft/transport/gui/GuiDiamondPipe.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcrafttransport/textures/gui/filter.png"
+      ]
+    },
+    {
+      "id": "buildcrafttransport:textures/gui/filtered_buffer.png",
+      "source": "src/main/java/buildcraft/transport/gui/GuiFilteredBuffer.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcrafttransport/textures/gui/filtered_buffer.png"
+      ]
+    },
+    {
+      "id": "buildcrafttransport:textures/gui/pipe_emerald_button.png",
+      "source": "src/main/java/buildcraft/transport/gui/GuiDiamondWoodPipe.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcrafttransport/textures/gui/pipe_emerald_button.png"
+      ]
+    },
+    {
+      "id": "buildcrafttransport:textures/gui/pipe_emerald.png",
+      "source": "src/main/java/buildcraft/transport/gui/GuiDiamondWoodPipe.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcrafttransport/textures/gui/pipe_emerald.png"
+      ]
+    },
+    {
+      "id": "buildcrafttransport:textures/gui/pipe_emzuli.png",
+      "source": "src/main/java/buildcraft/transport/gui/GuiEmzuliPipe_BC8.java",
+      "expectedCandidates": [
+        "src/main/resources/assets/buildcrafttransport/textures/gui/pipe_emzuli.png"
+      ]
+    }
+  ],
+  "missingScreens": [],
+  "orphanScreens": [],
+  "missingGuiResources": [],
+  "invalidGuiJson": [],
+  "errors": []
+}

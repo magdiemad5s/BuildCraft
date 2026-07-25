@@ -1,0 +1,6 @@
+{
+  "parent": "buildcraftcore:item/spring_water",
+  "overrides": [
+    { "predicate": { "buildcraftcore:variant": 1 }, "model": "buildcraftcore:item/spring_oil" }
+  ]
+}

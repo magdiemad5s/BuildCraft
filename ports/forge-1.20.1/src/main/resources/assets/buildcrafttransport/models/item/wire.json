@@ -1,0 +1,101 @@
+{
+    "parent":  "buildcrafttransport:item/wire/black",
+    "overrides":  [
+                      {
+                          "predicate":  {
+                                            "buildcrafttransport:wire_metadata":  0
+                                        },
+                          "model":  "buildcrafttransport:item/wire/black"
+                      },
+                      {
+                          "predicate":  {
+                                            "buildcrafttransport:wire_metadata":  0.066666666666666666
+                                        },
+                          "model":  "buildcrafttransport:item/wire/red"
+                      },
+                      {
+                          "predicate":  {
+                                            "buildcrafttransport:wire_metadata":  0.13333333333333333
+                                        },
+                          "model":  "buildcrafttransport:item/wire/green"
+                      },
+                      {
+                          "predicate":  {
+                                            "buildcrafttransport:wire_metadata":  0.2
+                                        },
+                          "model":  "buildcrafttransport:item/wire/brown"
+                      },
+                      {
+                          "predicate":  {
+                                            "buildcrafttransport:wire_metadata":  0.26666666666666666
+                                        },
+                          "model":  "buildcrafttransport:item/wire/blue"
+                      },
+                      {
+                          "predicate":  {
+                                            "buildcrafttransport:wire_metadata":  0.33333333333333331
+                                        },
+                          "model":  "buildcrafttransport:item/wire/purple"
+                      },
+                      {
+                          "predicate":  {
+                                            "buildcrafttransport:wire_metadata":  0.4
+                                        },
+                          "model":  "buildcrafttransport:item/wire/cyan"
+                      },
+                      {
+                          "predicate":  {
+                                            "buildcrafttransport:wire_metadata":  0.46666666666666667
+                                        },
+                          "model":  "buildcrafttransport:item/wire/light_gray"
+                      },
+                      {
+                          "predicate":  {
+                                            "buildcrafttransport:wire_metadata":  0.53333333333333333
+                                        },
+                          "model":  "buildcrafttransport:item/wire/gray"
+                      },
+                      {
+                          "predicate":  {
+                                            "buildcrafttransport:wire_metadata":  0.6
+                                        },
+                          "model":  "buildcrafttransport:item/wire/pink"
+                      },
+                      {
+                          "predicate":  {
+                                            "buildcrafttransport:wire_metadata":  0.66666666666666663
+                                        },
+                          "model":  "buildcrafttransport:item/wire/lime"
+                      },
+                      {
+                          "predicate":  {
+                                            "buildcrafttransport:wire_metadata":  0.73333333333333328
+                                        },
+                          "model":  "buildcrafttransport:item/wire/yellow"
+                      },
+                      {
+                          "predicate":  {
+                                            "buildcrafttransport:wire_metadata":  0.8
+                                        },
+                          "model":  "buildcrafttransport:item/wire/light_blue"
+                      },
+                      {
+                          "predicate":  {
+                                            "buildcrafttransport:wire_metadata":  0.8666666666666667
+                                        },
+                          "model":  "buildcrafttransport:item/wire/magenta"
+                      },
+                      {
+                          "predicate":  {
+                                            "buildcrafttransport:wire_metadata":  0.93333333333333335
+                                        },
+                          "model":  "buildcrafttransport:item/wire/orange"
+                      },
+                      {
+                          "predicate":  {
+                                            "buildcrafttransport:wire_metadata":  1
+                                        },
+                          "model":  "buildcrafttransport:item/wire/white"
+                      }
+                  ]
+}

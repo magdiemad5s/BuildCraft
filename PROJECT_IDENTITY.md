@@ -1,6 +1,6 @@
 # Project identity
 
-The release-facing project name is **BuildCraft Neo Better**.
+The release-facing project name is **BuildCraft Neo**.
 
 This name is intentionally separate from compatibility identities:
 

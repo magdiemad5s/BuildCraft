@@ -1,0 +1,10 @@
+{
+  "parent": "buildcraftcore:item/decorated/destroy",
+  "overrides": [
+    { "predicate": { "buildcraftcore:variant": 1 }, "model": "buildcraftcore:item/decorated/blueprint" },
+    { "predicate": { "buildcraftcore:variant": 2 }, "model": "buildcraftcore:item/decorated/template" },
+    { "predicate": { "buildcraftcore:variant": 3 }, "model": "buildcraftcore:item/decorated/paper" },
+    { "predicate": { "buildcraftcore:variant": 4 }, "model": "buildcraftcore:item/decorated/leather" },
+    { "predicate": { "buildcraftcore:variant": 5 }, "model": "buildcraftcore:item/decorated/laser_back" }
+  ]
+}

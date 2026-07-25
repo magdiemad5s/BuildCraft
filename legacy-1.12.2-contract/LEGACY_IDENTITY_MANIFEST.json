@@ -2,7 +2,7 @@
   "schema": "buildcraft-neo/legacy-identity-contract/v1",
   "purpose": "Machine-readable compatibility contract extracted from the BuildCraft 8.0.x-1.12.2 source. It is a preservation manifest, not evidence that a modern-loader implementation or world migration is complete.",
   "project": {
-    "displayName": "BuildCraft Neo Better",
+    "displayName": "BuildCraft Neo",
     "compatibilityRule": "The new display/project name must not replace any preserved legacy registry namespace, SavedData name, NBT key, recipe/tag path, or packet meaning."
   },
   "legacySource": {
@@ -412,12 +412,14 @@
     {
       "registryType": "block",
       "target": "buildcraftenergy:fluid_block_heat_0_oil",
+      "modernTarget": "buildcraftenergy:oil",
       "legacyPath": "fluid_block_oil",
       "source": "BCEnergy.registerMigrations(), marked 7.99.0"
     },
     {
       "registryType": "block",
       "target": "buildcraftenergy:fluid_block_heat_0_fuel_light",
+      "modernTarget": "buildcraftenergy:fuel_light",
       "legacyPath": "fluid_block_fuel",
       "source": "BCEnergy.registerMigrations(), marked 7.99.0"
     }

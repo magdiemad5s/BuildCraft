@@ -1,0 +1,624 @@
+{
+    "schema":  "buildcraft-neo/guide-source-manifest/v1",
+    "project":  "BuildCraft Neo",
+    "target":  "Minecraft 1.20.1 / Forge 47.4.22",
+    "source":  {
+                   "repository":  "https://github.com/BuildCraft/BuildCraftGuide",
+                   "commit":  "dc16f8b094fd35af1a9154055844ad58e4e98ab5",
+                   "role":  "pinned documentation resource reference"
+               },
+    "policy":  {
+                   "exactSourceFiles":  true,
+                   "generatedContent":  false,
+                   "originalGuideTexturesRetained":  true,
+                   "localeFallback":  "selected locale, then en_us"
+               },
+    "counts":  {
+                   "totalFiles":  120,
+                   "markdown":  111,
+                   "text":  9,
+                   "totalBytes":  111462
+               },
+    "files":  [
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide.txt",
+                      "bytes":  2254,
+                      "sha256":  "c573f41df8dae15bd60cd4270a093ed1a2cf2e1191cff49e729abf0973bbe2c1"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/action/machine_control_loop.md",
+                      "bytes":  678,
+                      "sha256":  "454631acf007127d4501b633f14c140080e797529d2e1171b6480fdfd2ca5ef8"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/action/machine_control_off.md",
+                      "bytes":  618,
+                      "sha256":  "4cf91fa413aa93d040c516b4ad15a51591397ebfd225e690da8ec80cf6fd279a"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/action/machine_control_on.md",
+                      "bytes":  615,
+                      "sha256":  "40134e961d60d64683a8814e06b3ede689476be1cbc3849e1fe6bcbef91937d4"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/action/redstone.md",
+                      "bytes":  519,
+                      "sha256":  "d84a676aebf287d50a8e860b2648381c60e36f802d22cb433f17643d4665a07a"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/block/engine_basics.md",
+                      "bytes":  15,
+                      "sha256":  "261827f4755a00767d2d12c93f1bc33044005ad75ab898340775fc2aa08aba45"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/block/engine_wood.md",
+                      "bytes":  1270,
+                      "sha256":  "21b5ed41cc83b9d0046cdd51676dc5c45cf1d992f204e1e85369cbdaee9dabce"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/item/box_volume.md",
+                      "bytes":  843,
+                      "sha256":  "959c6478e5bf9db1bd1832c726756f6d2ddc2d36f0b79e72c16543f405a18885"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/item/gear_diamond.md",
+                      "bytes":  501,
+                      "sha256":  "f4585a51aa2010cd2852b132a4fbc23f80180d7c613ef809322c7c89b59711db"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/item/gear_gold.md",
+                      "bytes":  451,
+                      "sha256":  "5a8e1c26117aaf9ff65e5fb322dd536b69fbf54b0334bab51195820d1614df89"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/item/gear_iron.md",
+                      "bytes":  459,
+                      "sha256":  "b607b615a9c6ad3c9e4b69af83248ba1975aa9636313f722c4aecfa7f1051b96"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/item/gear_stone.md",
+                      "bytes":  400,
+                      "sha256":  "392a5d269ec06211ea60427edca761c3ece7a6180d307979b3630ee8e756b8af"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/item/gear_wood.md",
+                      "bytes":  319,
+                      "sha256":  "65df06abcac82864e3cc72980314343fbda0e9b569db4c8dbb92cf8422b9797b"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/item/list.md",
+                      "bytes":  1402,
+                      "sha256":  "740537a6dfacd7b76e684eecdc5721594b109291823416a17a63b68695a4eff5"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/item/marker_connector.md",
+                      "bytes":  687,
+                      "sha256":  "872434966d51d38393afd43f4c2099844df62b72d9440079ece6b426ea9eb8a6"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/item/marker_land.md",
+                      "bytes":  975,
+                      "sha256":  "55ec6fe5fbc794e710b088969a3a36df411be0fdb9b26d4c35464c70c4fee384"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/item/marker_path.md",
+                      "bytes":  1319,
+                      "sha256":  "160fb8dfe31898db18828e068bd74991eb8de9f71eb10070d48fd99dcc060ac0"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/item/paintbrush.md",
+                      "bytes":  703,
+                      "sha256":  "c2de96866fe7c10111541bbe1ec0b7f0e88d36c531bde48f0c08433394daa70c"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/item/wrench.md",
+                      "bytes":  511,
+                      "sha256":  "dd9ff8f57f8110fb0a50815b38d8cdd0dda4aa72c8f91d91ebb60f7ce105e276"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/trigger/always_on.md",
+                      "bytes":  247,
+                      "sha256":  "204eca9bcb7ec14c46ff348a226489dd7ab3da638d68fbb8767353447615fecd"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/trigger/engine_blue.md",
+                      "bytes":  638,
+                      "sha256":  "80b3b6baa6a85b33bc0538fb058759fc6db8c45b16540774f3df91f7f68db560"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/trigger/engine_green.md",
+                      "bytes":  642,
+                      "sha256":  "59dcbb2d73f80fb31d4c90a2e28bb4087a9c6f4a74176782bf5f2ea97e029b0f"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/trigger/engine_overheat.md",
+                      "bytes":  672,
+                      "sha256":  "41def94928072a4f2093b999f9bd955bb3db7640ae70573dc9fd76e75b73cc7d"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/trigger/engine_red.md",
+                      "bytes":  635,
+                      "sha256":  "28bddf7c3c75cef503d045e1a9456970c4078655fccccbdb9eb03822379812d5"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/trigger/engine_yellow.md",
+                      "bytes":  646,
+                      "sha256":  "05c48f858bcbcef7fefc98de2b36c353b468b703eab69d14a72315373749f1ca"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/trigger/fluid_below_25.md",
+                      "bytes":  1004,
+                      "sha256":  "26f5ed9d78d01010a7ac5c978f9e9e06af8a4b92a4c5c39558b0155d93a7e666"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/trigger/fluid_below_50.md",
+                      "bytes":  999,
+                      "sha256":  "4afc7c6f3f4f05447299fd4c34f936d536f9a342656c161dd95895812b74f4dc"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/trigger/fluid_below_75.md",
+                      "bytes":  1009,
+                      "sha256":  "d901289e8abe057d78c77c181e631a561f13eb5b7b026643fe2c8585f136ad02"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/trigger/fluid_contains.md",
+                      "bytes":  901,
+                      "sha256":  "1ba1233cbe1aa1b3835ee463c2047b68ee00dbcf994516524288aab0e9417341"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/trigger/fluid_empty.md",
+                      "bytes":  602,
+                      "sha256":  "7b13df6a98e9afea3bc20007e2f164551453b88cf84f80f8bf6b3e45439150a2"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/trigger/fluid_full.md",
+                      "bytes":  610,
+                      "sha256":  "504dac56bfb7fc702e1acf8528bbba2041cbcce5f27c4c085ead7d2261b59c95"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/trigger/fluid_space.md",
+                      "bytes":  953,
+                      "sha256":  "a88b9a96627f80f77d1e36ca12a0f6756232f46d3e241b8a630f0483e19a8ca4"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/trigger/inventory_below_25.md",
+                      "bytes":  1003,
+                      "sha256":  "b6674fbaa3464d0cd89540d82d910b92ff8b61aa72eedfe362c6f9ea44bf1cb1"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/trigger/inventory_below_50.md",
+                      "bytes":  1003,
+                      "sha256":  "f7274c78588f3b68672dd3e86f587b3fb8706ced4f164c952338adda18aa8914"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/trigger/inventory_below_75.md",
+                      "bytes":  1003,
+                      "sha256":  "d8a163eb144b3582b6acf5ed9b706ff4ca502e19c03f39d9f836080c5f8b2a93"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/trigger/inventory_contains.md",
+                      "bytes":  948,
+                      "sha256":  "f251d20aaba6e48a1e3bbc0b1d0cf618c730ef2fda392f2b7d2a20fbaebe5c38"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/trigger/inventory_empty.md",
+                      "bytes":  667,
+                      "sha256":  "9c962c4268f728f6ac02c821d303db5c46cfd0cd909d63ef4c63ac2869a630fa"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/trigger/inventory_full.md",
+                      "bytes":  663,
+                      "sha256":  "d96266f150ee09e5c091f4792c416c22b10ade788c5a8850e775ed1e4fd777b7"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/trigger/inventory_space.md",
+                      "bytes":  1026,
+                      "sha256":  "e19d394c2230d1b26888197b30135502f71de409ada198c51436cf2ce299dc2a"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/trigger/machine_active.md",
+                      "bytes":  416,
+                      "sha256":  "364f2ca06c85ddd089604e7940a375cab4fb5fb5803e3e005e36bc5cc461eba7"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/trigger/machine_inactive.md",
+                      "bytes":  449,
+                      "sha256":  "87f430c197781264e6a6ba43c31d3faa77db54c988c0d1141973c08310648311"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/trigger/redstone_active.md",
+                      "bytes":  579,
+                      "sha256":  "9e9a4cfea1537a77791810c5bab5d1a0a7eb83d94fecf0f8c12caffb3ce33177"
+                  },
+                  {
+                      "path":  "assets/buildcraftcore/compat/buildcraft/guide/en_us/trigger/redstone_inactive.md",
+                      "bytes":  593,
+                      "sha256":  "e5b5d66a23cdc1d5683fd2d4afdc37a201e70a093602592caa657566395e4e2f"
+                  },
+                  {
+                      "path":  "assets/buildcraftenergy/compat/buildcraft/guide.txt",
+                      "bytes":  201,
+                      "sha256":  "e9716a4682b30a16cd12076cec48aac5bc82c34b9449d5199508a78a022619e4"
+                  },
+                  {
+                      "path":  "assets/buildcraftenergy/compat/buildcraft/guide/en_us/block/engine_iron.md",
+                      "bytes":  1539,
+                      "sha256":  "b8594a0ecfe126366528a232db2b7c72caa60974d10db7e9dc8188e2adac6815"
+                  },
+                  {
+                      "path":  "assets/buildcraftenergy/compat/buildcraft/guide/en_us/block/engine_stone.md",
+                      "bytes":  1271,
+                      "sha256":  "f226fc0a33ac1969efe83ace2a316c4481db3946e23f331f79470ce38571eafd"
+                  },
+                  {
+                      "path":  "assets/buildcraftfactory/compat/buildcraft/guide.txt",
+                      "bytes":  287,
+                      "sha256":  "17d9a13691d7857c052b1b8929f5231358ea4cf09fc6e105fa9ae6e93caa5243"
+                  },
+                  {
+                      "path":  "assets/buildcraftfactory/compat/buildcraft/guide/en_us/block/auto_workbench.md",
+                      "bytes":  720,
+                      "sha256":  "b07b8993e922c86da45c438c60c1d0752f25be6639da23cf85e10ec9dcbbdfed"
+                  },
+                  {
+                      "path":  "assets/buildcraftfactory/compat/buildcraft/guide/en_us/block/chute.md",
+                      "bytes":  649,
+                      "sha256":  "529049d31812aab38179eb2cd0bad2213355fbaebca10d898be25b31c11dcd2e"
+                  },
+                  {
+                      "path":  "assets/buildcraftfactory/compat/buildcraft/guide/en_us/block/distiller.md",
+                      "bytes":  929,
+                      "sha256":  "e41eef461ab245bb680177ef747df16708fda52f51072a0d43961321bb0c72d3"
+                  },
+                  {
+                      "path":  "assets/buildcraftfactory/compat/buildcraft/guide/en_us/block/flood_gate.md",
+                      "bytes":  594,
+                      "sha256":  "83c98c47ae86265d58c1a79e28cefc43447a9f4a366258bd28449f37623a86fd"
+                  },
+                  {
+                      "path":  "assets/buildcraftfactory/compat/buildcraft/guide/en_us/block/heat_exchange.md",
+                      "bytes":  557,
+                      "sha256":  "b29524bef79ad83b6f59fd326e76b56a4f139d663522270de781b5b180354ee1"
+                  },
+                  {
+                      "path":  "assets/buildcraftfactory/compat/buildcraft/guide/en_us/block/mining_well.md",
+                      "bytes":  979,
+                      "sha256":  "f2aa6edbd5c2ca15da78e96163b09a8787220af9399ad405d3090ee74590e13f"
+                  },
+                  {
+                      "path":  "assets/buildcraftfactory/compat/buildcraft/guide/en_us/block/pump.md",
+                      "bytes":  1013,
+                      "sha256":  "0644e79326e9c8d497b1322a4c41a8bf6def4e3408e716ccdde853c7003db66b"
+                  },
+                  {
+                      "path":  "assets/buildcraftfactory/compat/buildcraft/guide/en_us/block/tank.md",
+                      "bytes":  697,
+                      "sha256":  "1c50fbfab01b6606cf0b6647e8b1942b5648b93ba085863250160bf8afcbafbd"
+                  },
+                  {
+                      "path":  "assets/buildcraftlib/compat/buildcraft/guide.txt",
+                      "bytes":  361,
+                      "sha256":  "e8313c62c8f34da12bd7f821a076be9f982b75581ec41dc0a15f5de84b10dd24"
+                  },
+                  {
+                      "path":  "assets/buildcraftlib/compat/buildcraft/guide/en_us/config/guide_page_format.md",
+                      "bytes":  5830,
+                      "sha256":  "a0c5b590fbf1a2ac4184ba6ddb17e1c7f77e31726df23d6d0901ff38d7d9b433"
+                  },
+                  {
+                      "path":  "assets/buildcraftlib/compat/buildcraft/guide/en_us/config/json_insn_format.md",
+                      "bytes":  3739,
+                      "sha256":  "424998ddfdd8d45b57477be101adaab6873afc2f46b631092ab7c248fe409bff"
+                  },
+                  {
+                      "path":  "assets/buildcraftlib/compat/buildcraft/guide/en_us/config/registry_overview.md",
+                      "bytes":  0,
+                      "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                  },
+                  {
+                      "path":  "assets/buildcraftlib/compat/buildcraft/guide/en_us/item/guide.md",
+                      "bytes":  595,
+                      "sha256":  "880b5335c62d43a63c0f8dd0bb080571e77c18f7375b2fa9e7c036bd56a56e11"
+                  },
+                  {
+                      "path":  "assets/buildcraftlib/compat/buildcraft/guide/util.txt",
+                      "bytes":  1917,
+                      "sha256":  "aa488e23c5251bf7f04693e64431527327231613dc286147e6307391cac0ca7d"
+                  },
+                  {
+                      "path":  "assets/buildcraftsilicon/compat/buildcraft/guide.txt",
+                      "bytes":  456,
+                      "sha256":  "5122b4faba93d6410870fb3ce2e22131d4b469546faf292edf5bb1bc3a7dff35"
+                  },
+                  {
+                      "path":  "assets/buildcraftsilicon/compat/buildcraft/guide/en_us/action/pulsar_constant.md",
+                      "bytes":  722,
+                      "sha256":  "f8a198ac4070decb685bb065b773dfe0b5b30f982684abcf1190d891bb46dfc8"
+                  },
+                  {
+                      "path":  "assets/buildcraftsilicon/compat/buildcraft/guide/en_us/action/pulsar_single.md",
+                      "bytes":  763,
+                      "sha256":  "dfa2bade3a681435175053b0134511f314ac9578f166a9e1e4d51a66a12fda0f"
+                  },
+                  {
+                      "path":  "assets/buildcraftsilicon/compat/buildcraft/guide/en_us/item/plug_facade.md",
+                      "bytes":  602,
+                      "sha256":  "25e7c9002e4716ca22b86cc52afbc35dd3a3c5eb711d9107bb40cad4d4b18325"
+                  },
+                  {
+                      "path":  "assets/buildcraftsilicon/compat/buildcraft/guide/en_us/item/plug_filter.md",
+                      "bytes":  853,
+                      "sha256":  "748e6c1a511000e24601754b46a908a0d2edcf54eccb65313dadc2a804f1e491"
+                  },
+                  {
+                      "path":  "assets/buildcraftsilicon/compat/buildcraft/guide/en_us/item/plug_gate.md",
+                      "bytes":  2973,
+                      "sha256":  "c30404afe532b9a2e14abaf5b86e5534f1d33321f7d5b5c5d5bbd163f58e4aa8"
+                  },
+                  {
+                      "path":  "assets/buildcraftsilicon/compat/buildcraft/guide/en_us/item/plug_lens.md",
+                      "bytes":  802,
+                      "sha256":  "ad0c387cff9f13bf0a58cb1cedd3319e22079c787bd7d7c4a7714e8e47be35da"
+                  },
+                  {
+                      "path":  "assets/buildcraftsilicon/compat/buildcraft/guide/en_us/item/plug_light_sensor.md",
+                      "bytes":  946,
+                      "sha256":  "2a15aeb7fb4ddff20425d36ad0ec859dfb4847a8b4c13b6487c6482442fbc6db"
+                  },
+                  {
+                      "path":  "assets/buildcraftsilicon/compat/buildcraft/guide/en_us/item/plug_pulsar.md",
+                      "bytes":  873,
+                      "sha256":  "d600e1531016990162a8224602b96fbfa194949ab462aec2040a38cd90d5328e"
+                  },
+                  {
+                      "path":  "assets/buildcraftsilicon/compat/buildcraft/guide/en_us/trigger/light_high.md",
+                      "bytes":  443,
+                      "sha256":  "d284c12e7531a9d0914f97d359a33975c87c78b8e7c741ce20958cff22f0f264"
+                  },
+                  {
+                      "path":  "assets/buildcraftsilicon/compat/buildcraft/guide/en_us/trigger/light_low.md",
+                      "bytes":  441,
+                      "sha256":  "2d1758ed39da723bee461d53dbb17aeb2759c0327103f628b250de47cd340a86"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide.txt",
+                      "bytes":  1889,
+                      "sha256":  "c399eacbb5b87cbebffa3868108119ea6a7b54b782d439f43c96cef3b0f6b9e5"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/action/extraction_preset.md",
+                      "bytes":  588,
+                      "sha256":  "79caf128230dfb60fbc3f8343bda0a887c165d0bb6d49393eeff12d3225f61a2"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/action/pipe_colour.md",
+                      "bytes":  726,
+                      "sha256":  "dff7a92827936d9cc4fc70c37f123ab03e7540e52779efec252ba06be7474fd8"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/action/pipe_direction_above.md",
+                      "bytes":  533,
+                      "sha256":  "2d657876f16fe8ea815f65635876b4cc08f1d5ac752efba4a3e8917e18316cff"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/action/pipe_direction_below.md",
+                      "bytes":  551,
+                      "sha256":  "4b0a5a792a40d4446d0131a16d581ff9347cd1c2ff458fc940bafd7971a9c0e0"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/action/pipe_direction_east.md",
+                      "bytes":  555,
+                      "sha256":  "0da6a7a47ab650ca99573209391533881626bd9c8e679da4cf94cd1770d64dd0"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/action/pipe_direction_north.md",
+                      "bytes":  557,
+                      "sha256":  "5aa5d257db2752c2c479052f8163cfac3a51970b1dc7029aad08bcbd8549aada"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/action/pipe_direction_south.md",
+                      "bytes":  557,
+                      "sha256":  "44ccd3f9076114c43dc77085d3ad71c1dc63853e499e5cc8006dba7a613e58a9"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/action/pipe_direction_west.md",
+                      "bytes":  551,
+                      "sha256":  "6a1d446515296fe5f30622bce1faa1864f20a0612c9dcef6dc40d857f7d74a26"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/action/pipe_signal_active.md",
+                      "bytes":  741,
+                      "sha256":  "b3893045f7708ab8b1a71583479c984296f13826392f8811266298f79b467b40"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/item/plug_blocker.md",
+                      "bytes":  574,
+                      "sha256":  "24ee8dd6aae8103c3304e905abe4fc2018f9bb1ce3f7f73fcd535c1940d8bf0b"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/item/plug_power_adaptor.md",
+                      "bytes":  991,
+                      "sha256":  "3070d1a6a2fa54631e82189fe668b744d997a63b2b30fd6c6ba270d40e158b4c"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/item/wire.md",
+                      "bytes":  1019,
+                      "sha256":  "da3acfe76c3e34d8f1cc4664ade82332c1c68357b02c8d9a261cc014eb8b80d5"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/clay_fluid.md",
+                      "bytes":  1096,
+                      "sha256":  "8d143c76c52b9d05df791d82f978db4aed9d1eeebed4866e9a6663cc456dce89"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/clay_item.md",
+                      "bytes":  991,
+                      "sha256":  "1306eeb538e31cf0edafcb8334bb2d0cdc00c564463b6dc2ef944595d5fd26a5"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/cobble_fluid.md",
+                      "bytes":  1135,
+                      "sha256":  "5cb622e44007f2b8068aeb0c21dc42bd36b72da0ef7546d3ba3c23c1c93dd2ee"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/cobble_item.md",
+                      "bytes":  1064,
+                      "sha256":  "fcb73a0f3ea41d6dd7979bcac0bef69cd22c83865da4da3ce5e98086a831f806"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/daizuli_item.md",
+                      "bytes":  1254,
+                      "sha256":  "714e99824cd2980455527a63d62752a52790d42d9b14c1dfef4da520a620ea84"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/diamond_fluid.md",
+                      "bytes":  1447,
+                      "sha256":  "44e5678cae9887e359359de46b0bec06633c8f21b22c095105ff2bc9a666c2e4"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/diamond_item.md",
+                      "bytes":  1706,
+                      "sha256":  "e2400f092382240d47f2a0f1cfa82bda2e2d2a724a25bbf2153b15b9647fe257"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/diamond_wood_fluid.md",
+                      "bytes":  2005,
+                      "sha256":  "ee8b638958487d51d94e5380e4edaf2b6320a04fef582b0591281d97fad69721"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/diamond_wood_item.md",
+                      "bytes":  2214,
+                      "sha256":  "7d469f4e12c06f614e023eaf8760742a8b6594ec1798259816f457b7600d8a0f"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/emzuli_item.md",
+                      "bytes":  2199,
+                      "sha256":  "a070911691e7c97ff7c359ebd308e2e4fe5bfc593ebce6423ea0c5e55aad717b"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/gold_fluid.md",
+                      "bytes":  1013,
+                      "sha256":  "631fe6bb4b61c508f80ee06864647b4ec1f1694355508649b0f9fbe0862e3ac6"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/gold_item.md",
+                      "bytes":  945,
+                      "sha256":  "94160f8af61fb9e360d11b3cffee79a6ada5380e35df7b13ff23ef1667a2b93a"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/iron_fluid.md",
+                      "bytes":  1106,
+                      "sha256":  "3f7a29b4b326e2ce5384eec5d1ef9f8afdd2bd38fd252584bd14cf433d353bcb"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/iron_item.md",
+                      "bytes":  1121,
+                      "sha256":  "f7c1a5f43c2923390300c0f547bd97423f681bf931553527459bd48095a7f0d3"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/lapis_item.md",
+                      "bytes":  1056,
+                      "sha256":  "50ec48ab809a0f712882ced7a396dd16f039c33d2f8951f9f2b93e685863dae5"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/obsidian_item.md",
+                      "bytes":  1408,
+                      "sha256":  "6b2b72ab1581081881d12cd3e7f1d87646c6c400ee2e4ae0640ff04ae5b8a781"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/quartz_fluid.md",
+                      "bytes":  1137,
+                      "sha256":  "7652269af0bf9db1983ad9394ef414a4d306577a3b85d83ce7108a21f2e8c6c2"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/quartz_item.md",
+                      "bytes":  1038,
+                      "sha256":  "03956d043ee28b99caf18e6405b5f2e529dccb95fc4b754a2e9e8eaf8df5141b"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/sandstone_fluid.md",
+                      "bytes":  959,
+                      "sha256":  "efd0ae583553d1773f0c4db7d0ebc0948f3f7ec18aee16ebb435af3fbfe41596"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/sandstone_item.md",
+                      "bytes":  813,
+                      "sha256":  "6d71918cd576a6a8b4fa67dc240c32c592bae071c8d7bde08304d8e7c522ec84"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/stone_fluid.md",
+                      "bytes":  1126,
+                      "sha256":  "c12a673bf700fd78e2eae633b582c7d2a37d485d346f2d56fdd9d8349c66b40f"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/stone_item.md",
+                      "bytes":  1035,
+                      "sha256":  "40ca56c52103cf762c103fc2554bf5e0df071bf12902273adc79eeeb60630d74"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/stripes_item.md",
+                      "bytes":  1672,
+                      "sha256":  "607c230c1c4dc235d290282baa67fef1b50c8860830e598db23cd6c3ab85aa02"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/structure.md",
+                      "bytes":  498,
+                      "sha256":  "4fb58ef2df274598a31fd902b5229457d0d28142bb35503108219a936dd0bd4b"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/void_fluid.md",
+                      "bytes":  653,
+                      "sha256":  "bbb361a18dd28622e74ef56ad19563ae6622ab7d13f5a38c5af98541ac5b4801"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/void_item.md",
+                      "bytes":  610,
+                      "sha256":  "b23fcc84888bdc7514697eda6d0e1036f0e95922608f930a9bb2fe8aa9b6ab29"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/wood_fluid.md",
+                      "bytes":  1591,
+                      "sha256":  "d0ffe25020525d9c33c03b9f55806daf317a75f7477cff6cf1e9f20c3161ec05"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/pipe/wood_item.md",
+                      "bytes":  1436,
+                      "sha256":  "df52bb74f6b621e5059dc6f49e545587c3a7c5fe309d0f61ba0ab444649ec37a"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/trigger/fluids_traversing.md",
+                      "bytes":  326,
+                      "sha256":  "4fbcdefdab17faa6ed9bc0f0298cd8af223c92297fadbcb22e92669c900394cb"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/trigger/items_traversing.md",
+                      "bytes":  651,
+                      "sha256":  "0430d48d26c27c7fefaba5383ffddb38eb8b90c165638488a741645307d7e310"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/trigger/pipe_empty.md",
+                      "bytes":  366,
+                      "sha256":  "53773e644940b493035c76b84cf146bbb4a82c21b21fd458c2e638bb0c33fe8b"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/trigger/pipe_signal_active.md",
+                      "bytes":  769,
+                      "sha256":  "754f4813af12640f8206582b0f7d6dae14ef59292844df1272aa2b66c964bddc"
+                  },
+                  {
+                      "path":  "assets/buildcrafttransport/compat/buildcraft/guide/en_us/trigger/pipe_signal_inactive.md",
+                      "bytes":  785,
+                      "sha256":  "10bbda489695bcd5aca994a5469f2019813cefa4e8dc03110a94f08808f22359"
+                  },
+                  {
+                      "path":  "data/buildcraftcore/compat/buildcraft/book.txt",
+                      "bytes":  87,
+                      "sha256":  "6ff054c73f92b4e345a56e2b9049538e222e3bfb3bd1e25e6890594c7e577c93"
+                  },
+                  {
+                      "path":  "data/buildcraftlib/compat/buildcraft/book.txt",
+                      "bytes":  119,
+                      "sha256":  "5deda08079412fbb382b349e909fb498cd4f553b15ddd3f9b5548157d609801b"
+                  }
+              ]
+}

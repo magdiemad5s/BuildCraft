@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " I ",
+    "ICI"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "C": {
+      "item": "buildcraftsilicon:redstone_chipset",
+      "nbt": "{Damage:2}",
+      "type": "forge:partial_nbt"
+    }
+  },
+  "result": {
+    "item": "buildcraftrobotics:robot_station"
+  }
+}

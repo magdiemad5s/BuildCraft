@@ -1,220 +1,338 @@
 modLoader="javafml"
-loaderVersion="[47,)"
+loaderVersion="${loader_version_range}"
 license="MPL-2.0"
+showAsResourcePack=false
 
 [[mods]]
-modId="buildcraftlib"
-version="${file.jarVersion}"
-displayName="BuildCraft Neo Better Lib"
-description='''BuildCraft Neo Better compatibility scaffold. Not a gameplay release.'''
+    modId="buildcraftlib"
+    version="${mod_version}"
+    displayName="BuildCraft Neo - Library"
+    logoFile="buildcraft_neo_logo.png"
+    credits="Special thanks to the original BuildCraft team and all contributors."
+    authors="BuildCraft Team, CurativeTree, ShipovskijKorp, magdiemad5s"
+    description='''
+Shared library code and runtime helpers used by the BuildCraft Neo modules.
+    '''
+    displayTest="MATCH_VERSION"
 
 [[dependencies.buildcraftlib]]
-modId="forge"
-mandatory=true
-versionRange="[47,48)"
-ordering="NONE"
-side="BOTH"
+    modId="forge"
+    mandatory=true
+    versionRange="${forge_version_range}"
+    ordering="NONE"
+    side="BOTH"
 
 [[dependencies.buildcraftlib]]
-modId="minecraft"
-mandatory=true
-versionRange="[1.20.1,1.21)"
-ordering="NONE"
-side="BOTH"
+    modId="minecraft"
+    mandatory=true
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.buildcraftlib]]
+    modId="jei"
+    mandatory=false
+    versionRange="[15,)"
+    ordering="AFTER"
+    side="CLIENT"
+
+[[dependencies.buildcraftlib]]
+    modId="jade"
+    mandatory=false
+    versionRange="[11,)"
+    ordering="AFTER"
+    side="BOTH"
 
 [[mods]]
-modId="buildcraftcore"
-version="${file.jarVersion}"
-displayName="BuildCraft Neo Better Core"
-description='''BuildCraft Neo Better compatibility scaffold. Not a gameplay release.'''
+    modId="buildcraftcore"
+    version="${mod_version}"
+    displayName="BuildCraft Neo - Core"
+    logoFile="buildcraft_neo_logo.png"
+    credits="Special thanks to the original BuildCraft team and all contributors."
+    authors="BuildCraft Team, CurativeTree, ShipovskijKorp, magdiemad5s"
+    description='''
+Core BuildCraft content: common items, gears, engines, markers and shared gameplay systems.
+    '''
+    displayTest="MATCH_VERSION"
 
 [[dependencies.buildcraftcore]]
-modId="buildcraftlib"
-mandatory=true
-versionRange="[0,)"
-ordering="AFTER"
-side="BOTH"
+    modId="forge"
+    mandatory=true
+    versionRange="${forge_version_range}"
+    ordering="NONE"
+    side="BOTH"
 
 [[dependencies.buildcraftcore]]
-modId="forge"
-mandatory=true
-versionRange="[47,48)"
-ordering="NONE"
-side="BOTH"
+    modId="minecraft"
+    mandatory=true
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
 
 [[dependencies.buildcraftcore]]
-modId="minecraft"
-mandatory=true
-versionRange="[1.20.1,1.21)"
-ordering="NONE"
-side="BOTH"
+    modId="buildcraftlib"
+    mandatory=true
+    versionRange="[8.0.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
 
 [[mods]]
-modId="buildcraftbuilders"
-version="${file.jarVersion}"
-displayName="BuildCraft Neo Better Builders"
-description='''BuildCraft Neo Better compatibility scaffold. Not a gameplay release.'''
-
-[[dependencies.buildcraftbuilders]]
-modId="buildcraftcore"
-mandatory=true
-versionRange="[0,)"
-ordering="AFTER"
-side="BOTH"
-
-[[dependencies.buildcraftbuilders]]
-modId="forge"
-mandatory=true
-versionRange="[47,48)"
-ordering="NONE"
-side="BOTH"
-
-[[dependencies.buildcraftbuilders]]
-modId="minecraft"
-mandatory=true
-versionRange="[1.20.1,1.21)"
-ordering="NONE"
-side="BOTH"
-
-[[mods]]
-modId="buildcraftenergy"
-version="${file.jarVersion}"
-displayName="BuildCraft Neo Better Energy"
-description='''BuildCraft Neo Better compatibility scaffold. Not a gameplay release.'''
-
-[[dependencies.buildcraftenergy]]
-modId="buildcraftcore"
-mandatory=true
-versionRange="[0,)"
-ordering="AFTER"
-side="BOTH"
-
-[[dependencies.buildcraftenergy]]
-modId="forge"
-mandatory=true
-versionRange="[47,48)"
-ordering="NONE"
-side="BOTH"
-
-[[dependencies.buildcraftenergy]]
-modId="minecraft"
-mandatory=true
-versionRange="[1.20.1,1.21)"
-ordering="NONE"
-side="BOTH"
-
-[[mods]]
-modId="buildcraftfactory"
-version="${file.jarVersion}"
-displayName="BuildCraft Neo Better Factory"
-description='''BuildCraft Neo Better compatibility scaffold. Not a gameplay release.'''
+    modId="buildcraftfactory"
+    version="${mod_version}"
+    displayName="BuildCraft Neo - Factory"
+    logoFile="buildcraft_neo_logo.png"
+    credits="Special thanks to the original BuildCraft team and all contributors."
+    authors="BuildCraft Team, CurativeTree, ShipovskijKorp, magdiemad5s"
+    description='''
+Factory machines and fluid infrastructure, including tanks, pumps, mining wells and processing blocks.
+    '''
+    displayTest="MATCH_VERSION"
 
 [[dependencies.buildcraftfactory]]
-modId="buildcraftcore"
-mandatory=true
-versionRange="[0,)"
-ordering="AFTER"
-side="BOTH"
+    modId="forge"
+    mandatory=true
+    versionRange="${forge_version_range}"
+    ordering="NONE"
+    side="BOTH"
 
 [[dependencies.buildcraftfactory]]
-modId="forge"
-mandatory=true
-versionRange="[47,48)"
-ordering="NONE"
-side="BOTH"
+    modId="minecraft"
+    mandatory=true
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
 
 [[dependencies.buildcraftfactory]]
-modId="minecraft"
-mandatory=true
-versionRange="[1.20.1,1.21)"
-ordering="NONE"
-side="BOTH"
+    modId="buildcraftlib"
+    mandatory=true
+    versionRange="[8.0.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.buildcraftfactory]]
+    modId="buildcraftcore"
+    mandatory=true
+    versionRange="[8.0.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
 
 [[mods]]
-modId="buildcraftsilicon"
-version="${file.jarVersion}"
-displayName="BuildCraft Neo Better Silicon"
-description='''BuildCraft Neo Better compatibility scaffold. Not a gameplay release.'''
+    modId="buildcrafttransport"
+    version="${mod_version}"
+    displayName="BuildCraft Neo - Transport"
+    logoFile="buildcraft_neo_logo.png"
+    credits="Special thanks to the original BuildCraft team and all contributors."
+    authors="BuildCraft Team, CurativeTree, ShipovskijKorp, magdiemad5s"
+    description='''
+Item, fluid and power pipes, gates, wires, facades, plugs and transport automation.
+    '''
+    displayTest="MATCH_VERSION"
 
-[[dependencies.buildcraftsilicon]]
-modId="buildcraftcore"
-mandatory=true
-versionRange="[0,)"
-ordering="AFTER"
-side="BOTH"
+[[dependencies.buildcrafttransport]]
+    modId="forge"
+    mandatory=true
+    versionRange="${forge_version_range}"
+    ordering="NONE"
+    side="BOTH"
 
-[[dependencies.buildcraftsilicon]]
-# Pluggables initialise after transport registries when that module is present.
-modId="buildcrafttransport"
-mandatory=false
-versionRange="[0,)"
-ordering="AFTER"
-side="BOTH"
+[[dependencies.buildcrafttransport]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
 
-[[dependencies.buildcraftsilicon]]
-modId="forge"
-mandatory=true
-versionRange="[47,48)"
-ordering="NONE"
-side="BOTH"
+[[dependencies.buildcrafttransport]]
+    modId="buildcraftlib"
+    mandatory=true
+    versionRange="[8.0.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
 
-[[dependencies.buildcraftsilicon]]
-modId="minecraft"
-mandatory=true
-versionRange="[1.20.1,1.21)"
-ordering="NONE"
-side="BOTH"
+[[dependencies.buildcrafttransport]]
+    modId="buildcraftcore"
+    mandatory=true
+    versionRange="[8.0.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
 
 [[mods]]
-modId="buildcrafttransport"
-version="${file.jarVersion}"
-displayName="BuildCraft Neo Better Transport"
-description='''BuildCraft Neo Better compatibility scaffold. Not a gameplay release.'''
+    modId="buildcraftenergy"
+    version="${mod_version}"
+    displayName="BuildCraft Neo - Energy"
+    logoFile="buildcraft_neo_logo.png"
+    credits="Special thanks to the original BuildCraft team and all contributors."
+    authors="BuildCraft Team, CurativeTree, ShipovskijKorp, magdiemad5s"
+    description='''
+Oil, fuels, power generation and energy-related BuildCraft mechanics.
+    '''
+    displayTest="MATCH_VERSION"
 
-[[dependencies.buildcrafttransport]]
-modId="buildcraftcore"
-mandatory=true
-versionRange="[0,)"
-ordering="AFTER"
-side="BOTH"
+[[dependencies.buildcraftenergy]]
+    modId="forge"
+    mandatory=true
+    versionRange="${forge_version_range}"
+    ordering="NONE"
+    side="BOTH"
 
-[[dependencies.buildcrafttransport]]
-modId="forge"
-mandatory=true
-versionRange="[47,48)"
-ordering="NONE"
-side="BOTH"
+[[dependencies.buildcraftenergy]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
 
-[[dependencies.buildcrafttransport]]
-modId="minecraft"
-mandatory=true
-versionRange="[1.20.1,1.21)"
-ordering="NONE"
-side="BOTH"
+[[dependencies.buildcraftenergy]]
+    modId="buildcraftlib"
+    mandatory=true
+    versionRange="[8.0.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.buildcraftenergy]]
+    modId="buildcraftcore"
+    mandatory=true
+    versionRange="[8.0.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
 
 [[mods]]
-modId="buildcraftrobotics"
-version="${file.jarVersion}"
-displayName="BuildCraft Neo Better Robotics"
-description='''BuildCraft Neo Better compatibility scaffold. Not a gameplay release.'''
+    modId="buildcraftbuilders"
+    version="${mod_version}"
+    displayName="BuildCraft Neo - Builders"
+    logoFile="buildcraft_neo_logo.png"
+    credits="Special thanks to the original BuildCraft team and all contributors."
+    authors="BuildCraft Team, CurativeTree, ShipovskijKorp, magdiemad5s"
+    description='''
+Builder module content such as quarries, fillers, frames, markers, templates and construction machines.
+    '''
+    displayTest="MATCH_VERSION"
+
+[[dependencies.buildcraftbuilders]]
+    modId="forge"
+    mandatory=true
+    versionRange="${forge_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.buildcraftbuilders]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.buildcraftbuilders]]
+    modId="buildcraftlib"
+    mandatory=true
+    versionRange="[8.0.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.buildcraftbuilders]]
+    modId="buildcraftcore"
+    mandatory=true
+    versionRange="[8.0.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[mods]]
+    modId="buildcraftsilicon"
+    version="${mod_version}"
+    displayName="BuildCraft Neo - Silicon"
+    logoFile="buildcraft_neo_logo.png"
+    credits="Special thanks to the original BuildCraft team and all contributors."
+    authors="BuildCraft Team, CurativeTree, ShipovskijKorp, magdiemad5s"
+    description='''
+Silicon technology: lasers, assembly tables, integration tables, programming tables, chipsets and gates.
+    '''
+    displayTest="MATCH_VERSION"
+
+[[dependencies.buildcraftsilicon]]
+    modId="forge"
+    mandatory=true
+    versionRange="${forge_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.buildcraftsilicon]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.buildcraftsilicon]]
+    modId="buildcraftlib"
+    mandatory=true
+    versionRange="[8.0.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.buildcraftsilicon]]
+    modId="buildcraftcore"
+    mandatory=true
+    versionRange="[8.0.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.buildcraftsilicon]]
+    modId="buildcrafttransport"
+    mandatory=false
+    versionRange="[8.0.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[mods]]
+    modId="buildcraftrobotics"
+    version="${mod_version}"
+    displayName="BuildCraft Neo - Robotics"
+    logoFile="buildcraft_neo_logo.png"
+    credits="Special thanks to the original BuildCraft team and all contributors."
+    authors="BuildCraft Team, CurativeTree, ShipovskijKorp, magdiemad5s"
+    description='''
+Robots, docking stations, redstone boards, zones and robotic automation.
+    '''
+    displayTest="MATCH_VERSION"
 
 [[dependencies.buildcraftrobotics]]
-modId="buildcraftcore"
-mandatory=true
-versionRange="[0,)"
-ordering="AFTER"
-side="BOTH"
+    modId="forge"
+    mandatory=true
+    versionRange="${forge_version_range}"
+    ordering="NONE"
+    side="BOTH"
 
 [[dependencies.buildcraftrobotics]]
-modId="forge"
-mandatory=true
-versionRange="[47,48)"
-ordering="NONE"
-side="BOTH"
+    modId="minecraft"
+    mandatory=true
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
 
 [[dependencies.buildcraftrobotics]]
-modId="minecraft"
-mandatory=true
-versionRange="[1.20.1,1.21)"
-ordering="NONE"
-side="BOTH"
+    modId="buildcraftlib"
+    mandatory=true
+    versionRange="[8.0.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.buildcraftrobotics]]
+    modId="buildcraftcore"
+    mandatory=true
+    versionRange="[8.0.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.buildcraftrobotics]]
+    modId="buildcraftsilicon"
+    mandatory=true
+    versionRange="[8.0.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.buildcraftrobotics]]
+    modId="buildcrafttransport"
+    mandatory=true
+    versionRange="[8.0.0.0,)"
+    ordering="AFTER"
+    side="BOTH"

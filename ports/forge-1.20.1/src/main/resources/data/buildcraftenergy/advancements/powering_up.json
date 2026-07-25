@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "item": "buildcraftcore:engine",
+      "nbt": "{Damage:1}"
+    },
+    "title": {
+      "translate": "advancements.buildcraftenergy.poweringUp.title"
+    },
+    "description": {
+      "translate": "advancements.buildcraftenergy.poweringUp.description"
+    }
+  },
+  "parent": "buildcraftenergy:engine",
+  "criteria": {
+    "code_trigger": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "code_trigger"
+    ]
+  ]
+}

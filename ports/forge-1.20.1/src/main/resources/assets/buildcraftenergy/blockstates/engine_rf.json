@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "buildcraftenergy:block/engine_rf"
+    }
+  }
+}

@@ -1,4 +1,4 @@
-# BuildCraft Neo Better - NeoForge 1.20.1
+# BuildCraft Neo - NeoForge 1.20.1
 
 This is the isolated transitional NeoForge 1.20.1 lane: Java 17,
 NeoGradle 7.0.97, and `net.neoforged:forge:1.20.1-47.1.106`. Its use of

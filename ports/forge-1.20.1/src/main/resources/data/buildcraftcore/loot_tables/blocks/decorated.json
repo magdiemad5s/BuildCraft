@@ -1,0 +1,65 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "buildcraftcore:decorated",
+              "conditions": [
+                { "condition": "minecraft:block_state_property", "block": "buildcraftcore:decorated", "properties": { "decoration_type": "blueprint" } }
+              ],
+              "functions": [ { "function": "minecraft:set_nbt", "tag": "{Damage:1}" } ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "buildcraftcore:decorated",
+              "conditions": [
+                { "condition": "minecraft:block_state_property", "block": "buildcraftcore:decorated", "properties": { "decoration_type": "template" } }
+              ],
+              "functions": [ { "function": "minecraft:set_nbt", "tag": "{Damage:2}" } ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "buildcraftcore:decorated",
+              "conditions": [
+                { "condition": "minecraft:block_state_property", "block": "buildcraftcore:decorated", "properties": { "decoration_type": "paper" } }
+              ],
+              "functions": [ { "function": "minecraft:set_nbt", "tag": "{Damage:3}" } ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "buildcraftcore:decorated",
+              "conditions": [
+                { "condition": "minecraft:block_state_property", "block": "buildcraftcore:decorated", "properties": { "decoration_type": "leather" } }
+              ],
+              "functions": [ { "function": "minecraft:set_nbt", "tag": "{Damage:4}" } ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "buildcraftcore:decorated",
+              "conditions": [
+                { "condition": "minecraft:block_state_property", "block": "buildcraftcore:decorated", "properties": { "decoration_type": "laser_back" } }
+              ],
+              "functions": [ { "function": "minecraft:set_nbt", "tag": "{Damage:5}" } ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "buildcraftcore:decorated",
+              "functions": [ { "function": "minecraft:set_nbt", "tag": "{Damage:0}" } ]
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ]
+    }
+  ]
+}

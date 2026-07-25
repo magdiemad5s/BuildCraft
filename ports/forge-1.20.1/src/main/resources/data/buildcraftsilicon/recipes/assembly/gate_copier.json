@@ -1,0 +1,21 @@
+{
+  "type": "buildcraftsilicon:assembly",
+  "MJ": 500000000,
+  "ingredient_counts": [
+    1,
+    1
+  ],
+  "ingredients": [
+    {
+      "item": "buildcraftcore:wrench"
+    },
+    {
+      "item": "buildcraftsilicon:redstone_chipset",
+      "nbt": "{Damage:1}",
+      "type": "forge:partial_nbt"
+    }
+  ],
+  "result": {
+    "item": "buildcraftsilicon:gate_copier"
+  }
+}

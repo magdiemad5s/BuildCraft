@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "paintbrush_colouring",
+  "ingredients": [
+    {
+      "item": "buildcraftcore:paintbrush",
+      "nbt": "{Damage:0}",
+      "type": "forge:partial_nbt"
+    },
+    {
+      "tag": "forge:dyes/cyan"
+    }
+  ],
+  "result": {
+    "item": "buildcraftcore:paintbrush",
+    "nbt": "{Damage:10}"
+  }
+}

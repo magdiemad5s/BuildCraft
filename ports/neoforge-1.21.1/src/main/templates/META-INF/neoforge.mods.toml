@@ -5,8 +5,8 @@ license="${mod_license}"
 [[mods]]
 modId="buildcraftlib"
 version="${mod_version}+${minecraft_version}"
-displayName="BuildCraft Neo Better Lib"
-description='''BuildCraft Neo Better compatibility bootstrap. Not a gameplay release.'''
+displayName="BuildCraft Neo Lib"
+description='''BuildCraft Neo compatibility bootstrap. Not a gameplay release.'''
 
 [[dependencies.buildcraftlib]]
 modId="neoforge"
@@ -25,8 +25,8 @@ side="BOTH"
 [[mods]]
 modId="buildcraftcore"
 version="${mod_version}+${minecraft_version}"
-displayName="BuildCraft Neo Better Core"
-description='''BuildCraft Neo Better compatibility bootstrap. Not a gameplay release.'''
+displayName="BuildCraft Neo Core"
+description='''BuildCraft Neo compatibility bootstrap. Not a gameplay release.'''
 
 [[dependencies.buildcraftcore]]
 modId="buildcraftlib"
@@ -52,8 +52,8 @@ side="BOTH"
 [[mods]]
 modId="buildcraftbuilders"
 version="${mod_version}+${minecraft_version}"
-displayName="BuildCraft Neo Better Builders"
-description='''BuildCraft Neo Better compatibility bootstrap. Not a gameplay release.'''
+displayName="BuildCraft Neo Builders"
+description='''BuildCraft Neo compatibility bootstrap. Not a gameplay release.'''
 
 [[dependencies.buildcraftbuilders]]
 modId="buildcraftcore"
@@ -79,8 +79,8 @@ side="BOTH"
 [[mods]]
 modId="buildcraftenergy"
 version="${mod_version}+${minecraft_version}"
-displayName="BuildCraft Neo Better Energy"
-description='''BuildCraft Neo Better compatibility bootstrap. Not a gameplay release.'''
+displayName="BuildCraft Neo Energy"
+description='''BuildCraft Neo compatibility bootstrap. Not a gameplay release.'''
 
 [[dependencies.buildcraftenergy]]
 modId="buildcraftcore"
@@ -106,8 +106,8 @@ side="BOTH"
 [[mods]]
 modId="buildcraftfactory"
 version="${mod_version}+${minecraft_version}"
-displayName="BuildCraft Neo Better Factory"
-description='''BuildCraft Neo Better compatibility bootstrap. Not a gameplay release.'''
+displayName="BuildCraft Neo Factory"
+description='''BuildCraft Neo compatibility bootstrap. Not a gameplay release.'''
 
 [[dependencies.buildcraftfactory]]
 modId="buildcraftcore"
@@ -133,8 +133,8 @@ side="BOTH"
 [[mods]]
 modId="buildcraftsilicon"
 version="${mod_version}+${minecraft_version}"
-displayName="BuildCraft Neo Better Silicon"
-description='''BuildCraft Neo Better compatibility bootstrap. Not a gameplay release.'''
+displayName="BuildCraft Neo Silicon"
+description='''BuildCraft Neo compatibility bootstrap. Not a gameplay release.'''
 
 [[dependencies.buildcraftsilicon]]
 modId="buildcraftcore"
@@ -167,8 +167,8 @@ side="BOTH"
 [[mods]]
 modId="buildcrafttransport"
 version="${mod_version}+${minecraft_version}"
-displayName="BuildCraft Neo Better Transport"
-description='''BuildCraft Neo Better compatibility bootstrap. Not a gameplay release.'''
+displayName="BuildCraft Neo Transport"
+description='''BuildCraft Neo compatibility bootstrap. Not a gameplay release.'''
 
 [[dependencies.buildcrafttransport]]
 modId="buildcraftcore"
@@ -194,8 +194,8 @@ side="BOTH"
 [[mods]]
 modId="buildcraftrobotics"
 version="${mod_version}+${minecraft_version}"
-displayName="BuildCraft Neo Better Robotics"
-description='''BuildCraft Neo Better compatibility bootstrap. Not a gameplay release.'''
+displayName="BuildCraft Neo Robotics"
+description='''BuildCraft Neo compatibility bootstrap. Not a gameplay release.'''
 
 [[dependencies.buildcraftrobotics]]
 modId="buildcraftcore"

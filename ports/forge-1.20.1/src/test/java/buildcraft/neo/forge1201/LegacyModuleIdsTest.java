@@ -30,6 +30,6 @@ class LegacyModuleIdsTest {
 
     @Test
     void keepsTheLegacyResourceNamespace() {
-        assertEquals("buildcraft", BuildCraftNeo.RESOURCE_NAMESPACE);
+        assertEquals("buildcraft", LegacyModuleIds.RESOURCE_NAMESPACE);
     }
 }

@@ -4,7 +4,7 @@ Updated: 2026-07-23
 
 | Field | Value |
 |---|---|
-| Project identity | BuildCraft Neo Better |
+| Project identity | BuildCraft Neo |
 | Loader | NeoForge 21.1.242 |
 | Minecraft | 1.21.1 |
 | Java | 21 |

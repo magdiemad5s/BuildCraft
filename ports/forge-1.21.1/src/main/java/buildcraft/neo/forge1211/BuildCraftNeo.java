@@ -22,7 +22,7 @@ public final class BuildCraftNeo {
             throw new IllegalArgumentException("Unknown legacy BuildCraft module: " + moduleId);
         }
         if (INITIALIZED_MODULES.add(moduleId)) {
-            LOGGER.info("Bootstrapping BuildCraft Neo Better Forge 1.21.1 module {}", moduleId);
+            LOGGER.info("Bootstrapping BuildCraft Neo Forge 1.21.1 module {}", moduleId);
         }
     }
 }

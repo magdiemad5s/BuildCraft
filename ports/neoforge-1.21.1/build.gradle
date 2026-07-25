@@ -222,7 +222,7 @@ tasks.named('check').configure {
 tasks.named('jar', Jar).configure {
     manifest {
         attributes([
-            'Implementation-Title'         : 'BuildCraft Neo Better',
+            'Implementation-Title'         : 'BuildCraft Neo',
             'Implementation-Version'       : project.version,
             'BuildCraft-Legacy-Contract'   : '1.12.2',
             'BuildCraft-Resource-Namespace': 'buildcraft',

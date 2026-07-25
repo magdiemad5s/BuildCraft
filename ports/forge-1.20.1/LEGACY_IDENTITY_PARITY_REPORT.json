@@ -1,0 +1,835 @@
+{
+    "schema":  "buildcraft-neo/legacy-identity-parity-report/v1",
+    "generatedAtUtc":  "2026-07-24T18:15:14Z",
+    "mode":  "static-source-read-only",
+    "inputs":  {
+                   "manifest":  "../../legacy-1.12.2-contract/LEGACY_IDENTITY_MANIFEST.json",
+                   "sourceRoot":  "src/main/java/buildcraft",
+                   "javaFileCount":  1252
+               },
+    "manifestIntegrity":  {
+                              "declarationCount":  182,
+                              "itemCount":  116,
+                              "blockCount":  33,
+                              "blockEntityCount":  33,
+                              "legacyAliasCount":  49,
+                              "additionalAliasCount":  2,
+                              "savedDataCount":  5,
+                              "errors":  [
+
+                                         ]
+                          },
+    "modernSourceDiscovery":  {
+                                  "declarationCount":  188,
+                                  "itemCount":  116,
+                                  "blockCount":  36,
+                                  "blockEntityCount":  36,
+                                  "registrationEvidenceCount":  188,
+                                  "duplicateRegistrations":  [
+
+                                                             ],
+                                  "unresolvedDynamicSites":  [
+                                                                 {
+                                                                     "registry":  "item",
+                                                                     "argument":  "name + \"/\" + HEAT_NAMES[heat] + \"_bucket\"",
+                                                                     "file":  "src/main/java/buildcraft/energy/BCEnergyFluids.java",
+                                                                     "line":  172
+                                                                 },
+                                                                 {
+                                                                     "registry":  "block",
+                                                                     "argument":  "fullName",
+                                                                     "file":  "src/main/java/buildcraft/energy/BCEnergyFluids.java",
+                                                                     "line":  176
+                                                                 }
+                                                             ],
+                                  "countingRule":  "Literal RegistryObject fields plus ItemByEnum and instantiated PipeDefinition expansions; unresolved dynamic calls are listed, never guessed."
+                              },
+    "registryParity":  {
+                           "item":  {
+                                        "expectedCount":  116,
+                                        "actualCount":  116,
+                                        "matchingCount":  110,
+                                        "missingCount":  6,
+                                        "extraCount":  6,
+                                        "matching":  [
+                                                         "buildcraftbuilders:architect",
+                                                         "buildcraftbuilders:builder",
+                                                         "buildcraftbuilders:filler",
+                                                         "buildcraftbuilders:filler_planner",
+                                                         "buildcraftbuilders:frame",
+                                                         "buildcraftbuilders:library",
+                                                         "buildcraftbuilders:quarry",
+                                                         "buildcraftbuilders:replacer",
+                                                         "buildcraftbuilders:schematic_single",
+                                                         "buildcraftbuilders:snapshot",
+                                                         "buildcraftcore:decorated",
+                                                         "buildcraftcore:engine",
+                                                         "buildcraftcore:fragile_fluid_shard",
+                                                         "buildcraftcore:gear_diamond",
+                                                         "buildcraftcore:gear_gold",
+                                                         "buildcraftcore:gear_iron",
+                                                         "buildcraftcore:gear_stone",
+                                                         "buildcraftcore:gear_wood",
+                                                         "buildcraftcore:goggles",
+                                                         "buildcraftcore:list",
+                                                         "buildcraftcore:map_location",
+                                                         "buildcraftcore:marker_connector",
+                                                         "buildcraftcore:marker_path",
+                                                         "buildcraftcore:marker_volume",
+                                                         "buildcraftcore:paintbrush",
+                                                         "buildcraftcore:power_tester",
+                                                         "buildcraftcore:spring",
+                                                         "buildcraftcore:volume_box",
+                                                         "buildcraftcore:wrench",
+                                                         "buildcraftenergy:glob_of_oil",
+                                                         "buildcraftenergy:mj_dynamo",
+                                                         "buildcraftfactory:autoworkbench_item",
+                                                         "buildcraftfactory:chute",
+                                                         "buildcraftfactory:distiller",
+                                                         "buildcraftfactory:flood_gate",
+                                                         "buildcraftfactory:gel",
+                                                         "buildcraftfactory:heat_exchange",
+                                                         "buildcraftfactory:mining_well",
+                                                         "buildcraftfactory:pump",
+                                                         "buildcraftfactory:tank",
+                                                         "buildcraftfactory:water_gel_spawn",
+                                                         "buildcraftlib:debugger",
+                                                         "buildcraftlib:guide",
+                                                         "buildcraftlib:guide_note",
+                                                         "buildcraftrobotics:zone_planner",
+                                                         "buildcraftsilicon:advanced_crafting_table",
+                                                         "buildcraftsilicon:assembly_table",
+                                                         "buildcraftsilicon:charging_table",
+                                                         "buildcraftsilicon:gate_copier",
+                                                         "buildcraftsilicon:integration_table",
+                                                         "buildcraftsilicon:laser",
+                                                         "buildcraftsilicon:plug_facade",
+                                                         "buildcraftsilicon:plug_gate",
+                                                         "buildcraftsilicon:plug_lens",
+                                                         "buildcraftsilicon:plug_light_sensor",
+                                                         "buildcraftsilicon:plug_pulsar",
+                                                         "buildcraftsilicon:plug_timer",
+                                                         "buildcraftsilicon:programming_table",
+                                                         "buildcraftsilicon:redstone_chipset",
+                                                         "buildcrafttransport:filtered_buffer",
+                                                         "buildcrafttransport:pipe_clay_fluid",
+                                                         "buildcrafttransport:pipe_clay_item",
+                                                         "buildcrafttransport:pipe_cobble_fluid",
+                                                         "buildcrafttransport:pipe_cobble_item",
+                                                         "buildcrafttransport:pipe_cobble_power",
+                                                         "buildcrafttransport:pipe_cobble_rf",
+                                                         "buildcrafttransport:pipe_daizuli_item",
+                                                         "buildcrafttransport:pipe_diamond_fluid",
+                                                         "buildcrafttransport:pipe_diamond_item",
+                                                         "buildcrafttransport:pipe_diamond_power",
+                                                         "buildcrafttransport:pipe_diamond_rf",
+                                                         "buildcrafttransport:pipe_diamond_wood_fluid",
+                                                         "buildcrafttransport:pipe_diamond_wood_item",
+                                                         "buildcrafttransport:pipe_diamond_wood_power",
+                                                         "buildcrafttransport:pipe_diamond_wood_rf",
+                                                         "buildcrafttransport:pipe_emzuli_item",
+                                                         "buildcrafttransport:pipe_gold_fluid",
+                                                         "buildcrafttransport:pipe_gold_item",
+                                                         "buildcrafttransport:pipe_gold_power",
+                                                         "buildcrafttransport:pipe_gold_rf",
+                                                         "buildcrafttransport:pipe_iron_fluid",
+                                                         "buildcrafttransport:pipe_iron_item",
+                                                         "buildcrafttransport:pipe_iron_power",
+                                                         "buildcrafttransport:pipe_iron_rf",
+                                                         "buildcrafttransport:pipe_lapis_item",
+                                                         "buildcrafttransport:pipe_obsidian_item",
+                                                         "buildcrafttransport:pipe_quartz_fluid",
+                                                         "buildcrafttransport:pipe_quartz_item",
+                                                         "buildcrafttransport:pipe_quartz_power",
+                                                         "buildcrafttransport:pipe_quartz_rf",
+                                                         "buildcrafttransport:pipe_sandstone_fluid",
+                                                         "buildcrafttransport:pipe_sandstone_item",
+                                                         "buildcrafttransport:pipe_sandstone_power",
+                                                         "buildcrafttransport:pipe_sandstone_rf",
+                                                         "buildcrafttransport:pipe_stone_fluid",
+                                                         "buildcrafttransport:pipe_stone_item",
+                                                         "buildcrafttransport:pipe_stone_power",
+                                                         "buildcrafttransport:pipe_stone_rf",
+                                                         "buildcrafttransport:pipe_stripes_item",
+                                                         "buildcrafttransport:pipe_structure",
+                                                         "buildcrafttransport:pipe_void_fluid",
+                                                         "buildcrafttransport:pipe_void_item",
+                                                         "buildcrafttransport:pipe_wood_fluid",
+                                                         "buildcrafttransport:pipe_wood_item",
+                                                         "buildcrafttransport:pipe_wood_power",
+                                                         "buildcrafttransport:pipe_wood_rf",
+                                                         "buildcrafttransport:plug_blocker",
+                                                         "buildcrafttransport:plug_power_adaptor",
+                                                         "buildcrafttransport:waterproof",
+                                                         "buildcrafttransport:wire"
+                                                     ],
+                                        "missing":  [
+                                                        "buildcraftcore:diamond_shard",
+                                                        "buildcraftfactory:plastic_block",
+                                                        "buildcraftfactory:plastic_sheet",
+                                                        "buildcrafttransport:pipe_obsidian_fluid",
+                                                        "buildcrafttransport:pipe_quartz_power_2",
+                                                        "buildcrafttransport:pipe_wood_power_2"
+                                                    ],
+                                        "extra":  [
+                                                      "buildcraftbuilders:marker_construction",
+                                                      "buildcraftrobotics:redstone_board",
+                                                      "buildcraftrobotics:requester",
+                                                      "buildcraftrobotics:robot",
+                                                      "buildcraftrobotics:robot_station",
+                                                      "buildcraftsilicon:redstone_crystal"
+                                                  ]
+                                    },
+                           "block":  {
+                                         "expectedCount":  33,
+                                         "actualCount":  36,
+                                         "matchingCount":  33,
+                                         "missingCount":  0,
+                                         "extraCount":  3,
+                                         "matching":  [
+                                                          "buildcraftbuilders:architect",
+                                                          "buildcraftbuilders:builder",
+                                                          "buildcraftbuilders:filler",
+                                                          "buildcraftbuilders:frame",
+                                                          "buildcraftbuilders:library",
+                                                          "buildcraftbuilders:quarry",
+                                                          "buildcraftbuilders:replacer",
+                                                          "buildcraftcore:decorated",
+                                                          "buildcraftcore:engine",
+                                                          "buildcraftcore:marker_path",
+                                                          "buildcraftcore:marker_volume",
+                                                          "buildcraftcore:power_tester",
+                                                          "buildcraftcore:spring",
+                                                          "buildcraftenergy:mj_dynamo",
+                                                          "buildcraftfactory:autoworkbench_item",
+                                                          "buildcraftfactory:chute",
+                                                          "buildcraftfactory:distiller",
+                                                          "buildcraftfactory:flood_gate",
+                                                          "buildcraftfactory:heat_exchange",
+                                                          "buildcraftfactory:mining_well",
+                                                          "buildcraftfactory:pump",
+                                                          "buildcraftfactory:tank",
+                                                          "buildcraftfactory:tube",
+                                                          "buildcraftfactory:water_gel",
+                                                          "buildcraftrobotics:zone_planner",
+                                                          "buildcraftsilicon:advanced_crafting_table",
+                                                          "buildcraftsilicon:assembly_table",
+                                                          "buildcraftsilicon:charging_table",
+                                                          "buildcraftsilicon:integration_table",
+                                                          "buildcraftsilicon:laser",
+                                                          "buildcraftsilicon:programming_table",
+                                                          "buildcrafttransport:filtered_buffer",
+                                                          "buildcrafttransport:pipe_holder"
+                                                      ],
+                                         "missing":  [
+
+                                                     ],
+                                         "extra":  [
+                                                       "buildcraftbuilders:marker_construction",
+                                                       "buildcraftbuilders:quarry_drill_collision",
+                                                       "buildcraftrobotics:requester"
+                                                   ]
+                                     },
+                           "blockEntity":  {
+                                               "expectedCount":  33,
+                                               "actualCount":  36,
+                                               "matchingCount":  33,
+                                               "missingCount":  0,
+                                               "extraCount":  3,
+                                               "matching":  [
+                                                                "buildcraftbuilders:architect",
+                                                                "buildcraftbuilders:builder",
+                                                                "buildcraftbuilders:filler",
+                                                                "buildcraftbuilders:library",
+                                                                "buildcraftbuilders:quarry",
+                                                                "buildcraftbuilders:replacer",
+                                                                "buildcraftcore:engine.creative",
+                                                                "buildcraftcore:engine.wood",
+                                                                "buildcraftcore:marker.path",
+                                                                "buildcraftcore:marker.volume",
+                                                                "buildcraftcore:power_tester",
+                                                                "buildcraftenergy:engine.iron",
+                                                                "buildcraftenergy:engine.rf",
+                                                                "buildcraftenergy:engine.stone",
+                                                                "buildcraftenergy:mj_dynamo",
+                                                                "buildcraftenergy:spring.oil",
+                                                                "buildcraftfactory:autoworkbench_item",
+                                                                "buildcraftfactory:chute",
+                                                                "buildcraftfactory:distiller",
+                                                                "buildcraftfactory:flood_gate",
+                                                                "buildcraftfactory:heat_exchange",
+                                                                "buildcraftfactory:mining_well",
+                                                                "buildcraftfactory:pump",
+                                                                "buildcraftfactory:tank",
+                                                                "buildcraftrobotics:zone_planner",
+                                                                "buildcraftsilicon:advanced_crafting_table",
+                                                                "buildcraftsilicon:assembly_table",
+                                                                "buildcraftsilicon:charging_table",
+                                                                "buildcraftsilicon:integration_table",
+                                                                "buildcraftsilicon:laser",
+                                                                "buildcraftsilicon:programming_table",
+                                                                "buildcrafttransport:filtered_buffer",
+                                                                "buildcrafttransport:pipe_holder"
+                                                            ],
+                                               "missing":  [
+
+                                                           ],
+                                               "extra":  [
+                                                             "buildcraftbuilders:entity_marker_construction",
+                                                             "buildcraftbuilders:entity_quarry_drill_collision",
+                                                             "buildcraftrobotics:entity_requester"
+                                                         ]
+                                           }
+                       },
+    "releaseRequiredMissing":  {
+                                   "item":  [
+
+                                            ],
+                                   "block":  [
+
+                                             ],
+                                   "blockEntity":  [
+
+                                                   ]
+                               },
+    "legacyConditionalMissing":  {
+                                     "item":  [
+                                                  "buildcraftcore:diamond_shard",
+                                                  "buildcraftfactory:plastic_block",
+                                                  "buildcraftfactory:plastic_sheet",
+                                                  "buildcrafttransport:pipe_obsidian_fluid",
+                                                  "buildcrafttransport:pipe_quartz_power_2",
+                                                  "buildcrafttransport:pipe_wood_power_2"
+                                              ],
+                                     "block":  [
+
+                                               ],
+                                     "blockEntity":  [
+
+                                                     ]
+                                 },
+    "creativeTabParity":  {
+                              "wiredProviderCount":  15,
+                              "unresolvedProviders":  [
+
+                                                      ],
+                              "registeredModernItemCount":  116,
+                              "exposedModernItemCount":  116,
+                              "registeredLegacyItemCount":  110,
+                              "registeredLegacyItemsMissingCreativeCount":  0,
+                              "registeredLegacyItemsMissingCreative":  [
+
+                                                                       ],
+                              "allRegisteredModernItemsMissingCreativeCount":  0,
+                              "allRegisteredModernItemsMissingCreative":  [
+
+                                                                          ],
+                              "wiredProviders":  [
+                                                     {
+                                                         "provider":  "BCBuildersItems::getCreativeTabItems",
+                                                         "source":  "src/main/java/buildcraft/builders/BCBuildersItems.java",
+                                                         "wiredFrom":  "src/main/java/buildcraft/builders/BCBuilders.java:50"
+                                                     },
+                                                     {
+                                                         "provider":  "BCCoreItems::getCreativeTabItems",
+                                                         "source":  "src/main/java/buildcraft/core/BCCoreItems.java",
+                                                         "wiredFrom":  "src/main/java/buildcraft/core/BCCore.java:94"
+                                                     },
+                                                     {
+                                                         "provider":  "BCLibItems::getCreativeTabItems",
+                                                         "source":  "src/main/java/buildcraft/lib/BCLibItems.java",
+                                                         "wiredFrom":  "src/main/java/buildcraft/core/BCCore.java:95"
+                                                     },
+                                                     {
+                                                         "provider":  "BCEnergyBlocks::getCreativeTabItems",
+                                                         "source":  "src/main/java/buildcraft/energy/BCEnergyBlocks.java",
+                                                         "wiredFrom":  "src/main/java/buildcraft/energy/BCEnergy.java:55"
+                                                     },
+                                                     {
+                                                         "provider":  "BCEnergyItems::getCreativeTabItems",
+                                                         "source":  "src/main/java/buildcraft/energy/BCEnergyItems.java",
+                                                         "wiredFrom":  "src/main/java/buildcraft/energy/BCEnergy.java:56"
+                                                     },
+                                                     {
+                                                         "provider":  "BCEnergyFluids::getCreativeTabItems",
+                                                         "source":  "src/main/java/buildcraft/energy/BCEnergyFluids.java",
+                                                         "wiredFrom":  "src/main/java/buildcraft/energy/BCEnergy.java:57"
+                                                     },
+                                                     {
+                                                         "provider":  "BCFactoryItems::getCreativeTabItems",
+                                                         "source":  "src/main/java/buildcraft/factory/BCFactoryItems.java",
+                                                         "wiredFrom":  "src/main/java/buildcraft/factory/BCFactory.java:35"
+                                                     },
+                                                     {
+                                                         "provider":  "BCRoboticsItems::getRoboticsTabItems",
+                                                         "source":  "src/main/java/buildcraft/robotics/BCRoboticsItems.java",
+                                                         "wiredFrom":  "src/main/java/buildcraft/robotics/BCRobotics.java:129"
+                                                     },
+                                                     {
+                                                         "provider":  "BCRoboticsItems::getMainTabItems",
+                                                         "source":  "src/main/java/buildcraft/robotics/BCRoboticsItems.java",
+                                                         "wiredFrom":  "src/main/java/buildcraft/robotics/BCRobotics.java:130"
+                                                     },
+                                                     {
+                                                         "provider":  "BCSiliconItems::getMainTabItems",
+                                                         "source":  "src/main/java/buildcraft/silicon/BCSiliconItems.java",
+                                                         "wiredFrom":  "src/main/java/buildcraft/silicon/BCSilicon.java:79"
+                                                     },
+                                                     {
+                                                         "provider":  "BCSiliconItems::getPlugTabItems",
+                                                         "source":  "src/main/java/buildcraft/silicon/BCSiliconItems.java",
+                                                         "wiredFrom":  "src/main/java/buildcraft/silicon/BCSilicon.java:80"
+                                                     },
+                                                     {
+                                                         "provider":  "BCSiliconItems::getFacadeTabItems",
+                                                         "source":  "src/main/java/buildcraft/silicon/BCSiliconItems.java",
+                                                         "wiredFrom":  "src/main/java/buildcraft/silicon/BCSilicon.java:81"
+                                                     },
+                                                     {
+                                                         "provider":  "BCTransportItems::getPipeTabItems",
+                                                         "source":  "src/main/java/buildcraft/transport/BCTransportItems.java",
+                                                         "wiredFrom":  "src/main/java/buildcraft/transport/BCTransport.java:75"
+                                                     },
+                                                     {
+                                                         "provider":  "BCTransportItems::getPlugTabItems",
+                                                         "source":  "src/main/java/buildcraft/transport/BCTransportItems.java",
+                                                         "wiredFrom":  "src/main/java/buildcraft/transport/BCTransport.java:76"
+                                                     },
+                                                     {
+                                                         "provider":  "BCTransportBlocks::getCreativeTabItems",
+                                                         "source":  "src/main/java/buildcraft/transport/BCTransportBlocks.java",
+                                                         "wiredFrom":  "src/main/java/buildcraft/transport/BCTransport.java:77"
+                                                     }
+                                                 ]
+                          },
+    "migrationAliasParity":  {
+                                 "expectedAliasCount":  51,
+                                 "declaredAliasEvidenceCount":  85,
+                                 "matchingAliasEvidenceCount":  51,
+                                 "missingAliasCount":  0,
+                                 "missingAliases":  [
+
+                                                    ],
+                                 "modernTargetOverrideCount":  2,
+                                 "expectedAliasResolution":  [
+                                                                 {
+                                                                     "registryType":  "item",
+                                                                     "legacyPath":  "filling_planner",
+                                                                     "historicalTarget":  "buildcraftbuilders:filler_planner",
+                                                                     "currentTargetUsedForMatching":  "buildcraftbuilders:filler_planner",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "item",
+                                                                     "legacyPath":  "wrenchItem",
+                                                                     "historicalTarget":  "buildcraftcore:wrench",
+                                                                     "currentTargetUsedForMatching":  "buildcraftcore:wrench",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "item",
+                                                                     "legacyPath":  "woodenGearItem",
+                                                                     "historicalTarget":  "buildcraftcore:gear_wood",
+                                                                     "currentTargetUsedForMatching":  "buildcraftcore:gear_wood",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "item",
+                                                                     "legacyPath":  "stoneGearItem",
+                                                                     "historicalTarget":  "buildcraftcore:gear_stone",
+                                                                     "currentTargetUsedForMatching":  "buildcraftcore:gear_stone",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "item",
+                                                                     "legacyPath":  "ironGearItem",
+                                                                     "historicalTarget":  "buildcraftcore:gear_iron",
+                                                                     "currentTargetUsedForMatching":  "buildcraftcore:gear_iron",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "item",
+                                                                     "legacyPath":  "goldGearItem",
+                                                                     "historicalTarget":  "buildcraftcore:gear_gold",
+                                                                     "currentTargetUsedForMatching":  "buildcraftcore:gear_gold",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "item",
+                                                                     "legacyPath":  "diamondGearItem",
+                                                                     "historicalTarget":  "buildcraftcore:gear_diamond",
+                                                                     "currentTargetUsedForMatching":  "buildcraftcore:gear_diamond",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "item",
+                                                                     "legacyPath":  "listItem",
+                                                                     "historicalTarget":  "buildcraftcore:list",
+                                                                     "currentTargetUsedForMatching":  "buildcraftcore:list",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "item",
+                                                                     "legacyPath":  "mapLocation",
+                                                                     "historicalTarget":  "buildcraftcore:map_location",
+                                                                     "currentTargetUsedForMatching":  "buildcraftcore:map_location",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "item",
+                                                                     "legacyPath":  "markerBlock",
+                                                                     "historicalTarget":  "buildcraftcore:marker_volume",
+                                                                     "currentTargetUsedForMatching":  "buildcraftcore:marker_volume",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "item",
+                                                                     "legacyPath":  "pathMarkerBlock",
+                                                                     "historicalTarget":  "buildcraftcore:marker_path",
+                                                                     "currentTargetUsedForMatching":  "buildcraftcore:marker_path",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "block",
+                                                                     "legacyPath":  "engineBlock",
+                                                                     "historicalTarget":  "buildcraftcore:engine",
+                                                                     "currentTargetUsedForMatching":  "buildcraftcore:engine",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "block",
+                                                                     "legacyPath":  "markerBlock",
+                                                                     "historicalTarget":  "buildcraftcore:marker_volume",
+                                                                     "currentTargetUsedForMatching":  "buildcraftcore:marker_volume",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "block",
+                                                                     "legacyPath":  "pathMarkerBlock",
+                                                                     "historicalTarget":  "buildcraftcore:marker_path",
+                                                                     "currentTargetUsedForMatching":  "buildcraftcore:marker_path",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "block",
+                                                                     "legacyPath":  "power_tester",
+                                                                     "historicalTarget":  "buildcraftcore:power_tester",
+                                                                     "currentTargetUsedForMatching":  "buildcraftcore:power_tester",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "blockEntity",
+                                                                     "legacyPath":  "buildcraft.builders.Marker",
+                                                                     "historicalTarget":  "buildcraftcore:marker.volume",
+                                                                     "currentTargetUsedForMatching":  "buildcraftcore:marker.volume",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "blockEntity",
+                                                                     "legacyPath":  "Marker",
+                                                                     "historicalTarget":  "buildcraftcore:marker.volume",
+                                                                     "currentTargetUsedForMatching":  "buildcraftcore:marker.volume",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "item",
+                                                                     "legacyPath":  "glob_oil",
+                                                                     "historicalTarget":  "buildcraftenergy:glob_of_oil",
+                                                                     "currentTargetUsedForMatching":  "buildcraftenergy:glob_of_oil",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "item",
+                                                                     "legacyPath":  "plasticSheet",
+                                                                     "historicalTarget":  "buildcraftfactory:plastic_sheet",
+                                                                     "currentTargetUsedForMatching":  "buildcraftfactory:plastic_sheet",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "item",
+                                                                     "legacyPath":  "heat_exchange_start",
+                                                                     "historicalTarget":  "buildcraftfactory:heat_exchange",
+                                                                     "currentTargetUsedForMatching":  "buildcraftfactory:heat_exchange",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "item",
+                                                                     "legacyPath":  "heat_exchange_middle",
+                                                                     "historicalTarget":  "buildcraftfactory:heat_exchange",
+                                                                     "currentTargetUsedForMatching":  "buildcraftfactory:heat_exchange",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "item",
+                                                                     "legacyPath":  "heat_exchange_end",
+                                                                     "historicalTarget":  "buildcraftfactory:heat_exchange",
+                                                                     "currentTargetUsedForMatching":  "buildcraftfactory:heat_exchange",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "block",
+                                                                     "legacyPath":  "autoWorkbenchBlock",
+                                                                     "historicalTarget":  "buildcraftfactory:autoworkbench_item",
+                                                                     "currentTargetUsedForMatching":  "buildcraftfactory:autoworkbench_item",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "block",
+                                                                     "legacyPath":  "miningWellBlock",
+                                                                     "historicalTarget":  "buildcraftfactory:mining_well",
+                                                                     "currentTargetUsedForMatching":  "buildcraftfactory:mining_well",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "block",
+                                                                     "legacyPath":  "pumpBlock",
+                                                                     "historicalTarget":  "buildcraftfactory:pump",
+                                                                     "currentTargetUsedForMatching":  "buildcraftfactory:pump",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "block",
+                                                                     "legacyPath":  "tubeBlock",
+                                                                     "historicalTarget":  "buildcraftfactory:tube",
+                                                                     "currentTargetUsedForMatching":  "buildcraftfactory:tube",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "block",
+                                                                     "legacyPath":  "floodGateBlock",
+                                                                     "historicalTarget":  "buildcraftfactory:flood_gate",
+                                                                     "currentTargetUsedForMatching":  "buildcraftfactory:flood_gate",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "block",
+                                                                     "legacyPath":  "tankBlock",
+                                                                     "historicalTarget":  "buildcraftfactory:tank",
+                                                                     "currentTargetUsedForMatching":  "buildcraftfactory:tank",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "block",
+                                                                     "legacyPath":  "chuteBlock",
+                                                                     "historicalTarget":  "buildcraftfactory:chute",
+                                                                     "currentTargetUsedForMatching":  "buildcraftfactory:chute",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "block",
+                                                                     "legacyPath":  "heat_exchange_start",
+                                                                     "historicalTarget":  "buildcraftfactory:heat_exchange",
+                                                                     "currentTargetUsedForMatching":  "buildcraftfactory:heat_exchange",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "block",
+                                                                     "legacyPath":  "heat_exchange_middle",
+                                                                     "historicalTarget":  "buildcraftfactory:heat_exchange",
+                                                                     "currentTargetUsedForMatching":  "buildcraftfactory:heat_exchange",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "block",
+                                                                     "legacyPath":  "heat_exchange_end",
+                                                                     "historicalTarget":  "buildcraftfactory:heat_exchange",
+                                                                     "currentTargetUsedForMatching":  "buildcraftfactory:heat_exchange",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "blockEntity",
+                                                                     "legacyPath":  "heat_exchange.start",
+                                                                     "historicalTarget":  "buildcraftfactory:heat_exchange",
+                                                                     "currentTargetUsedForMatching":  "buildcraftfactory:heat_exchange",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "blockEntity",
+                                                                     "legacyPath":  "heat_exchange.end",
+                                                                     "historicalTarget":  "buildcraftfactory:heat_exchange",
+                                                                     "currentTargetUsedForMatching":  "buildcraftfactory:heat_exchange",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "item",
+                                                                     "legacyPath":  "plug_gate",
+                                                                     "historicalTarget":  "buildcraftsilicon:plug_gate",
+                                                                     "currentTargetUsedForMatching":  "buildcraftsilicon:plug_gate",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "item",
+                                                                     "legacyPath":  "plug_lens",
+                                                                     "historicalTarget":  "buildcraftsilicon:plug_lens",
+                                                                     "currentTargetUsedForMatching":  "buildcraftsilicon:plug_lens",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "item",
+                                                                     "legacyPath":  "plug_pulsar",
+                                                                     "historicalTarget":  "buildcraftsilicon:plug_pulsar",
+                                                                     "currentTargetUsedForMatching":  "buildcraftsilicon:plug_pulsar",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "item",
+                                                                     "legacyPath":  "plug_light_sensor",
+                                                                     "historicalTarget":  "buildcraftsilicon:plug_light_sensor",
+                                                                     "currentTargetUsedForMatching":  "buildcraftsilicon:plug_light_sensor",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "item",
+                                                                     "legacyPath":  "plug_timer",
+                                                                     "historicalTarget":  "buildcraftsilicon:plug_timer",
+                                                                     "currentTargetUsedForMatching":  "buildcraftsilicon:plug_timer",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "item",
+                                                                     "legacyPath":  "plug_facade",
+                                                                     "historicalTarget":  "buildcraftsilicon:plug_facade",
+                                                                     "currentTargetUsedForMatching":  "buildcraftsilicon:plug_facade",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "block",
+                                                                     "legacyPath":  "laserBlock",
+                                                                     "historicalTarget":  "buildcraftsilicon:laser",
+                                                                     "currentTargetUsedForMatching":  "buildcraftsilicon:laser",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "block",
+                                                                     "legacyPath":  "assemblyTableBlock",
+                                                                     "historicalTarget":  "buildcraftsilicon:assembly_table",
+                                                                     "currentTargetUsedForMatching":  "buildcraftsilicon:assembly_table",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "block",
+                                                                     "legacyPath":  "advancedCraftingTableBlock",
+                                                                     "historicalTarget":  "buildcraftsilicon:advanced_crafting_table",
+                                                                     "currentTargetUsedForMatching":  "buildcraftsilicon:advanced_crafting_table",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "block",
+                                                                     "legacyPath":  "integrationTableBlock",
+                                                                     "historicalTarget":  "buildcraftsilicon:integration_table",
+                                                                     "currentTargetUsedForMatching":  "buildcraftsilicon:integration_table",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "block",
+                                                                     "legacyPath":  "chargingTableBlock",
+                                                                     "historicalTarget":  "buildcraftsilicon:charging_table",
+                                                                     "currentTargetUsedForMatching":  "buildcraftsilicon:charging_table",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "block",
+                                                                     "legacyPath":  "programmingTableBlock",
+                                                                     "historicalTarget":  "buildcraftsilicon:programming_table",
+                                                                     "currentTargetUsedForMatching":  "buildcraftsilicon:programming_table",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "block",
+                                                                     "legacyPath":  "zonePlannerBlock",
+                                                                     "historicalTarget":  "buildcraftrobotics:zone_planner",
+                                                                     "currentTargetUsedForMatching":  "buildcraftrobotics:zone_planner",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "item",
+                                                                     "legacyPath":  "pipeWaterproof",
+                                                                     "historicalTarget":  "buildcrafttransport:waterproof",
+                                                                     "currentTargetUsedForMatching":  "buildcrafttransport:waterproof",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "block",
+                                                                     "legacyPath":  "filteredBufferBlock",
+                                                                     "historicalTarget":  "buildcrafttransport:filtered_buffer",
+                                                                     "currentTargetUsedForMatching":  "buildcrafttransport:filtered_buffer",
+                                                                     "modernTargetOverrideApplied":  false
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "block",
+                                                                     "legacyPath":  "fluid_block_oil",
+                                                                     "historicalTarget":  "buildcraftenergy:fluid_block_heat_0_oil",
+                                                                     "currentTargetUsedForMatching":  "buildcraftenergy:oil",
+                                                                     "modernTargetOverrideApplied":  true
+                                                                 },
+                                                                 {
+                                                                     "registryType":  "block",
+                                                                     "legacyPath":  "fluid_block_fuel",
+                                                                     "historicalTarget":  "buildcraftenergy:fluid_block_heat_0_fuel_light",
+                                                                     "currentTargetUsedForMatching":  "buildcraftenergy:fuel_light",
+                                                                     "modernTargetOverrideApplied":  true
+                                                                 }
+                                                             ],
+                                 "missingMappingHandlerDetected":  true,
+                                 "qualification":  "Manifest target retains the audited 1.12.2 destination. When modernTarget is present, parity matching uses that current registered destination; expectedAliasResolution reports both. oldReg remains metadata evidence, and Forge MissingMappingsEvent handling is independently required."
+                             },
+    "savedDataParity":  {
+                            "expectedCount":  5,
+                            "foundCount":  5,
+                            "missingCount":  0,
+                            "missing":  [
+
+                                        ],
+                            "evidence":  [
+                                             {
+                                                 "name":  "buildcraft_wire_systems",
+                                                 "found":  true,
+                                                 "evidence":  [
+                                                                  "src/main/java/buildcraft/transport/wire/WorldSavedDataWireSystems.java:39"
+                                                              ]
+                                             },
+                                             {
+                                                 "name":  "buildcraft_volume_boxes",
+                                                 "found":  true,
+                                                 "evidence":  [
+                                                                  "src/main/java/buildcraft/core/marker/volume/WorldSavedDataVolumeBoxes.java:26"
+                                                              ]
+                                             },
+                                             {
+                                                 "name":  "buildcraft_marker_volume",
+                                                 "found":  true,
+                                                 "evidence":  [
+                                                                  "src/main/java/buildcraft/core/marker/VolumeSavedData.java:14"
+                                                              ]
+                                             },
+                                             {
+                                                 "name":  "buildcraft_marker_path",
+                                                 "found":  true,
+                                                 "evidence":  [
+                                                                  "src/main/java/buildcraft/core/marker/PathSavedData.java:15"
+                                                              ]
+                                             },
+                                             {
+                                                 "name":  "buildcraft_world_gen",
+                                                 "found":  true,
+                                                 "evidence":  [
+                                                                  "src/main/java/buildcraft/lib/world/gen/RetroGenData.java:34"
+                                                              ]
+                                             }
+                                         ]
+                        },
+    "gate":  {
+                 "complete":  true,
+                 "strictFailureCount":  0,
+                 "strictFailureRules":  [
+                                            "manifest counts valid",
+                                            "no duplicate modern IDs",
+                                            "all non-conditional legacy IDs exact",
+                                            "registered legacy items exposed by wired creative providers",
+                                            "all aliases declared",
+                                            "Forge missing-mapping handler present",
+                                            "all SavedData names retained",
+                                            "all creative provider references resolve"
+                                        ]
+             }
+}

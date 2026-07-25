@@ -6,7 +6,7 @@ Audited read-only reference:
 `shipovskijkorp-1.20.1-main`.
 
 This repository is a useful Forge 1.20.1 **reference**, not an adopted
-implementation or a production baseline for BuildCraft Neo Better. It contains
+implementation or a production baseline for BuildCraft Neo. It contains
 one commit, no JUnit/GameTest source tree, and no runtime validation performed
 by this project.
 
@@ -30,7 +30,7 @@ disabled for 1.20.1. No Create, Mekanism, Curios, or TOP integration was found.
    `PipeFlowPower.tryExtractPower()` is a TODO returning zero; per-side power
    buffers are unbounded; Forge ENERGY is not exposed; `MjBattery` does not
    enforce capacity or safe NBT bounds; and the sole `BCEnergyStorage` is both
-   unused and contains a `canRecive` spelling defect. BuildCraft Neo Better's
+   unused and contains a `canRecive` spelling defect. BuildCraft Neo's
    bounded energy foundation is retained instead.
 
 2. **Small oil deposits are unreachable by default.**
@@ -61,7 +61,7 @@ runtime-proven distributable artifact.
 
 ## Safe reuse rules
 
-- Preserve BuildCraft Neo Better's legacy ID/NBT/SavedData/packet manifest;
+- Preserve BuildCraft Neo's legacy ID/NBT/SavedData/packet manifest;
   Community Edition IDs differ in places, notably some block-entity IDs.
 - Recreate behavior with the current loader APIs rather than copy source or
   assets blindly. Any copied MPL-2.0 material requires file-level attribution

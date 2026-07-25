@@ -1,0 +1,21 @@
+{
+  "parent": "buildcraftcore:item/engine_redstone",
+  "overrides": [
+    {
+      "predicate": { "buildcraftcore:variant": 1 },
+      "model": "buildcraftenergy:item/engine_stone"
+    },
+    {
+      "predicate": { "buildcraftcore:variant": 2 },
+      "model": "buildcraftenergy:item/engine_iron"
+    },
+    {
+      "predicate": { "buildcraftcore:variant": 3 },
+      "model": "buildcraftcore:item/engine_creative"
+    },
+    {
+      "predicate": { "buildcraftcore:variant": 4 },
+      "model": "buildcraftenergy:item/engine_rf"
+    }
+  ]
+}

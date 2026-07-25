@@ -1,0 +1,21 @@
+{
+  "type": "buildcraftsilicon:assembly",
+  "MJ": 1000000000,
+  "ingredient_counts": [
+    1,
+    2
+  ],
+  "ingredients": [
+    {
+      "item": "buildcraftcore:engine",
+      "nbt": "{Damage:0}",
+      "type": "forge:partial_nbt"
+    },
+    {
+      "tag": "forge:ingots/iron"
+    }
+  ],
+  "result": {
+    "item": "buildcraftsilicon:plug_pulsar"
+  }
+}

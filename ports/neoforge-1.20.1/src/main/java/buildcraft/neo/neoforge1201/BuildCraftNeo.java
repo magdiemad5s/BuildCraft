@@ -25,9 +25,9 @@ public final class BuildCraftNeo {
             throw new IllegalArgumentException("Unknown legacy BuildCraft module: " + moduleId);
         }
         if (INITIALIZED_MODULES.add(moduleId)) {
-            LOGGER.info("Bootstrapping BuildCraft Neo Better module {}", moduleId);
+            LOGGER.info("Bootstrapping BuildCraft Neo module {}", moduleId);
             modEventBus.addListener((FMLCommonSetupEvent event) ->
-                LOGGER.debug("Common setup reached for BuildCraft Neo Better module {}", moduleId)
+                LOGGER.debug("Common setup reached for BuildCraft Neo module {}", moduleId)
             );
         }
     }

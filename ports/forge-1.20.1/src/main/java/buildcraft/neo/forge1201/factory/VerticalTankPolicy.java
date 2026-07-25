@@ -27,6 +27,6 @@ public final class VerticalTankPolicy {
             return 0;
         }
         int clampedAmount = Math.min(amount, capacity);
-        return Math.min(15, (clampedAmount * 14) / capacity + 1);
+        return Math.min(15, (int) (((long) clampedAmount * 14L) / capacity) + 1);
     }
 }

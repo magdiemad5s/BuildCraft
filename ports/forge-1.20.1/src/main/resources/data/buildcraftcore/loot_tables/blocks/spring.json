@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "conditions": [
+        { "condition": "minecraft:survives_explosion" }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "buildcraftcore:spring",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "buildcraftcore:spring",
+              "properties": { "type": "water" }
+            }
+          ],
+          "functions": [
+            { "function": "minecraft:set_nbt", "tag": "{Damage:0}" }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "buildcraftcore:spring",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "buildcraftcore:spring",
+              "properties": { "type": "oil" }
+            }
+          ],
+          "functions": [
+            { "function": "minecraft:set_nbt", "tag": "{Damage:1}" }
+          ]
+        }
+      ]
+    }
+  ]
+}

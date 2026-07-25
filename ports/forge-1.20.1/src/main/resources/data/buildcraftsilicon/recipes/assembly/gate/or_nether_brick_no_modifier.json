@@ -1,0 +1,24 @@
+{
+  "type": "buildcraftsilicon:assembly",
+  "MJ": 40000000000,
+  "group": "buildcraftsilicon:gate_or",
+  "ingredient_counts": [
+    1,
+    1
+  ],
+  "ingredients": [
+    {
+      "type": "forge:partial_nbt",
+      "count": 1,
+      "item": "buildcraftsilicon:redstone_chipset",
+      "nbt": "{Damage:1}"
+    },
+    {
+      "item": "minecraft:nether_bricks"
+    }
+  ],
+  "result": {
+    "item": "buildcraftsilicon:plug_gate",
+    "nbt": "{gate:{logic:1b,material:2b,modifier:0b}}"
+  }
+}

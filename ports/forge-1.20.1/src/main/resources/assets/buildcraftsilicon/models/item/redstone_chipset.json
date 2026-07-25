@@ -1,0 +1,9 @@
+{
+  "parent": "buildcraftsilicon:item/redstone_chipset/red",
+  "overrides": [
+    { "predicate": { "buildcraftsilicon:variant": 1 }, "model": "buildcraftsilicon:item/redstone_chipset/iron" },
+    { "predicate": { "buildcraftsilicon:variant": 2 }, "model": "buildcraftsilicon:item/redstone_chipset/gold" },
+    { "predicate": { "buildcraftsilicon:variant": 3 }, "model": "buildcraftsilicon:item/redstone_chipset/quartz" },
+    { "predicate": { "buildcraftsilicon:variant": 4 }, "model": "buildcraftsilicon:item/redstone_chipset/diamond" }
+  ]
+}

@@ -3,7 +3,7 @@ package buildcraft.neo.neoforge1211;
 /**
  * Shared identity boundary for the NeoForge 1.21.1 lane.
  *
- * <p>The release-facing name is BuildCraft Neo Better, while resource and
+ * <p>The release-facing name is BuildCraft Neo, while resource and
  * data content keeps the legacy {@value #RESOURCE_NAMESPACE} namespace.</p>
  */
 public final class BuildCraftNeo {
